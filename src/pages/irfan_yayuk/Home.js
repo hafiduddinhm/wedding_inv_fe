@@ -1,8 +1,6 @@
-import '../App.css'
 import React, {useRef, forwardRef, useEffect} from 'react';
 import { Image, Container, Row, Col, Button } from 'react-bootstrap';
 import backgroundImage from '../../assets/image/bg.png'
-import PlayAudio from './PlayAudio';
 
 const Home = forwardRef((props, ref) => {
     const sectionRef = useRef(null);
@@ -13,17 +11,12 @@ const Home = forwardRef((props, ref) => {
         }
     }, [ref]);
 
-    const audio = PlayAudio()
     const styles = {
         backgroundImage: `url(${backgroundImage})`,
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'repeat-y',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
     };
-
-    const handlePlay = (e) => {
-        audio.play();
-    }
 
     return (
         <section ref={sectionRef}>
@@ -37,9 +30,9 @@ const Home = forwardRef((props, ref) => {
                         <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod euismod ligula ac faucibus. Nulla in lectus quis risus tristique posuere ac ac velit.</p>
                         <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod euismod ligula ac faucibus. Nulla in lectus quis risus tristique posuere ac ac velit.</p>
                         <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod euismod ligula ac faucibus. Nulla in lectus quis risus tristique posuere ac ac velit.</p>
-                        <Button variant="primary" onClick={handlePlay}>Get Started</Button>
                     </Col>
                 </Row>
+                <Row style={{minHeight: '50pt'}}></Row>
             </Container>
         </section>
         

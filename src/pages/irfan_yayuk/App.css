@@ -1,0 +1,38 @@
+*::-webkit-scrollbar {
+    display: none;
+}
+
+*::-webkit-scrollbar-button {
+    display: none;
+}
+
+*::-webkit-scrollbar-track {
+    display: none;
+}
+
+*::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    display: none;
+}
+
+@font-face {
+    font-family: "BillionMiracles";
+    src: url("../../assets/font/Billion Miracles.otf");
+}
+
+.font-estetik {
+    font-family: 'Alex Brush', cursive !important;
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+    transform: translate(0);
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+    transform: translate(0, -45px);
+}

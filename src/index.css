@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: Ovo, sans-serif;
+  font-family: Ovo, serif !important;
+  font-size: 2.5vh !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
