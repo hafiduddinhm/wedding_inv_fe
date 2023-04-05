@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Modal from 'react-modal'
-import { Box, Grid, Typography, Button, useTheme } from '@mui/material';
+import { Box, Button, useTheme } from '@mui/material';
+
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import PlayAudio from './PlayAudio'
 import backgroundImage from '../../assets/image/bg.png'
@@ -22,11 +23,12 @@ const OpeningModal = () => {
             left: '0',
             right: '0',
             bottom: '0',
-            zIndex: '5',
+            zIndex: 5,
             padding: '0',
             border: 'none',
             borderRadius: '0',
             backgroundImage: `url(${backgroundImage})`,
+            overflow: 'hidden',
         },
         overlay: {
             transition: 'opacity 500ms ease-in-out',
@@ -51,6 +53,7 @@ const OpeningModal = () => {
         flexDirection: 'column',
         alignItems: 'center',
         height: window.innerHeight,
+        overflowX: 'hidden',
     };
 
     
@@ -116,15 +119,21 @@ const OpeningModal = () => {
 
     useEffect(() => {
         Modal.setAppElement('body')
-    })
+    }, [])
+
+    if (isOpen) {
+        console.log('isOpen')
+        document.body.style.overflow = 'hidden';
+    }
 
     const closeModal = () => {
+        document.body.style.overflowY = 'auto';
         setIsOpen(false);
         audio.play()
     };
 
     return (
-        <Modal isOpen={isOpen} closeTimeoutMS={500} style={modalStyles}>
+        <Modal isOpen={isOpen} onRequestClose={closeModal} closeTimeoutMS={500} style={modalStyles}>
             <Box style={boxStyles}>
                 <p style={{ color: theme.palette.gray.main, marginTop: '9vh', marginBottom: 10 }}>The Wedding of</p>
                 <h1 style={{ color: theme.palette.primary.main, fontSize: '6vh' }} className="font-estetik">Irfan & Yayuk</h1>
@@ -141,8 +150,6 @@ const OpeningModal = () => {
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "30vh" }}>
                     <img src={bgOrnament} style={{ width: '100%', height: '100%' }}></img>
                 </div>
-
-
             </Box>
         </Modal>
     )

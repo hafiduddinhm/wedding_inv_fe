@@ -70,7 +70,7 @@ const BottomNavbar = ({ sectionRefs }) => {
     setPlay(false)
   });
 
-  const isSmallScreen = useMediaQuery('(max-width:400px)');
+  const isSmallScreen = useMediaQuery('(max-width:500px)');
 
   return (
     <>

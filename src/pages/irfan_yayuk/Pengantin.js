@@ -4,16 +4,9 @@ import backgroundImage from '../../assets/image/bg.png'
 
 const Pengantin = forwardRef((props, sectionRef) => {
 
-    const styles = {
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundRepeat: 'repeat-y',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-    };
-
     return (
-        <section ref={sectionRef}>
-            <Container fluid style={styles}>
+        <section ref={sectionRef} style={{backgroundImage: `url(${backgroundImage})`}}>
+            <Container fluid>
                 {/* edit disini */}
                 <Row className="justify-content-center align-items-center vh-100">
                     <Col md={6}  className="text-center">

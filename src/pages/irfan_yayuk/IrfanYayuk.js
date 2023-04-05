@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import OpeningModal from "./OpeningModal"
 import Home from './Home'
