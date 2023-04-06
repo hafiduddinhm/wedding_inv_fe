@@ -1,28 +1,148 @@
-import React, { forwardRef } from 'react';
-import { Image, Container, Row, Col, Button } from 'react-bootstrap';
+import React, { forwardRef, useState, useEffect } from 'react';
+import { Grid, Box, useTheme, useMediaQuery } from '@mui/material'
 import backgroundImage from '../../assets/image/bg.png'
+import ornament from '../../assets/image/ornamen.png'
+import ornament2 from '../../assets/image/perjalanan.png'
+import butterfly from '../../assets/image/butterfly.png'
+import timeline from '../../assets/image/timeline.png'
+import pageTransition from '../../assets/image/transition.png'
+import groom from '../../assets/image/groom.png'
+import bride from '../../assets/image/bride.png'
 
 const Pengantin = forwardRef((props, sectionRef) => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+            setWindowHeight(window.innerHeight);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const isLg = useMediaQuery(theme => theme.breakpoints.up('lg'));
+    const isMd = useMediaQuery(theme => theme.breakpoints.only('md'));
+
+    const theme = useTheme();
+
+    const styles ={
+        box: {
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            color: 'primary.main',
+            margin: '7% 17%' 
+        },
+        ornament: {
+            width: `${75-windowWidth*0.03}%`
+        },
+        ornament2: {
+            width: `${140-windowWidth*0.03}%`
+        },
+        butterfly: {
+            top: '0vh',
+            width: `30%`,
+            position: 'relative',
+            right: '-50%',
+        },
+        timeline:{
+            width: '40%',
+            marginBottom: '45%'
+        },
+        timeline2:{
+            width: '100%',
+            height: '100%',
+            paddingBottom: `${70-windowWidth*0.03}%`
+        },
+        txt:{
+            header: {
+                fontSize: `${100+windowWidth*0.06}%`,
+                marginTop: '2vh',
+                textAlign: 'center',
+            },
+            textAlign: 'center',
+            fontSize: `${60+windowWidth*0.04}%`,
+        },
+        img: {
+            width: '65%',
+        }
+    }
 
     return (
-        <section ref={sectionRef} style={{backgroundImage: `url(${backgroundImage})`}}>
-            <Container fluid>
-                {/* edit disini */}
-                <Row className="justify-content-center align-items-center vh-100">
-                    <Col md={6}  className="text-center">
-                        <h1 className='font-estetik'>ini section pengantin</h1>
-                        <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod euismod ligula ac faucibus. Nulla in lectus quis risus tristique posuere ac ac velit.</p>
-                        <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod euismod ligula ac faucibus. Nulla in lectus quis risus tristique posuere ac ac velit.</p>
-                        <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod euismod ligula ac faucibus. Nulla in lectus quis risus tristique posuere ac ac velit.</p>
-                        <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod euismod ligula ac faucibus. Nulla in lectus quis risus tristique posuere ac ac velit.</p>
-                        <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod euismod ligula ac faucibus. Nulla in lectus quis risus tristique posuere ac ac velit.</p>
-                        <Button variant="primary">Get Started</Button>
-                    </Col>
-                </Row>
-                <Row style={{minHeight: '30pt'}}></Row>
-            </Container>
+        <section ref={sectionRef} style={{ backgroundImage: `url(${backgroundImage})`, overflowX: 'hidden' }}>
+            <div style={{ top: 0, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "7vh" }}>
+                <img src={pageTransition} style={{height: '100%', width: '100%'}}/>
+            </div>
+            <Box sx={styles.box}>
+                <img src={ornament} style={styles.ornament}/>
+                <p style={{ color: theme.palette.dark.main, textAlign: 'center', marginTop: '2vh', fontSize: `${60+windowWidth*0.04}%`,}}>Assalamu'alaikum Wr. Wb.<br/>Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami:</p>
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                    <img src={groom} style={styles.img}/>
+                    <h1 style={styles.txt.header}>Irfan Arif Widya Kusuma</h1>
+                    <p style={styles.txt}>Putra Pertama dari Bpk Arifin & Ibu Maya</p>
+                </Box>
+                <h1 style={{fontSize: `${200-windowWidth*0.04}%`, marginBottom: '2vh',}}>&</h1>
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                    <img src={bride} style={styles.img} />
+                    <h1 style={styles.txt.header}>Yayuk Susanti</h1>
+                    <p style={styles.txt}>Putri Kedua dari Bpk Saunan (Alm) & Ibu Sumarni</p>
+                </Box>
+                <br/>
+                <br/>
+                <img src={ornament2} style={styles.ornament2}/>
+                <h1 style={styles.txt.header}>Perjalanan Cerita Kami</h1>
+                <img src={ornament} style={styles.ornament}/>
+                <img src={butterfly} style={styles.butterfly}/>
+                <Grid container spacing={4} wrap="nowrap">
+                    {isLg ? (
+                        <React.Fragment>
+                            <Grid item xs={12} sm={4} style={{ display: 'flex', alignItems: 'flex-end', padding: '3%', paddingBottom: 0}}>
+                                <p style={styles.txt}>Di tahun 2023 ini alhamdulilah kami bisa melanjutkan hubungan ke jenjang pernikahan. Terimakasih untuk semesta atas segala campur tangan di dalamnya. Terimakasih untuk mempercayai bahwa sabar adalah ladang pahala untuk aku bisa nemenin mas terus.</p>
+                            </Grid>
+                            <Grid item xs={12} sm={4} style={{display: 'flex', justifyContent: 'center'}} >
+                                <img src={timeline} style={styles.timeline}/>
+                            </Grid>
+                            <Grid item xs={12} sm={4} style={{ display: 'flex', alignItems: 'flex-start', padding: '3%', paddingTop: 0 }}>
+                                <p style={styles.txt}>Awal bertemu pada tahun 2018. Kemudian di tahun 2021 kami menjalin hubungan sampai saat ini. Berawal dari teman tidak disangka sama sama ada rasa.</p>
+                            </Grid>
+                        </React.Fragment>
+                    ) : (
+                        <React.Fragment>
+                            <Grid item xs={8} md={4} style={{paddingLeft: 0, marginLeft: '-7%'}}>
+                                <img src={timeline} style={styles.timeline2}/>
+                            </Grid>
+                            <Grid item xs={16} md={8} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', paddingLeft: '2%', marginRight: '-5%'}}>
+                                <p style={styles.txt}>Awal bertemu pada tahun 2018. Kemudian di tahun 2021 kami menjalin hubungan sampai saat ini. Berawal dari teman tidak disangka sama sama ada rasa.</p>
+                                <p style={styles.txt}>⋮</p>
+                                <p style={styles.txt}>Di tahun 2023 ini alhamdulilah kami bisa melanjutkan hubungan ke jenjang pernikahan. Terimakasih untuk semesta atas segala campur tangan di dalamnya. Terimakasih untuk mempercayai bahwa sabar adalah ladang pahala untuk aku bisa nemenin mas terus.</p>
+                            </Grid>
+                        </React.Fragment>
+                    )}
+                    {/* <Grid item>
+                        <p style={styles.txt}>Awal bertemu pada tahun 2018. Kemudian di tahun 2021 kami menjalin hubungan sampai saat ini. Berawal dari teman tidak disangka sama sama ada rasa.</p>
+                    </Grid>
+                    <Grid item>
+                        <img src={timeline} style={styles.ornament2}/>
+                    </Grid>
+                    <Grid item>
+                        <p style={styles.txt}>⋮</p>
+                    </Grid>
+                    <Grid item>
+                        <p style={styles.txt}>Di tahun 2023 ini alhamdulilah kami bisa melanjutkan hubungan ke jenjang pernikahan. Terimakasih untuk semesta atas segala campur tangan di dalamnya. Terimakasih untuk mempercayai bahwa sabar adalah ladang pahala untuk aku bisa nemenin mas terus.</p>
+                    </Grid> */}
+                </Grid>
+            </Box>
+            
+                <br/>
+                <br/>
+                <br/>
+                <br/>
         </section>
-        
+
     );
 });
 

@@ -28,16 +28,16 @@ const Home = forwardRef((props, ref) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        height: `${windowHeight-25}px`,
+        height: `95vh`,
         overflowX: 'hidden',
     };
 
     const ornament1Styles = {
         left: '0%',
-        bottom: `${-39+windowWidth*0.005}vh`,
+        bottom: (windowWidth > 800 && windowWidth > windowHeight) ? `${-25-windowWidth*0.01}vh` : `${-33-windowWidth*0.01}vh` ,
         position: 'absolute',
         display: (windowWidth < 320 && windowHeight >480) ? "none" : "block",
-        width: `${70-windowWidth*0.05}%`
+        width: `${70-windowWidth*0.027}%`
     };
 
     const ornament2Styles = {
@@ -89,11 +89,11 @@ const Home = forwardRef((props, ref) => {
                         <img src={flowerOrnament2} style={{width: '100%',height: '100%'}}></img>
                     </div>
                 </div>
-                <h1 style={{ color: theme.palette.primary.main, fontSize: `${140-windowWidth*0.005}%`, marginTop: '10vh' }} >Irfan Arif Widya Kusuma</h1>
-                <h1 style={{ color: theme.palette.primary.main, fontSize: `${140-windowWidth*0.005}%` }} >&</h1>
-                <h1 style={{ color: theme.palette.primary.main, fontSize: `${140-windowWidth*0.005}%` }} >Yayuk Susanti</h1>
-                <h1 style={{ color: theme.palette.primary.main, fontSize: `${120-windowWidth*0.005}%`, marginTop: '2vh' }} >— 07 May 2023 —</h1>
-                <div style={{ position: 'absolute', bottom: 25, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "17vh" }}>
+                <h1 style={{ color: theme.palette.primary.main, fontSize: `${160-windowWidth*0.006}%`, marginTop: '10vh' }} >Irfan Arif Widya Kusuma</h1>
+                <h1 style={{ color: theme.palette.primary.main, fontSize: `${160-windowWidth*0.006}%` }} >&</h1>
+                <h1 style={{ color: theme.palette.primary.main, fontSize: `${160-windowWidth*0.006}%` }} >Yayuk Susanti</h1>
+                <h1 style={{ color: theme.palette.primary.main, fontSize: `${130-windowWidth*0.006}%`, marginTop: '2vh' }} >— 07 May 2023 —</h1>
+                <div style={{ position: 'absolute', bottom: -30, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "20vh" }}>
                     <img src={bgOrnament} style={{ width: '100%', height: '100%' }}></img>
                 </div>
                 <div style={{ position: 'relative', bottom: 25, left: 0, width: '100%', zIndex: 0 }}>
