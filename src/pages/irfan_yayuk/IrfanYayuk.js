@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import OpeningModal from "./OpeningModal"
 import Home from './Home'
 import Pengantin from './Pengantin'
-import BottomNavbar from "./BottomNavbar";
+import Acara from "./Acara"
+import BottomNavbar from "./BottomNavbar"
+
 import './App.css'
 
 const theme = createTheme({
@@ -29,14 +31,16 @@ const theme = createTheme({
 const IrfanYayuk = () => {    
     const section1Ref = React.useRef(null);
     const section2Ref = React.useRef(null);
+    const section3Ref = React.useRef(null);
 
     return (
         <ThemeProvider theme={theme}>
             <OpeningModal/>
             <Home ref={section1Ref}/>
             <Pengantin ref={section2Ref}/>
+            <Acara ref={section3Ref}/>
             <BottomNavbar
-                sectionRefs={[section1Ref, section2Ref]}
+                sectionRefs={[section1Ref, section2Ref, section3Ref]}
             />
         </ThemeProvider>
     );

@@ -11,12 +11,10 @@ import bride from '../../assets/image/bride.png'
 
 const Pengantin = forwardRef((props, sectionRef) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
-            setWindowHeight(window.innerHeight);
         };
         window.addEventListener('resize', handleResize);
         return () => {
@@ -50,13 +48,13 @@ const Pengantin = forwardRef((props, sectionRef) => {
             right: '-50%',
         },
         timeline:{
-            width: '40%',
-            marginBottom: '45%'
+            width: '70%',
+            paddingBottom: `${140-windowWidth*0.03}%`
         },
         timeline2:{
             width: '100%',
             height: '100%',
-            paddingBottom: `${70-windowWidth*0.03}%`
+            paddingBottom: `${90-windowWidth*0.1}%`
         },
         txt:{
             header: {
@@ -98,15 +96,15 @@ const Pengantin = forwardRef((props, sectionRef) => {
                 <img src={ornament} style={styles.ornament}/>
                 <img src={butterfly} style={styles.butterfly}/>
                 <Grid container spacing={4} wrap="nowrap">
-                    {isLg ? (
+                    {(isMd || isLg) ? (
                         <React.Fragment>
-                            <Grid item xs={12} sm={4} style={{ display: 'flex', alignItems: 'flex-end', padding: '3%', paddingBottom: 0}}>
+                            <Grid item xs={14} sm={5} style={{ display: 'flex', alignItems: 'flex-end', padding: '3%', paddingBottom: 0}}>
                                 <p style={styles.txt}>Di tahun 2023 ini alhamdulilah kami bisa melanjutkan hubungan ke jenjang pernikahan. Terimakasih untuk semesta atas segala campur tangan di dalamnya. Terimakasih untuk mempercayai bahwa sabar adalah ladang pahala untuk aku bisa nemenin mas terus.</p>
                             </Grid>
-                            <Grid item xs={12} sm={4} style={{display: 'flex', justifyContent: 'center'}} >
+                            <Grid item xs={8} sm={2} style={{display: 'flex', justifyContent: 'center', paddingLeft: 0}} >
                                 <img src={timeline} style={styles.timeline}/>
                             </Grid>
-                            <Grid item xs={12} sm={4} style={{ display: 'flex', alignItems: 'flex-start', padding: '3%', paddingTop: 0 }}>
+                            <Grid item xs={14} sm={5} style={{ display: 'flex', alignItems: 'flex-start', padding: '3%', paddingTop: 0 }}>
                                 <p style={styles.txt}>Awal bertemu pada tahun 2018. Kemudian di tahun 2021 kami menjalin hubungan sampai saat ini. Berawal dari teman tidak disangka sama sama ada rasa.</p>
                             </Grid>
                         </React.Fragment>
@@ -122,25 +120,8 @@ const Pengantin = forwardRef((props, sectionRef) => {
                             </Grid>
                         </React.Fragment>
                     )}
-                    {/* <Grid item>
-                        <p style={styles.txt}>Awal bertemu pada tahun 2018. Kemudian di tahun 2021 kami menjalin hubungan sampai saat ini. Berawal dari teman tidak disangka sama sama ada rasa.</p>
-                    </Grid>
-                    <Grid item>
-                        <img src={timeline} style={styles.ornament2}/>
-                    </Grid>
-                    <Grid item>
-                        <p style={styles.txt}>⋮</p>
-                    </Grid>
-                    <Grid item>
-                        <p style={styles.txt}>Di tahun 2023 ini alhamdulilah kami bisa melanjutkan hubungan ke jenjang pernikahan. Terimakasih untuk semesta atas segala campur tangan di dalamnya. Terimakasih untuk mempercayai bahwa sabar adalah ladang pahala untuk aku bisa nemenin mas terus.</p>
-                    </Grid> */}
                 </Grid>
             </Box>
-            
-                <br/>
-                <br/>
-                <br/>
-                <br/>
         </section>
 
     );
