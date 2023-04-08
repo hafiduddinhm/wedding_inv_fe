@@ -7,6 +7,7 @@ import Acara from "./Acara"
 import BottomNavbar from "./BottomNavbar"
 
 import './App.css'
+import AmplopDigital from "./AmplopDigital";
 
 const theme = createTheme({
     palette: {
@@ -39,6 +40,7 @@ const IrfanYayuk = () => {
             <Home ref={section1Ref}/>
             <Pengantin ref={section2Ref}/>
             <Acara ref={section3Ref}/>
+            <AmplopDigital/>
             <BottomNavbar
                 sectionRefs={[section1Ref, section2Ref, section3Ref]}
             />

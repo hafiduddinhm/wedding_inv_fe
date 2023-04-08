@@ -79,7 +79,7 @@ const Acara = forwardRef((props, sectionRef) => {
                 color: theme.palette.dark.main
             },
             textAlign: 'center',
-            fontSize: `${60+windowWidth*0.04}%`,
+            fontSize: `${70+windowWidth*0.04}%`,
             color: theme.palette.dark.main
         },
     }
