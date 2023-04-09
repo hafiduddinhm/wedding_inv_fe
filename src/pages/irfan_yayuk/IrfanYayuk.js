@@ -5,6 +5,9 @@ import Home from './Home'
 import Pengantin from './Pengantin'
 import Acara from "./Acara"
 import BottomNavbar from "./BottomNavbar"
+import Ucapan from "./Ucapan"
+import Closing from "./Closing"
+import pageTransition from '../../assets/image/transition.png'
 
 import './App.css'
 import AmplopDigital from "./AmplopDigital";
@@ -33,6 +36,8 @@ const IrfanYayuk = () => {
     const section1Ref = React.useRef(null);
     const section2Ref = React.useRef(null);
     const section3Ref = React.useRef(null);
+    const section4Ref = React.useRef(null);
+    const section5Ref = React.useRef(null);
 
     return (
         <ThemeProvider theme={theme}>
@@ -41,8 +46,10 @@ const IrfanYayuk = () => {
             <Pengantin ref={section2Ref}/>
             <Acara ref={section3Ref}/>
             <AmplopDigital/>
+            <Ucapan ref={section5Ref}/>
+            <Closing/>
             <BottomNavbar
-                sectionRefs={[section1Ref, section2Ref, section3Ref]}
+                sectionRefs={[section1Ref, section2Ref, section3Ref, section4Ref, section5Ref]}
             />
         </ThemeProvider>
     );

@@ -23,7 +23,7 @@ const Acara = forwardRef((props, sectionRef) => {
     const theme = useTheme();
 
     const handleButtonClick = () => {
-        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        window.location.href = 'https://maps.app.goo.gl/9eDXpA7zyLP59MPL9?g_st=iw';
     }
 
     const styles ={
