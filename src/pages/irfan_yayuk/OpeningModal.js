@@ -15,6 +15,20 @@ import './App.css'
 
 const OpeningModal = () => {
 
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+            setWindowHeight(window.innerHeight);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const theme = useTheme();
 
     const modalStyles = {
@@ -36,12 +50,12 @@ const OpeningModal = () => {
     };
     const btnStyles = {
         borderRadius: 30,
-        padding: '8px 15px',
-        right: '1.5rem',
-        bottom: '2.5rem',
+        padding: `${7+windowWidth*0.005}px ${14+windowWidth*0.005}px`,
+        right: '4%',
+        bottom: '6%',
         position: 'absolute',
         zIndex: 5,
-        fontSize: '0.75rem'
+        fontSize: `${80+windowWidth*0.03}%`
     };
     const bridesImgStyles = {
         height: '54vh',
@@ -55,22 +69,6 @@ const OpeningModal = () => {
         height: window.innerHeight,
         overflowX: 'hidden',
     };
-
-    
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-            setWindowHeight(window.innerHeight);
-        };
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
     const ornament1Styles = {
         right: '-17%',
         top: '5vh',
@@ -144,7 +142,7 @@ const OpeningModal = () => {
                 <img src={flowerOrnament3} style={ornament3Styles}></img>
                 <img src={brides} style={bridesImgStyles}></img>
                 <Button variant="contained" onClick={closeModal} style={btnStyles}>
-                    <MailOutlinedIcon style={{ marginRight: '7px', fontSize: '1rem' }} />
+                    <MailOutlinedIcon style={{ marginRight: '7px', fontSize: `${80+windowWidth*0.03}%` }} />
                     Buka Undangan
                 </Button>
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "30vh" }}>

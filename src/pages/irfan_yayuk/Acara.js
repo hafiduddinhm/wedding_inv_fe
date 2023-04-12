@@ -62,8 +62,8 @@ const Acara = forwardRef((props, sectionRef) => {
             padding: '8px 15px',
             fontSize: '0.75rem',
             justifySelf: 'center',
-            marginTop: windowWidth > 600 ? '20%' : '40%',
-            width: windowWidth > 600 ? '30%' : '80%',
+            marginTop: windowWidth > 600 ? '30%' : '40%',
+            width: windowWidth > 600 ? '45%' : '80%',
             backgroundColor: '#777687'
         },
         txt:{
@@ -128,14 +128,14 @@ const Acara = forwardRef((props, sectionRef) => {
             <Box sx={styles.box}>    
                 <div style={styles.ornament1} />
                 <Grid container spacing={6} style={{ position: 'relative', marginTop: '-25%', marginBottom: '-20%'}}>
-                    <Grid item xs={12} sm={6} style={{justifyContent: 'center'}}>
+                    <Grid data-aos='fade-right' data-aos-duration="1500" item xs={12} sm={6} style={{justifyContent: 'center'}}>
                         <h2 className="font-estetik" style={{textAlign: 'center'}}>Akad Nikah</h2>
                         <Box style={{backgroundImage: `url(${cardBackground})`, padding: windowWidth > 600 ? '20% 5% 10% 10%' : '30% 5% 10% 10%'}}>
                             <h5 style={styles.txt.h5}>Sabtu, 06 Mei 2023</h5>
                             <p style={styles.txt}>Pukul 09.00 WIB s/d Selesai<br/>Alamat: Dsn. Balong Ombo RT 001 RW 001 Desa Talun Kidul Kec. Sumobito Kab. Jombang</p>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    <Grid data-aos='fade-left' data-aos-duration="1500" item xs={12} sm={6}>
                         <h2 className="font-estetik" style={{textAlign: 'center'}}>Resepsi</h2>
                         <Box style={{backgroundImage: `url(${cardBackground})`, padding: windowWidth > 600 ? '20% 5% 10% 10%' : '30% 5% 10% 10%'}}>
                             <h5 style={styles.txt.h5}>Minggu, 07 Mei 2023</h5>
@@ -143,7 +143,7 @@ const Acara = forwardRef((props, sectionRef) => {
                         </Box>
                     </Grid>
                 </Grid>
-                <Button variant="contained" onClick={handleButtonClick} style={styles.btnStyles}>
+                <Button data-aos='fade-up' data-aos-duration="1500" variant="contained" onClick={handleButtonClick} style={styles.btnStyles}>
                     <PlaceIcon style={{ marginRight: '7px', fontSize: '1rem' }} />
                     Lihat Lokasi
                 </Button>

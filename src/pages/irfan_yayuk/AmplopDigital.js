@@ -88,7 +88,7 @@ const AmplopDigital = () => {
                 color: theme.palette.dark.main,
             },
             textAlign: 'center',
-            fontSize: `${60+windowWidth*0.04}%`,
+            fontSize: `${70+windowWidth*0.04}%`,
             color: theme.palette.dark.main,
             marginBottom: '2vh',
         },
@@ -105,7 +105,7 @@ const AmplopDigital = () => {
             <p style={styles.txt}>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.<br/>Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashlesh</p>
             <br/>
             <Grid container spacing={4}>
-                <Grid item xs={12} sm={6} style={{justifyContent: 'center'}}>
+                <Grid data-aos='fade-right' data-aos-duration="1500" item xs={12} sm={6} style={{justifyContent: 'center'}}>
                     <Box style={{backgroundColor: '#f7fafc', borderRadius: '7%', padding: '5% 10% 10% 10%'}}>
                         <img src={ornament} style={styles.img}/>
                         <h5 style={styles.txt.h5}>{bank1}</h5>
@@ -116,7 +116,7 @@ const AmplopDigital = () => {
                         </Button>
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid data-aos='fade-left' data-aos-duration="1500" item xs={12} sm={6}>
                     <Box style={{backgroundColor: '#f7fafc', borderRadius: '7%', padding: '5% 10% 10% 10%'}}>
                         <img src={ornament} style={styles.img}/>
                         <h5 style={styles.txt.h5}>{bank2}</h5>

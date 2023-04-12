@@ -3,10 +3,9 @@ import { Grid, Box, Button, useTheme, TextField, Select, MenuItem, InputBase} fr
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import backgroundImage from '../../assets/image/bg.png'
 import bgOrnament from '../../assets/image/4.png'
-
 import ornament2 from '../../assets/image/14.png'
 import ornament3 from '../../assets/image/ucapan.png'
-
+import { motion, Variants } from "framer-motion"
 
 import { Card, CardContent, Typography } from '@mui/material';
 // import pattern from '../../assets/image/pattern.png'
@@ -15,10 +14,11 @@ const Ucapan = forwardRef((props, sectionRef) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const cards = [
         { id: 1, name: 'Card 1', status: 1, comment: 'Content 1', timestamp: '5 menit yang lalu' },
-        { id: 2, name: 'Card 2', status: 0, comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati unde numquam et expedita quod itaque officiis id magnam autem harum!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati unde numquam et expedita quod itaque officiis id magnam autem harum!', timestamp: '6 menit yang lalu' },
+        { id: 2, name: 'Card 2', status: 0, comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati unde numquam et expedita quod itaque officiis id magnam autem harum!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati unde numquam et expedita quod itaque officiis id magnam autem harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati unde numquam et expedita quod itaque officiis id magnam autem harum!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati unde numquam et expedita quod itaque officiis id magnam autem harum!', timestamp: '6 menit yang lalu' },
         { id: 3, name: 'Card 3', status: 1, comment: 'Content 3', timestamp: '7 menit yang lalu' },
         { id: 4, name: 'Card 4', status: 0, comment: 'Content 4', timestamp: '8 menit yang lalu' },
         { id: 5, name: 'Card 5', status: 1, comment: 'Content 5', timestamp: '9 menit yang lalu' },
+        { id: 6, name: 'Card 6', status: 1, comment: 'Content 5', timestamp: '9 menit yang lalu' },
     ];
 
     useEffect(() => {
@@ -105,7 +105,9 @@ const Ucapan = forwardRef((props, sectionRef) => {
             overflowY: 'scroll', 
             overflowX: 'hidden',
             borderRadius: '15px',
-            padding: '0.5rem',
+            border: '0.5rem solid rgba(0, 0, 0, 0.01)',
+            borderWidth: '0.5rem',
+            // padding: '0.5rem',
             backgroundColor: 'rgba(0, 0, 0, 0.1)',
             txt:{
                 header: {
@@ -115,14 +117,14 @@ const Ucapan = forwardRef((props, sectionRef) => {
                     fontFamily: 'Ovo'
                 },
                 time: {
-                    fontSize: `${100-windowWidth*0.07}%`,
+                    fontSize: `${60+windowWidth*0.04}%`,
                     color: theme.palette.dark.main,
                     display: 'flex',
                     alignItems: 'center',
                     marginTop: '1.2rem',
                     fontFamily: 'Ovo'
                 },
-                fontSize: `${100-windowWidth*0.07}%`,
+                fontSize: `${70+windowWidth*0.04}%`,
                 color: theme.palette.dark.main,
                 alignItems: 'center',
                 fontFamily: 'Ovo'
@@ -172,7 +174,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                 color: theme.palette.dark.main,
             },
             textAlign: 'center',
-            fontSize: `${60+windowWidth*0.04}%`,
+            fontSize: `${70+windowWidth*0.04}%`,
             color: theme.palette.dark.main,
             marginBottom: '2vh',
         },
@@ -182,12 +184,29 @@ const Ucapan = forwardRef((props, sectionRef) => {
         }
     }
 
+    const cardVariants = {
+        offscreen: {
+            y: 300
+        },
+        onscreen: {
+            y: 0,
+            transition: {
+                type: "spring",
+                bounce: 0.2,
+                duration: 1
+            }
+        }
+    };
+    
+
     return (
         <section ref={sectionRef} >
             <Box sx={styles.box}>
-                <div style={{position: 'relative', marginRight: `${-30+windowWidth*0.005}%`}}>
-                    <div style={{position: 'absolute', right: 0, width: `${35-windowWidth*0.01}%`}}>
-                        <img src={ornament2} style={styles.ornament.rotate}/>
+                <div data-aos='zoom-in' data-aos-duration='1000' style={{transformOrigin: '120% 50%'}}>
+                    <div style={{position: 'relative',  marginRight: `${-30+windowWidth*0.005}%`}}>
+                        <div style={{position: 'absolute', right: 0, width: `${35-windowWidth*0.01}%`}}>
+                            <img src={ornament2} style={styles.ornament.rotate}/>
+                        </div>
                     </div>
                 </div>
                 <h1 className="font-estetik" style={styles.txt.header}>Ucapkan Sesuatu</h1>
@@ -205,7 +224,14 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         InputProps={{
                             maxLength: 35,
                             disableUnderline: true,
-                            style: { borderRadius: 10, fontSize: '85%', backgroundColor: '#dfdfdf'},
+                            style: { borderRadius: 10, fontSize: `${70+windowWidth*0.04}%`, backgroundColor: '#0000001a'},
+                        }}
+                        InputLabelProps={{
+                            sx: {
+                                fontFamily: 'Ovo',
+                                fontSize: `${70+windowWidth*0.04}%`,
+                                color: 'dark.main'
+                            }
                         }}
                     />
                     <TextField
@@ -221,7 +247,14 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         variant="filled"
                         InputProps={{
                             disableUnderline: true,
-                            style: { borderRadius: 10, fontSize: '85%', backgroundColor: '#dfdfdf'},
+                            style: { borderRadius: 10, fontSize: `${70+windowWidth*0.04}%`, backgroundColor: '#0000001a'},
+                        }}
+                        InputLabelProps={{
+                            sx: {
+                                fontFamily: 'Ovo',
+                                fontSize: `${70+windowWidth*0.04}%`,
+                                color: 'dark.main'
+                            }
                         }}
                     />
                     <br/>
@@ -236,12 +269,23 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         margin="normal"
                         variant="filled"
                         disableUnderline
-                        style={{borderRadius: 10, paddingBottom: 15, backgroundColor: '#dfdfdf'}}
-                        
+                        style={{borderRadius: 10, paddingBottom: 15, backgroundColor: '#0000001a'}}
                     >
-                        <MenuItem value={0}>Konfirmasi kehadiran</MenuItem>
-                        <MenuItem value={1}>Hadir</MenuItem>
-                        <MenuItem value={2}>Berhalangan</MenuItem>
+                        <MenuItem value={0}>
+                            <Typography variant="body1" style={styles.card.txt}>
+                                Konfirmasi kehadiran
+                            </Typography>
+                        </MenuItem>
+                        <MenuItem value={1}>
+                            <Typography variant="body1" style={styles.card.txt}>
+                                Hadir
+                            </Typography>
+                        </MenuItem>
+                        <MenuItem value={2}>
+                            <Typography variant="body1" style={styles.card.txt}>
+                                Berhalangan
+                            </Typography>
+                        </MenuItem>
                     </Select>
                     <div style={{ marginTop: '1rem' }}>
                         <Button
@@ -260,26 +304,36 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         )}
                     </div>
                 </form>
-                <div style={styles.card}>
+                <div data-aos='fade-down' data-aos-duration="1000" style={styles.card}>
                     <Grid container spacing={2} direction='column' >
                         {cards.map((card) => (
-                        <Grid key={card.id} item xs={12} md={6} lg={4}>
-                            <Card style={{borderRadius: '10px'}}>
-                            <CardContent sx={{paddingBottom: '1.5vh !important'}}>
-                                <Typography sx={styles.card.txt.header} variant="h5" component="h2">
-                                    {card.name} - {card.status ? 'Hadir' : 'Tidak Hadir'}
-                                </Typography>
-                                <Typography sx={styles.card.txt} component="p">
-                                    {card.comment}
-                                </Typography>
-                                <Typography sx={styles.card.txt.time} component="p">
-                                    <AccessTimeOutlinedIcon sx={{width: '0.9rem', marginRight: '2%', alignSelf: 'center'}}/>
-                                    {card.timestamp}
-                                </Typography>
-                            </CardContent>
-                            </Card>
+                        <Grid key={card.id} item>
+                            <motion.div
+                                initial="offscreen"
+                                whileInView="onscreen"
+                                viewport={{ once: true, amount: 0.8 }}
+                                style={{height: '100%'}}
+                            >
+                                <motion.div className="card" variants={cardVariants} style={{backgroundColor: 'transparent', borderColor: 'transparent'}}>
+                                    <Card style={{borderRadius: '10px'}}>
+                                        <CardContent sx={{paddingBottom: '1.5vh !important'}}>
+                                            <Typography sx={styles.card.txt.header} variant="h5" component="h2">
+                                                {card.name} - {card.status ? 'Hadirᅠᅠᅠᅠᅠᅠ' : 'Berhalangan'}
+                                            </Typography>
+                                            <Typography sx={styles.card.txt} component="p">
+                                                {card.comment}
+                                            </Typography>
+                                            <Typography sx={styles.card.txt.time} component="p">
+                                                <AccessTimeOutlinedIcon sx={{width: '0.9rem', marginRight: '2%', alignSelf: 'center'}}/>
+                                                {card.timestamp}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </motion.div>
+                            </motion.div>
                         </Grid>
                         ))}
+                        
                     </Grid>
                 </div>
                 <br/>
@@ -288,19 +342,19 @@ const Ucapan = forwardRef((props, sectionRef) => {
                 <br/>
                 <br/>
                 <br/>
-                <div style={{position: 'relative', marginBottom: windowWidth > 500 ? '4rem' : '1rem', marginRight: '-10%'}}>
+                <div data-aos='fade-up' data-aos-duration='1500' data-aos-delay='200' style={{position: 'relative', marginBottom: windowWidth > 500 ? '4rem' : '1rem', marginRight: '-10%'}}>
                     <div style={{position: 'absolute', right: 0, width: `${65-windowWidth*0.025}%`}}>
                         <img src={ornament3} style={styles.ornament}/>
                     </div>
                 </div>
-                <div style={{position: 'relative', marginBottom: windowWidth > 500 ? '2rem' : '1rem'}}>
-                    <div style={{position: 'absolute', width: `${50-windowWidth*0.025}%`}}>
+                <div data-aos='fade-up' data-aos-duration='1500' style={{position: 'relative', marginBottom: windowWidth > 500 ? '2rem' : '1rem'}}>
+                    <div style={{position: 'absolute', width: `${60-windowWidth*0.025}%`}}>
                         <img src={ornament2} style={styles.ornament}/>
                     </div>
                 </div>
                 
                 <div style={{position: 'relative'}}>
-                    <div style={{ position: 'absolute', left: -200, right: -200, display: "flex", justifyContent: "center", alignItems: "center", height: "15vh" }}>
+                    <div style={{ position: 'absolute', left: -250, right: -250, display: "flex", justifyContent: "center", alignItems: "center", height: "15vh" }}>
                         <img src={bgOrnament} style={{ width: '100%', height: '100%' }}/>
                     </div> 
                 </div>

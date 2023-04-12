@@ -47,6 +47,7 @@ const IrfanYayuk = () => {
             <Acara ref={section3Ref}/>
             <AmplopDigital/>
             <Ucapan ref={section5Ref}/>
+            
             <Closing/>
             <BottomNavbar
                 sectionRefs={[section1Ref, section2Ref, section3Ref, section4Ref, section5Ref]}
