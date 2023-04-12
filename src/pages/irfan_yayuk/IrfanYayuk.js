@@ -7,6 +7,7 @@ import Acara from "./Acara"
 import BottomNavbar from "./BottomNavbar"
 import Ucapan from "./Ucapan"
 import Closing from "./Closing"
+import Gallery from "./galery";
 import pageTransition from '../../assets/image/transition.png'
 
 import './App.css'
@@ -45,6 +46,7 @@ const IrfanYayuk = () => {
             <Home ref={section1Ref}/>
             <Pengantin ref={section2Ref}/>
             <Acara ref={section3Ref}/>
+            <Gallery ref={section4Ref} />
             <AmplopDigital/>
             <Ucapan ref={section5Ref}/>
             
