@@ -1,11 +1,13 @@
-import React, { forwardRef, useState, useEffect } from 'react';
-import { Grid, Box, Button, useTheme, TextField, Select, MenuItem, InputBase} from '@mui/material'
+import React, { forwardRef, useState, useEffect, useCallback } from 'react';
+import { Grid, Box, Button, useTheme, TextField, Select, MenuItem, CircularProgress} from '@mui/material'
+import { LoadingButton } from '@mui/lab';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import backgroundImage from '../../assets/image/bg.png'
 import bgOrnament from '../../assets/image/4.png'
 import ornament2 from '../../assets/image/14.png'
 import ornament3 from '../../assets/image/ucapan.png'
 import { motion, Variants } from "framer-motion"
+import axios from "axios"
 
 import { Card, CardContent, Typography } from '@mui/material';
 // import pattern from '../../assets/image/pattern.png'
@@ -37,33 +39,86 @@ const Ucapan = forwardRef((props, sectionRef) => {
     const [ucapan, setUcapan] = useState('');
     const [kehadiran, setKehadiran] = useState(0);
     const [formTouched, setFormTouched] = useState(false);
+    
+    const [comments, setComment] = useState([])
+    const [loading, setLoading] = useState(true);
+    const [loadingPost, setLoadingPost] = useState(false);
 
+    const beUrl = "https://wedding-inv-be.vercel.app/irfan_yayuk"
+
+    const fetchData = async () => {
+        try{
+            const response = await axios.get(beUrl)
+            setComment(response.data.data)
+            console.log(response.data.data)
+        } catch(error) {
+            console.error(error)
+        } finally{
+            setLoading(false)
+        } 
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+    
     const handleChange = (event) => {
         const { name, value } = event.target;
         if (!formTouched) {
             setFormTouched(true);
         }
         if (name === 'kehadiran') {
+            // console.log(value)
             setKehadiran(value);
         } else {
             if (name === 'nama') {
                 if (value.length <= 35) {
                     setNama(value);
+                    // console.log(value)
                 } else {
                     alert("nama terlalu panjang")
                 }
             } else if (name === 'ucapan') {
                 setUcapan(value);
+                // console.log(value)
             }
         }
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // handle form submission here
-        alert("Ucapan berhasil dikirim")
-        handleReset();
+
+        let formdata = new FormData();
+
+        formdata.append("name", nama)
+        if (kehadiran != 1){
+            formdata.append("status", false)
+        } else formdata.append("status", true)
+        formdata.append("comment", ucapan)
+
+        // for (var pair of formdata.entries()) {
+        //     console.log(pair[0]+ ' : ' + pair[1]); 
+        // }
+        setLoadingPost(true);
+
+        axios.post(beUrl, formdata, {
+            headers: {'Content-Type': 'application/json'}
+        })
+            .then((response) => {
+                console.log(response.data)
+                setLoadingPost(false)
+                setLoading(true)
+                fetchData()
+            }).catch((err) => {
+                setLoadingPost(false)
+                console.error(err)
+            }).finally(() => {
+                alert("Ucapan berhasil dikirim")
+            })
+        handleReset()
     };
+
+    // console.log(comments)
 
     const handleReset = () => {
         setNama('');
@@ -71,8 +126,6 @@ const Ucapan = forwardRef((props, sectionRef) => {
         setKehadiran(0);
         setFormTouched(false);
     };
-
-    
 
     const styles ={
         box: {
@@ -139,6 +192,10 @@ const Ucapan = forwardRef((props, sectionRef) => {
                 marginTop: '15px',
                 width: '100%',
                 backgroundColor: 'dark.main',
+                color: 'white',
+                '& .MuiCircularProgress-root': {
+                    color: 'white',
+                },
                 '&:hover': {
                     backgroundColor: '#526AA6',
                     boxShadow: 'none',
@@ -288,7 +345,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         </MenuItem>
                     </Select>
                     <div style={{ marginTop: '1rem' }}>
-                        <Button
+                        {/* <Button
                         type="submit"
                         variant="contained"
                         disableRipple={true}
@@ -296,7 +353,17 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         sx={styles.btnStyles.submit}
                         >
                             Kirim
-                        </Button>
+                        </Button> */}
+                        <LoadingButton
+                            type="submit"
+                            variant="contained"
+                            disableRipple={true}
+                            disabled={!formTouched}
+                            sx={styles.btnStyles.submit}
+                            loading={loadingPost}
+                        >
+                            <span>Kirim</span>
+                        </LoadingButton>
                         {formTouched && (
                         <Button variant="outlined" disableRipple={true} onClick={handleReset} sx={styles.btnStyles.cancel}>
                             Batal
@@ -306,34 +373,49 @@ const Ucapan = forwardRef((props, sectionRef) => {
                 </form>
                 <div data-aos='fade-down' data-aos-duration="1000" style={styles.card}>
                     <Grid container spacing={2} direction='column' >
-                        {cards.map((card) => (
-                        <Grid key={card.id} item>
-                            <motion.div
-                                initial="offscreen"
-                                whileInView="onscreen"
-                                viewport={{ once: true, amount: 0.8 }}
-                                style={{height: '100%'}}
-                            >
-                                <motion.div className="card" variants={cardVariants} style={{backgroundColor: 'transparent', borderColor: 'transparent'}}>
-                                    <Card style={{borderRadius: '10px'}}>
-                                        <CardContent sx={{paddingBottom: '1.5vh !important'}}>
-                                            <Typography sx={styles.card.txt.header} variant="h5" component="h2">
-                                                {card.name} - {card.status ? 'Hadirᅠᅠᅠᅠᅠᅠ' : 'Berhalangan'}
-                                            </Typography>
-                                            <Typography sx={styles.card.txt} component="p">
-                                                {card.comment}
-                                            </Typography>
-                                            <Typography sx={styles.card.txt.time} component="p">
-                                                <AccessTimeOutlinedIcon sx={{width: '0.9rem', marginRight: '2%', alignSelf: 'center'}}/>
-                                                {card.timestamp}
-                                            </Typography>
-                                        </CardContent>
-                                    </Card>
-                                </motion.div>
-                            </motion.div>
-                        </Grid>
-                        ))}
-                        
+                        {loading ? (
+                            <Grid item sx={{margin: '5%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <CircularProgress size={'10%'} />
+                            </Grid>
+                        ) : (
+                            <>
+                            {comments != null ? (
+                                <>
+                                    {comments.map((comment) => (
+                                        <Grid key={comment._id} item>
+                                            <motion.div
+                                                initial="offscreen"
+                                                whileInView="onscreen"
+                                                viewport={{ once: true, amount: 0.8 }}
+                                                style={{height: '100%'}}
+                                            >
+                                                <motion.div className="card" variants={cardVariants} style={{backgroundColor: 'transparent', borderColor: 'transparent'}}>
+                                                    <Card style={{borderRadius: '10px'}}>
+                                                        <CardContent sx={{paddingBottom: '1.5vh !important'}}>
+                                                            <Typography sx={styles.card.txt.header} variant="h5" component="h2">
+                                                                {comment.name} - {comment.status ? 'Hadirᅠᅠᅠᅠᅠᅠ' : 'Berhalangan'}
+                                                            </Typography>
+                                                            <Typography sx={styles.card.txt} component="p">
+                                                                {comment.comment}
+                                                            </Typography>
+                                                            <Typography sx={styles.card.txt.time} component="p">
+                                                                <AccessTimeOutlinedIcon sx={{width: '0.9rem', marginRight: '2%', alignSelf: 'center'}}/>
+                                                                {comment.timestamp}
+                                                            </Typography>
+                                                        </CardContent>
+                                                    </Card>
+                                                </motion.div>
+                                            </motion.div>
+                                        </Grid>
+                                    ))}
+                                </>
+                            ) : (
+                                <Grid item sx={{margin: '2%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                    <p style={styles.txt}><i>Belum ada ucapan</i></p> 
+                                </Grid>
+                            )}
+                        </>   
+                        )}
                     </Grid>
                 </div>
                 <br/>
