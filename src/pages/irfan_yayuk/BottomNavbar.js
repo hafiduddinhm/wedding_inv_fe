@@ -76,7 +76,7 @@ const BottomNavbar = ({ sectionRefs }) => {
 
   return (
     <>
-      <Fab sx={btnStyles} elevation={3} onClick={handlePlay}>
+      <Fab sx={btnStyles} onClick={handlePlay}>
         {play ? <PauseCircleFilledRoundedIcon style={{color: theme.palette.dark.main}}/> : <PlayCircleRoundedIcon style={{color: theme.palette.dark.main}}/>}
       </Fab>
       <Box sx={navbarStyles} elevation={3}>

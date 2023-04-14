@@ -1,5 +1,5 @@
 import './App.css'
-import React, { forwardRef, useState, useRef, useEffect } from "react";
+import React, { forwardRef, useState, useEffect } from "react";
 import backgroundImage from '../../assets/image/bg.png';
 import ornament1 from '../../assets/image/galeri1.png'
 import ornament2 from '../../assets/image/galeri2.png'
