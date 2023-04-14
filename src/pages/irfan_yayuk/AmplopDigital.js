@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid, Box, Button, useTheme } from '@mui/material'
+import { Grid, Box, Button, useTheme, Alert, AlertTitle, Snackbar, Slide } from '@mui/material'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import backgroundImage from '../../assets/image/bg2.png'
 import ornament from '../../assets/image/ornamen2.png'
@@ -7,6 +7,10 @@ import pattern from '../../assets/image/pattern.png'
 
 const AmplopDigital = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [open, setOpen] = useState(false);
+    const [severity, setSeverity] = useState('success')
+    const [title, setTitle] = useState('')
+    const [message, setMessage] = useState('')
 
     const bank1 = 'BCA'
     const rekening1 = '1841124176'
@@ -15,6 +19,13 @@ const AmplopDigital = () => {
     const bank2 = 'Dana'
     const rekening2 = '085895203369'
     const atasNama2 = 'Yayuk Susanti'
+
+    const handleSnackbarClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+        setOpen(false);
+    };
 
     useEffect(() => {
         const handleResize = () => {
@@ -31,13 +42,25 @@ const AmplopDigital = () => {
     const handleButtonClick = (rekening) => {
         if (!navigator.clipboard) {
             // Clipboard API not available
-            alert("something went wrong1");
+            // alert("something went wrong1");
+            setSeverity('error')
+            setTitle('Yahh..') 
+            setMessage('terjadi kesalahan saat menyalin')
+            setOpen(true);
             return;
         }
         navigator.clipboard.writeText(rekening).then(() => {
-            alert("successfully copied");
+            // alert("successfully copied");
+            setSeverity('success')
+            setTitle('Berhasil') 
+            setMessage('nomor rekening berhasil disalin!')
+            setOpen(true);
         }).catch(() => {
-            alert("something went wrong");
+            setSeverity('error')
+            setTitle('Yahh..') 
+            setMessage('nomor rekening gagal disalin')
+            setOpen(true);
+            // alert("something went wrong");
         });
     }
 
@@ -102,7 +125,7 @@ const AmplopDigital = () => {
         <>
         <Box sx={styles.box}>
             <h1 className="font-estetik" style={styles.txt.header}>Amplop Digital</h1>
-            <p style={styles.txt}>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.<br/>Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashlesh</p>
+            <p style={styles.txt}>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.<br/>Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashlesh melalui:</p>
             <br/>
             <Grid container spacing={4}>
                 <Grid data-aos='fade-right' data-aos-duration="1500" item xs={12} sm={6} style={{justifyContent: 'center'}}>
@@ -127,6 +150,18 @@ const AmplopDigital = () => {
                         </Button>
                     </Box>
                 </Grid>
+                <Snackbar
+                    open={open}
+                    autoHideDuration={3000}
+                    onClose={handleSnackbarClose}
+                    TransitionComponent={Slide}
+                    anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                >
+                    <Alert severity={severity} variant="filled" onClose={handleSnackbarClose}>
+                        <AlertTitle>{title}</AlertTitle>
+                        {message}
+                    </Alert>
+                </Snackbar>
             </Grid>
             <br/>
             <br/>

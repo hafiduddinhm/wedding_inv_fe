@@ -25,7 +25,8 @@ const BottomNavbar = ({ sectionRefs }) => {
     right: 0,
     padding: 0.5,
     paddingTop: 0.5,  
-    display: 'flex', 
+    display: 'flex',
+    zIndex: 2, 
     flexDirection: 'row', 
     justifyContent: 'space-between',
     backgroundColor: theme.palette.secondary.main,
@@ -37,7 +38,8 @@ const BottomNavbar = ({ sectionRefs }) => {
   const btnStyles = {
     height: 45,
     width: 45, 
-    position: 'fixed', 
+    position: 'fixed',
+    zIndex: 2,  
     bottom: 70, 
     right: 16,
     zIndex: 0,
@@ -74,7 +76,7 @@ const BottomNavbar = ({ sectionRefs }) => {
 
   return (
     <>
-      <Fab sx={btnStyles} onClick={handlePlay}>
+      <Fab sx={btnStyles} elevation={3} onClick={handlePlay}>
         {play ? <PauseCircleFilledRoundedIcon style={{color: theme.palette.dark.main}}/> : <PlayCircleRoundedIcon style={{color: theme.palette.dark.main}}/>}
       </Fab>
       <Box sx={navbarStyles} elevation={3}>

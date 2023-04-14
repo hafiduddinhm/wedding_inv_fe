@@ -37,7 +37,8 @@ const OpeningModal = () => {
             left: '0',
             right: '0',
             bottom: '0',
-            zIndex: 5,
+            position: 'absolute',
+            zIndex: 3,
             padding: '0',
             border: 'none',
             borderRadius: '0',
@@ -46,6 +47,8 @@ const OpeningModal = () => {
         },
         overlay: {
             transition: 'opacity 500ms ease-in-out',
+            position: 'absolute',
+            zIndex: 3,
         }
     };
     const btnStyles = {

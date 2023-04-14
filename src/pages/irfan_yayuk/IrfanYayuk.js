@@ -1,5 +1,6 @@
 import React from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Helmet } from 'react-helmet'
 import OpeningModal from "./OpeningModal"
 import Home from './Home'
 import Pengantin from './Pengantin'
@@ -8,7 +9,7 @@ import BottomNavbar from "./BottomNavbar"
 import Ucapan from "./Ucapan"
 import Closing from "./Closing"
 import Gallery from "./galery";
-import pageTransition from '../../assets/image/transition.png'
+import coupleImage from '../../assets/image/11.png';
 
 import './App.css'
 import AmplopDigital from "./AmplopDigital";
@@ -40,9 +41,20 @@ const IrfanYayuk = () => {
     const section4Ref = React.useRef(null);
     const section5Ref = React.useRef(null);
 
+    const ogImageUrl = `${window.location.origin}${coupleImage}`;
+
     return (
         <ThemeProvider theme={theme}>
-            <OpeningModal/>
+            <Helmet>
+                <title>The Wedding of Irfan & Yayuk</title>
+                <meta name="description" content="Minggu, 7 Mei 2023" />
+                <meta property="og:title" content="The Wedding of Irfan & Yayuk" />
+                <meta property="og:description" content="Minggu, 7 Mei 2023" />
+                <meta property="og:image" content={ogImageUrl} />
+                <meta property="og:url" content="https://menghitunghari.com/" />
+                <meta property="og:type" content="website" />
+            </Helmet>
+            <OpeningModal />
             <Home ref={section1Ref}/>
             <Pengantin ref={section2Ref}/>
             <Acara ref={section3Ref}/>

@@ -1,5 +1,5 @@
 import React, { forwardRef, useState, useEffect, useCallback } from 'react';
-import { Grid, Box, Button, useTheme, TextField, Select, MenuItem, CircularProgress} from '@mui/material'
+import { Grid, Box, Button, useTheme, TextField, Select, MenuItem, CircularProgress } from '@mui/material'
 import { LoadingButton } from '@mui/lab';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import backgroundImage from '../../assets/image/bg.png'
@@ -9,19 +9,10 @@ import ornament3 from '../../assets/image/ucapan.png'
 import { motion, Variants } from "framer-motion"
 import axios from "axios"
 
-import { Card, CardContent, Typography } from '@mui/material';
-// import pattern from '../../assets/image/pattern.png'
+import { Card, CardContent, Typography, Alert, AlertTitle, Snackbar, Slide } from '@mui/material';
 
 const Ucapan = forwardRef((props, sectionRef) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const cards = [
-        { id: 1, name: 'Card 1', status: 1, comment: 'Content 1', timestamp: '5 menit yang lalu' },
-        { id: 2, name: 'Card 2', status: 0, comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati unde numquam et expedita quod itaque officiis id magnam autem harum!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati unde numquam et expedita quod itaque officiis id magnam autem harum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati unde numquam et expedita quod itaque officiis id magnam autem harum!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati unde numquam et expedita quod itaque officiis id magnam autem harum!', timestamp: '6 menit yang lalu' },
-        { id: 3, name: 'Card 3', status: 1, comment: 'Content 3', timestamp: '7 menit yang lalu' },
-        { id: 4, name: 'Card 4', status: 0, comment: 'Content 4', timestamp: '8 menit yang lalu' },
-        { id: 5, name: 'Card 5', status: 1, comment: 'Content 5', timestamp: '9 menit yang lalu' },
-        { id: 6, name: 'Card 6', status: 1, comment: 'Content 5', timestamp: '9 menit yang lalu' },
-    ];
 
     useEffect(() => {
         const handleResize = () => {
@@ -43,15 +34,29 @@ const Ucapan = forwardRef((props, sectionRef) => {
     const [comments, setComment] = useState([])
     const [loading, setLoading] = useState(true);
     const [loadingPost, setLoadingPost] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [severity, setSeverity] = useState('success')
+    const [title, setTitle] = useState('')
+    const [message, setMessage] = useState('')
 
     const beUrl = "https://wedding-inv-be.vercel.app/irfan_yayuk"
+
+    const handleSnackbarClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+        setOpen(false);
+    };
 
     const fetchData = async () => {
         try{
             const response = await axios.get(beUrl)
             setComment(response.data.data)
-            console.log(response.data.data)
         } catch(error) {
+            setSeverity('error')
+            setTitle('Yahh..') 
+            setMessage('Daftar ucapan gagal diambil')
+            setOpen(true);
             console.error(error)
         } finally{
             setLoading(false)
@@ -61,6 +66,9 @@ const Ucapan = forwardRef((props, sectionRef) => {
     useEffect(() => {
         fetchData();
     }, []);
+
+    const isNameError = nama.length > 15;
+    const nameHelperText = isNameError ? 'nama melebihi 15 karakter' : '';
     
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -68,19 +76,14 @@ const Ucapan = forwardRef((props, sectionRef) => {
             setFormTouched(true);
         }
         if (name === 'kehadiran') {
-            // console.log(value)
             setKehadiran(value);
         } else {
             if (name === 'nama') {
-                if (value.length <= 35) {
+                if (value.length <= 15) {
                     setNama(value);
-                    // console.log(value)
-                } else {
-                    alert("nama terlalu panjang")
                 }
             } else if (name === 'ucapan') {
                 setUcapan(value);
-                // console.log(value)
             }
         }
     };
@@ -91,15 +94,23 @@ const Ucapan = forwardRef((props, sectionRef) => {
         let formdata = new FormData();
 
         formdata.append("name", nama)
-        if (kehadiran != 1){
+        if (kehadiran === 1){
+            formdata.append("status", true)
+        } else if (kehadiran === 2) {
             formdata.append("status", false)
-        } else formdata.append("status", true)
+        } else {
+            setSeverity('error')
+            setTitle('Upss..')
+            setMessage('Kamu belum konfirmasi kehadiranmu')
+            setOpen(true);
+            return
+        }
         formdata.append("comment", ucapan)
-
-        // for (var pair of formdata.entries()) {
-        //     console.log(pair[0]+ ' : ' + pair[1]); 
-        // }
         setLoadingPost(true);
+        
+        for (var pair of formdata.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]); 
+        }
 
         axios.post(beUrl, formdata, {
             headers: {'Content-Type': 'application/json'}
@@ -109,16 +120,21 @@ const Ucapan = forwardRef((props, sectionRef) => {
                 setLoadingPost(false)
                 setLoading(true)
                 fetchData()
+                setSeverity('success');
+                setTitle('Berhasil')
+                setMessage('Ucapan berhasil dikirim!');
+                setOpen(true);
             }).catch((err) => {
                 setLoadingPost(false)
+                setSeverity('error');
+                setTitle('Sayang sekali')
+                setMessage('Ucapanmu gagal dikirim');
+                setOpen(true);
                 console.error(err)
-            }).finally(() => {
-                alert("Ucapan berhasil dikirim")
+                // alert("Gagal mengirim ucapan")
             })
         handleReset()
     };
-
-    // console.log(comments)
 
     const handleReset = () => {
         setNama('');
@@ -276,10 +292,11 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         onChange={handleChange}
                         fullWidth
                         required
+                        error={isNameError}
+                        helperText={nameHelperText}
                         margin="normal"
                         variant="filled"
                         InputProps={{
-                            maxLength: 35,
                             disableUnderline: true,
                             style: { borderRadius: 10, fontSize: `${70+windowWidth*0.04}%`, backgroundColor: '#0000001a'},
                         }}
@@ -345,15 +362,6 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         </MenuItem>
                     </Select>
                     <div style={{ marginTop: '1rem' }}>
-                        {/* <Button
-                        type="submit"
-                        variant="contained"
-                        disableRipple={true}
-                        disabled={!formTouched}
-                        sx={styles.btnStyles.submit}
-                        >
-                            Kirim
-                        </Button> */}
                         <LoadingButton
                             type="submit"
                             variant="contained"
@@ -369,6 +377,18 @@ const Ucapan = forwardRef((props, sectionRef) => {
                             Batal
                         </Button>
                         )}
+                        <Snackbar
+                            open={open}
+                            autoHideDuration={3000}
+                            onClose={handleSnackbarClose}
+                            TransitionComponent={Slide}
+                            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                        >
+                            <Alert severity={severity} variant="filled" onClose={handleSnackbarClose}>
+                                <AlertTitle>{title}</AlertTitle>
+                                {message}
+                            </Alert>
+                        </Snackbar>
                     </div>
                 </form>
                 <div data-aos='fade-down' data-aos-duration="1000" style={styles.card}>
@@ -393,7 +413,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                                                     <Card style={{borderRadius: '10px'}}>
                                                         <CardContent sx={{paddingBottom: '1.5vh !important'}}>
                                                             <Typography sx={styles.card.txt.header} variant="h5" component="h2">
-                                                                {comment.name} - {comment.status ? 'Hadirᅠᅠᅠᅠᅠᅠ' : 'Berhalangan'}
+                                                                {comment.name} - {comment.status === "true" ? 'Hadir ᅟᅟᅟᅟ' : 'Tidak Hadir'}
                                                             </Typography>
                                                             <Typography sx={styles.card.txt} component="p">
                                                                 {comment.comment}
