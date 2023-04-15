@@ -51,8 +51,9 @@ const IrfanYayuk = () => {
                 <meta property="og:title" content="The Wedding of Irfan & Yayuk" />
                 <meta property="og:description" content="Minggu, 7 Mei 2023" />
                 <meta property="og:image" content={ogImageUrl} />
-                <meta property="og:url" content="https://menghitunghari.com/" />
+                <meta property="og:url" content="https://menghitunghari.vercel.app/" />
                 <meta property="og:type" content="website" />
+                <link rel="canonical" href="https://menghitunghari.vercel.app/irfan_yayuk" />
             </Helmet>
             <OpeningModal />
             <Home ref={section1Ref}/>

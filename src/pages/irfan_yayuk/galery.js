@@ -5,6 +5,7 @@ import ornament1 from '../../assets/image/galeri1.png'
 import ornament2 from '../../assets/image/galeri2.png'
 import butterfly from '../../assets/image/butterfly.png'
 import { Box, useTheme } from '@mui/material';
+import { ArrowBackIosRounded, ArrowForwardIosRounded } from '@mui/icons-material';
 import Slider from 'react-slick';
 import styled from 'styled-components'
 import 'slick-carousel/slick/slick.css'
@@ -136,6 +137,20 @@ const Gallery = forwardRef((props, sectionRef) => {
       },
     }
 
+    const PrevArrow = (props) => {
+      const { className, style, onClick } = props;
+      return (
+        <ArrowBackIosRounded className={className} style={{ ...style, display: 'block', marginLeft: '10%', color: theme.palette.dark.main }} onClick={onClick} />
+      );
+    };
+    
+    const NextArrow = (props) => {
+      const { className, style, onClick } = props;
+      return (
+        <ArrowForwardIosRounded className={className} style={{ ...style, display: 'block', marginRight: '10%', color: theme.palette.dark.main }} onClick={onClick} />
+      );
+    };
+
     const settings1 = {
         infinite: true,
         speed: 500,
@@ -144,6 +159,8 @@ const Gallery = forwardRef((props, sectionRef) => {
         autoplay: true,
         autoplaySpeed: 3000,
         cssEase: 'ease-in-out',
+        prevArrow: <PrevArrow />,
+        nextArrow: <NextArrow />,
         // asNavFor: thumbnailSlider.current,
         beforeChange: (current, next) => setSelectedImageIndex(next),
     };
