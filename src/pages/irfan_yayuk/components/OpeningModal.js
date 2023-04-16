@@ -4,12 +4,12 @@ import { Box, Button, useTheme } from '@mui/material';
 
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import PlayAudio from './PlayAudio'
-import backgroundImage from '../../assets/image/bg.png'
-import brides from '../../assets/image/brides.png'
-import bgOrnament from '../../assets/image/2.png'
-import flowerOrnament1 from '../../assets/image/3.png'
-import flowerOrnament2 from '../../assets/image/15.png'
-import flowerOrnament3 from '../../assets/image/16.png'
+import backgroundImage from '../assets/image/bg.png'
+import brides from '../assets/image/brides.png'
+import bgOrnament from '../assets/image/2.png'
+import flowerOrnament1 from '../assets/image/3.png'
+import flowerOrnament2 from '../assets/image/15.png'
+import flowerOrnament3 from '../assets/image/16.png'
 
 import './App.css'
 

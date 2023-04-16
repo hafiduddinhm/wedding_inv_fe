@@ -1,11 +1,11 @@
 import React, {useRef, forwardRef, useState, useEffect} from 'react';
 import { Box, useTheme } from '@mui/material';
-import backgroundImage from '../../assets/image/bg.png'
-import bgOrnament from '../../assets/image/4.png'
-import bgOrnament2 from '../../assets/image/12.png'
-import flowerOrnament1 from '../../assets/image/home.png'
-import flowerOrnament2 from '../../assets/image/home2.png'
-import flowerOrnament3 from '../../assets/image/home1.png'
+import backgroundImage from '../assets/image/bg.png'
+import bgOrnament from '../assets/image/4.png'
+import bgOrnament2 from '../assets/image/12.png'
+import flowerOrnament1 from '../assets/image/home.png'
+import flowerOrnament2 from '../assets/image/home2.png'
+import flowerOrnament3 from '../assets/image/home1.png'
 import aos from 'aos';
 import 'aos/dist/aos.css';
 

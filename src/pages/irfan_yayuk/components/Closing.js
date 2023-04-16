@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Box, IconButton, useTheme, useMediaQuery } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import backgroundImage from '../../assets/image/bg3.png'
-import ornament from '../../assets/image/ornamen3.png'
-import ornament1 from '../../assets/image/16.png'
-import couple from '../../assets/image/11.png'
-import pageTransition from '../../assets/image/transition.png'
+import backgroundImage from '../assets/image/bg3.png'
+import ornament from '../assets/image/ornamen3.png'
+import ornament1 from '../assets/image/16.png'
+import couple from '../assets/image/11.png'
+import pageTransition from '../assets/image/transition.png'
 
 const AmplopDigital = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);

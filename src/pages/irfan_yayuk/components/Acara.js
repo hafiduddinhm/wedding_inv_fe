@@ -1,10 +1,10 @@
 import React, { forwardRef, useState, useEffect } from 'react';
 import { Grid, Box, Button, useTheme } from '@mui/material'
 import PlaceIcon from '@mui/icons-material/Place';
-import cardBackground from '../../assets/image/13-4.png'
-import ornament1 from '../../assets/image/acara1.png'
-import ornament2 from '../../assets/image/acara2.png'
-import pattern from '../../assets/image/pattern.png'
+import cardBackground from '../assets/image/13-4.png'
+import ornament1 from '../assets/image/acara1.png'
+import ornament2 from '../assets/image/acara2.png'
+import pattern from '../assets/image/pattern.png'
 
 const Acara = forwardRef((props, sectionRef) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);

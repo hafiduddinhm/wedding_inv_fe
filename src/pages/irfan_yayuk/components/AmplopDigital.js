@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Box, Button, useTheme, Alert, AlertTitle, Snackbar, Slide } from '@mui/material'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import backgroundImage from '../../assets/image/bg2.png'
-import ornament from '../../assets/image/ornamen2.png'
-import pattern from '../../assets/image/pattern.png'
+import backgroundImage from '../assets/image/bg2.png'
+import ornament from '../assets/image/ornamen2.png'
+import pattern from '../assets/image/pattern.png'
 
 const AmplopDigital = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);

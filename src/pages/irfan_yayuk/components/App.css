@@ -18,10 +18,10 @@
     display: none;
 }
 
-@font-face {
+/* @font-face {
     font-family: "BillionMiracles";
     src: url("../../assets/font/Billion Miracles.otf");
-}
+} */
 
 .font-estetik {
     font-family: 'Alex Brush', cursive !important;

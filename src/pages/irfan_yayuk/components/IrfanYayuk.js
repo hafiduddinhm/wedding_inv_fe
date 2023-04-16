@@ -9,7 +9,7 @@ import BottomNavbar from "./BottomNavbar"
 import Ucapan from "./Ucapan"
 import Closing from "./Closing"
 import Gallery from "./galery";
-import coupleImage from '../../assets/image/11.png';
+import coupleImage from '../assets/image/11.png';
 
 import './App.css'
 import AmplopDigital from "./AmplopDigital";
@@ -46,9 +46,9 @@ const IrfanYayuk = () => {
     return (
         <ThemeProvider theme={theme}>
             <Helmet>
-                <title>The Wedding of Irfan & Yayuk</title>
+                <title>Irfan & Yayuk Wedding</title>
                 <meta name="description" content="Minggu, 7 Mei 2023" />
-                <meta property="og:title" content="The Wedding of Irfan & Yayuk" />
+                <meta property="og:title" content="Irfan & Yayuk Wedding" />
                 <meta property="og:description" content="Minggu, 7 Mei 2023" />
                 <meta property="og:image" content={ogImageUrl} />
                 <meta property="og:url" content="https://menghitunghari.vercel.app/" />
