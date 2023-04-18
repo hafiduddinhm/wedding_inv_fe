@@ -1,7 +1,7 @@
 import React from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Helmet } from 'react-helmet'
-import styled from 'styled-components';
+import styled from 'styled-components'
 import OpeningModal from "./OpeningModal"
 import Home from './Home'
 import Pengantin from './Pengantin'
@@ -11,40 +11,38 @@ import Ucapan from "./Ucapan"
 import Closing from "./Closing"
 import Gallery from "./galery";
 import coupleImage from '../assets/image/11.png';
-
-import './App.css'
 import AmplopDigital from "./AmplopDigital";
 
-const IrfanYayukStyle = styled.div`
-
-    font-family: 'Ovo', serif !important;
+const ElmaHendraStyle = styled.div`
+   
+    font-family: 'Glacial Indifference', sans-serif !important;
 
     .font-estetik {
-        font-family: 'Alex Brush', cursive !important;
+        font-family: 'moontime', cursive !important;
     }
 `;
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#283a68',
+            main: '#9B3939',
         },
         secondary: {
             main: '#e0e2e4',
         },
         dark: {
-            main: '#394a73',
+            main: '#6D423F',
         },
         light: {
-            main: '#eff1ec',
+            main: '#F6F3F1',
         },
         gray: {
-            main: '#777687'
+            main: '#F59C9C'
         }
     },
 });
 
-const IrfanYayuk = () => {    
+const ElmaHendra = () => {    
     const section1Ref = React.useRef(null);
     const section2Ref = React.useRef(null);
     const section3Ref = React.useRef(null);
@@ -55,7 +53,7 @@ const IrfanYayuk = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <IrfanYayukStyle>
+            <ElmaHendraStyle>
                 <Helmet>
                     <title>Irfan & Yayuk Wedding</title>
                     <meta name="description" content="Minggu, 7 Mei 2023" />
@@ -73,14 +71,13 @@ const IrfanYayuk = () => {
                 <Gallery ref={section4Ref} />
                 <AmplopDigital/>
                 <Ucapan ref={section5Ref}/>
-                
                 <Closing/>
                 <BottomNavbar
                     sectionRefs={[section1Ref, section2Ref, section3Ref, section4Ref, section5Ref]}
                 />
-            </IrfanYayukStyle>
+            </ElmaHendraStyle>
         </ThemeProvider>
     );
 };
 
-export default IrfanYayuk;
+export default ElmaHendra;

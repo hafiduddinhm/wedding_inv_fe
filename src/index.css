@@ -1,8 +1,12 @@
 body {
   margin: 0;
-  font-family: Ovo, serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "moontime";
+  src: url('/src/pages/elma_hendra/assets/font/moontime.ttf');
 }
 
 code {

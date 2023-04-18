@@ -23,10 +23,6 @@
     src: url("../../assets/font/Billion Miracles.otf");
 } */
 
-.font-estetik {
-    font-family: 'Alex Brush', cursive !important;
-}
-
 .ReactModal__Overlay--after-open{
     opacity: 1;
     transform: translate(0);

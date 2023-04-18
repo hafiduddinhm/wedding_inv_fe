@@ -1,4 +1,3 @@
-import './App.css'
 import React, { forwardRef, useState, useEffect } from "react";
 import backgroundImage from '../assets/image/bg.png';
 import ornament1 from '../assets/image/galeri1.png'
@@ -52,13 +51,11 @@ const ImageCarouselWrapper = styled(Box)`
 `;
 
 const imageToShow = [
-    "/media/irfan_yayuk/1.jpg",
-    "/media/irfan_yayuk/2.jpg",
-    "/media/irfan_yayuk/3.jpg",
-    "/media/irfan_yayuk/4.jpg",
-    "/media/irfan_yayuk/5.jpg",
-    "/media/irfan_yayuk/6.jpg",
-    "/media/irfan_yayuk/7.jpg",
+    "/media/elma_hendra/1.jpg",
+    "/media/elma_hendra/2.jpg",
+    "/media/elma_hendra/3.jpg",
+    "/media/elma_hendra/4.jpg",
+    "/media/elma_hendra/5.jpg",
 ];
 
 const Gallery = forwardRef((props, sectionRef) => {

@@ -11,8 +11,6 @@ import flowerOrnament1 from '../assets/image/3.png'
 import flowerOrnament2 from '../assets/image/15.png'
 import flowerOrnament3 from '../assets/image/16.png'
 
-import './App.css'
-
 const OpeningModal = () => {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -136,8 +134,8 @@ const OpeningModal = () => {
     return (
         <Modal isOpen={isOpen} onRequestClose={closeModal} closeTimeoutMS={500} style={modalStyles}>
             <Box style={boxStyles}>
-                <p style={{ color: theme.palette.gray.main, marginTop: '9vh', marginBottom: 10 }}>The Wedding of</p>
-                <h1 style={{ color: theme.palette.primary.main, fontSize: '6vh' }} className="font-estetik">Irfan & Yayuk</h1>
+                <p style={{ color: theme.palette.gray.main, marginTop: '9vh', marginBottom: 10, fontFamily: 'Ovo' }}>The Wedding of</p>
+                <h1 style={{ color: theme.palette.primary.main, fontFamily: "Alex Brush", fontSize: '6vh' }} className="font-estetik">Irfan & Yayuk</h1>
                 <img src={flowerOrnament2} style={ornament2Styles}></img>
                 <img src={flowerOrnament1} style={ornament1Styles}></img>
                 <img src={flowerOrnament2} style={ornament5Styles}></img>
