@@ -5,7 +5,6 @@ import ornament2 from '../assets/image/galeri2.png'
 import resin1 from '../assets/image/resin1.png'
 import resin2 from '../assets/image/resin2.png'
 import resin3 from '../assets/image/resin3.png'
-import butterfly from '../assets/image/butterfly.png'
 import { Box, useTheme } from '@mui/material';
 import { ArrowBackIosRounded, ArrowForwardIosRounded } from '@mui/icons-material';
 import Slider from 'react-slick';

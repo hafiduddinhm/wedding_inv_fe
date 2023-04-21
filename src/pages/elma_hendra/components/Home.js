@@ -1,7 +1,5 @@
 import React, {useRef, forwardRef, useState, useEffect} from 'react';
 import { Box, useTheme } from '@mui/material';
-import bgOrnament from '../assets/image/4.png'
-import flowerOrnament1 from '../assets/image/home.png'
 import ornament from '../assets/image/ornamen.png'
 import ornament1 from '../assets/image/home1.png'
 import ornament2 from '../assets/image/home2.png'
@@ -114,7 +112,6 @@ const Home = forwardRef((props, ref) => {
             fontFamily: 'Glacial Indifference',
             textAlign: 'center', 
             zIndex: 3,
-            fontSize: `${110+windowWidth*0.05}%`,
             fontSize: windowWidth>windowHeight ? 
             `${(1+windowHeight*0.005)}vh` : 
             `${(40+windowWidth*0.25)}%`,

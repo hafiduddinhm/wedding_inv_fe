@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, IconButton, useTheme, useMediaQuery } from '@mui/material'
+import { Box, IconButton, useTheme } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import ornament from '../assets/image/closing.png'
@@ -26,9 +26,6 @@ const Closing = () => {
     };
 
     const theme = useTheme();
-    const isLg = useMediaQuery(theme => theme.breakpoints.up('lg'));
-    const isMd = useMediaQuery(theme => theme.breakpoints.only('md'));
-    const isSm = useMediaQuery(theme => theme.breakpoints.down('sm'));
 
     const styles ={
         section: {

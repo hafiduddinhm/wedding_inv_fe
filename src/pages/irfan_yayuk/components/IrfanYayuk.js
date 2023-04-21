@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useHistory } from "react-router-dom";
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components';
 import OpeningModal from "./OpeningModal"
@@ -44,7 +45,25 @@ const theme = createTheme({
     },
 });
 
-const IrfanYayuk = () => {    
+const IrfanYayuk = () => {  
+    
+    const history = useHistory();
+
+    useEffect(() => {
+        // scroll to the top of the page when the component mounts
+        window.scrollTo(0, 0);
+
+        // listen for history changes and scroll to the top of the page
+        const unlisten = history.listen(() => {
+            window.scrollTo(0, 0);
+        });
+
+        // cleanup function to remove the listener when the component unmounts
+        return () => {
+            unlisten();
+        };
+    }, [history]);
+
     const section1Ref = React.useRef(null);
     const section2Ref = React.useRef(null);
     const section3Ref = React.useRef(null);

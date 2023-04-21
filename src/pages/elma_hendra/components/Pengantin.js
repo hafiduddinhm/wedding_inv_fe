@@ -1,5 +1,5 @@
 import React, { forwardRef, useState, useEffect } from 'react';
-import { Grid, Box, useTheme, useMediaQuery } from '@mui/material'
+import { Box, useTheme } from '@mui/material'
 import backgroundImage from '../assets/image/bgOrnamentPengantin.png'
 import ornamentTransition from '../assets/image/acara1.png'
 import groom from '../assets/image/groom.png'
@@ -23,9 +23,6 @@ const Pengantin = forwardRef((props, sectionRef) => {
     useEffect(() => {
         aos.init()
     }, [])
-
-    const isLg = useMediaQuery(theme => theme.breakpoints.up('lg'));
-    const isMd = useMediaQuery(theme => theme.breakpoints.only('md'));
 
     const theme = useTheme();
 

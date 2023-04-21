@@ -2,7 +2,6 @@ import React, { forwardRef, useState, useEffect } from 'react';
 import { Grid, Box, Button, useTheme } from '@mui/material'
 import PlaceIcon from '@mui/icons-material/PlaceOutlined';
 import backgroundImage from '../assets/image/bgAcara.png'
-import ornament1 from '../assets/image/acara1.png'
 
 const Acara = forwardRef((props, sectionRef) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);

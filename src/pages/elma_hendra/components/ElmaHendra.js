@@ -11,8 +11,9 @@ import BottomNavbar from "./BottomNavbar"
 import Ucapan from "./Ucapan"
 import Closing from "./Closing"
 import Gallery from "./galery";
-import coupleImage from '../assets/image/11.png';
 import AmplopDigital from "./AmplopDigital";
+import coupleImage from '../assets/image/brides.png';
+
 
 const ElmaHendraStyle = styled.div`
    
