@@ -57,7 +57,7 @@ const App = () => {
     <BrowserRouter>
       <Switch>
         <Route path="/irfan_yayuk" component={IrfanYayuk} />
-        <Route path="/elma_hendra" component={ElmaHendra} />
+        <Route path="/hendra_elma" component={ElmaHendra} />
       </Switch>
     </BrowserRouter>
     </>

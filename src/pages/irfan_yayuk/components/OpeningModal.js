@@ -121,7 +121,6 @@ const OpeningModal = () => {
     }, [])
 
     if (isOpen) {
-        console.log('isOpen')
         document.body.style.overflow = 'hidden';
     }
 

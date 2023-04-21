@@ -29,7 +29,7 @@ const BottomNavbar = ({ sectionRefs }) => {
     zIndex: 2, 
     flexDirection: 'row', 
     justifyContent: 'space-between',
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.light.main,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     boxShadow: '0px 3px 9px'
@@ -43,7 +43,8 @@ const BottomNavbar = ({ sectionRefs }) => {
     bottom: 70, 
     right: 16,
     zIndex: 0,
-    color: theme.palette.dark.main
+    color: theme.palette.dark.main,
+    backgroundColor: theme.palette.light.main
   };
 
   const handleChange = (event, newValue) => {

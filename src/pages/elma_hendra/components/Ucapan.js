@@ -1,11 +1,13 @@
 import React, { forwardRef, useState, useEffect } from 'react';
 import { Grid, Box, Button, useTheme, TextField, Select, MenuItem, CircularProgress } from '@mui/material'
 import { LoadingButton } from '@mui/lab';
-import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
+import { AccessTimeOutlined, SendRounded } from '@mui/icons-material';
 import backgroundImage from '../assets/image/bg.png'
 import bgOrnament from '../assets/image/4.png'
-import ornament2 from '../assets/image/14.png'
-import ornament3 from '../assets/image/ucapan.png'
+import ornament1 from '../assets/image/ucapan_flower.png'
+import ornament2 from '../assets/image/galeri2.png'
+import ornament3 from '../assets/image/ucapan_ornament.png'
+import resin1 from '../assets/image/resin4.png'
 import { motion } from "framer-motion"
 import axios from "axios"
 
@@ -39,7 +41,8 @@ const Ucapan = forwardRef((props, sectionRef) => {
     const [title, setTitle] = useState('')
     const [message, setMessage] = useState('')
 
-    const beUrl = "https://wedding-inv-be.vercel.app/irfan_yayuk"
+    const beUrl = "https://wedding-inv-be.vercel.app/hendra_elma"
+    const MAX_LENGTH = 20
 
     const handleSnackbarClose = (event, reason) => {
         if (reason === 'clickaway') {
@@ -66,9 +69,6 @@ const Ucapan = forwardRef((props, sectionRef) => {
     useEffect(() => {
         fetchData();
     }, []);
-
-    const isNameError = nama.length > 15;
-    const nameHelperText = isNameError ? 'nama melebihi 15 karakter' : '';
     
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -79,7 +79,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
             setKehadiran(value);
         } else {
             if (name === 'nama') {
-                if (value.length <= 15) {
+                if (value.length <= 20) {
                     setNama(value);
                 }
             } else if (name === 'ucapan') {
@@ -149,26 +149,66 @@ const Ucapan = forwardRef((props, sectionRef) => {
             flexDirection: 'column', 
             alignItems: 'center', 
             color: 'dark.main',
-            padding: windowWidth > 500 ? '4% 12%' : '20% 12%',
-            backgroundImage: `url(${backgroundImage})`,
+            padding: windowWidth > 500 ? '0% 12%' : '0% 12%',
+            backgroundColor: theme.palette.light.main,
+            // backgroundImage: `url(${backgroundImage})`,
             overflow: 'hidden' 
         },
         ornament1: {
-            width: '100%',
-            height: '100%',
-            display: (windowWidth < 320) ? "none" : "block",
-        },
-        ornament: {
-            width: '100%',
-            height: '100%',
+            // right: `${-8+windowWidth*0.025}%`,
+            left:  `${60-windowWidth*0.03}%`,
+            display: 'flex',
             zIndex: 0,
-            rotate:{
-                width: '100%',
-                height: '100%',
-                zIndex: 0,
-                transform: 'rotate(-90deg)'
-            }
+            position: 'relative',
+            marginBottom: '-4vh',
+            // marginBottom: `${-10-windowWidth*0.025}vh`,
+            width: `${60+windowWidth*0.008}%`,
+            height: `${15+windowWidth*0.006}vh`,
+            backgroundImage: `url(${ornament1})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'right',
         },
+        ornament2: {
+            left: 0,
+            display: 'flex',
+            zIndex: 0,
+            position: 'absolute',
+            marginTop: '7vh',
+            width: `${60+windowWidth*0.025}%`,
+            height: `${40+windowWidth*0.01}vh`,
+            backgroundImage: `url(${ornament2})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'left',
+            overflow: 'hidden',
+        },
+        ornament3: {
+            right: 0,
+            display: 'flex',
+            zIndex: 0,
+            position: 'absolute',
+            marginTop: '-12vh',
+            width: `${70+windowWidth*0.025}%`,
+            height: `${50+windowWidth*0.01}vh`,
+            backgroundImage: `url(${ornament3})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'right',
+        },
+        resin1: {
+            left: 0,
+            display: 'flex',
+            zIndex: 0,
+            position: 'absolute',
+            marginTop: '30vh',
+            width: `${80+windowWidth*0.025}%`,
+            height: `${60+windowWidth*0.01}vh`,
+            backgroundImage: `url(${resin1})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'left',
+          },
         card: {
             maxHeight: '60vh', 
             overflowY: 'scroll', 
@@ -181,9 +221,10 @@ const Ucapan = forwardRef((props, sectionRef) => {
             txt:{
                 header: {
                     fontSize: `${80+windowWidth*0.04}%`,
+                    fontWeight: 'bold',
                     color: theme.palette.dark.main,
                     marginBottom: '5px',
-                    fontFamily: 'Ovo'
+                    fontFamily: 'Glacial Indifference'
                 },
                 time: {
                     fontSize: `${60+windowWidth*0.04}%`,
@@ -191,12 +232,12 @@ const Ucapan = forwardRef((props, sectionRef) => {
                     display: 'flex',
                     alignItems: 'center',
                     marginTop: '1.2rem',
-                    fontFamily: 'Ovo'
+                    fontFamily: 'Glacial Indifference'
                 },
                 fontSize: `${70+windowWidth*0.04}%`,
                 color: theme.palette.dark.main,
                 alignItems: 'center',
-                fontFamily: 'Ovo'
+                fontFamily: 'Glacial Indifference'
             },
         },
         btnStyles: {
@@ -213,7 +254,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                     color: 'white',
                 },
                 '&:hover': {
-                    backgroundColor: '#526AA6',
+                    backgroundColor: '#875B57',
                     boxShadow: 'none',
                 }
             },
@@ -237,9 +278,10 @@ const Ucapan = forwardRef((props, sectionRef) => {
         },
         txt:{
             header: {
-                fontSize: `${200+windowWidth*0.06}%`,
+                fontSize: `${250+windowWidth*0.06}%`,
                 marginBottom: '2vh',
                 textAlign: 'center',
+                zIndex: 1,
             },
             larger: {
                 textAlign: 'center',
@@ -250,6 +292,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
             fontSize: `${70+windowWidth*0.04}%`,
             color: theme.palette.dark.main,
             marginBottom: '2vh',
+            zIndex: 1,
         },
         img: {
             width: '100%',
@@ -274,17 +317,12 @@ const Ucapan = forwardRef((props, sectionRef) => {
 
     return (
         <section ref={sectionRef} >
+            <div style={styles.resin1} />
             <Box sx={styles.box}>
-                <div data-aos='zoom-in' data-aos-duration='1000' style={{transformOrigin: '120% 50%'}}>
-                    <div style={{position: 'relative',  marginRight: `${-30+windowWidth*0.005}%`}}>
-                        <div style={{position: 'absolute', right: 0, width: `${35-windowWidth*0.01}%`}}>
-                            <img src={ornament2} style={styles.ornament.rotate}/>
-                        </div>
-                    </div>
-                </div>
+                <div style={styles.ornament1} data-aos='fade-left' data-aos-duration="1500"/>
                 <h1 className="font-estetik" style={styles.txt.header}>Ucapkan Sesuatu</h1>
                 <p style={styles.txt}>Berikan Ucapan & Doa Restu</p>
-                <form onSubmit={handleSubmit} style={{zIndex: 0, margin: '7vh 0%'}}>
+                <form onSubmit={handleSubmit} style={{zIndex: 0, margin: '3vh 0% 7vh 0%'}}>
                     <TextField
                         label="Nama"
                         name="nama"
@@ -292,17 +330,17 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         onChange={handleChange}
                         fullWidth
                         required
-                        error={isNameError}
-                        helperText={nameHelperText}
+                        helperText={ formTouched ? `${nama.length}/${MAX_LENGTH}` : ""}
                         margin="normal"
                         variant="filled"
                         InputProps={{
+                            maxLength: MAX_LENGTH,
                             disableUnderline: true,
-                            style: { borderRadius: 10, fontSize: `${70+windowWidth*0.04}%`, backgroundColor: '#0000001a'},
+                            style: { borderRadius: 20, fontSize: `${70+windowWidth*0.04}%`, backgroundColor: 'white'},
                         }}
                         InputLabelProps={{
                             sx: {
-                                fontFamily: 'Ovo',
+                                fontFamily: 'Glacial Indifference',
                                 fontSize: `${70+windowWidth*0.04}%`,
                                 color: 'dark.main'
                             }
@@ -321,11 +359,11 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         variant="filled"
                         InputProps={{
                             disableUnderline: true,
-                            style: { borderRadius: 10, fontSize: `${70+windowWidth*0.04}%`, backgroundColor: '#0000001a'},
+                            style: { borderRadius: 20, fontSize: `${70+windowWidth*0.04}%`, backgroundColor: 'white'},
                         }}
                         InputLabelProps={{
                             sx: {
-                                fontFamily: 'Ovo',
+                                fontFamily: 'Glacial Indifference',
                                 fontSize: `${70+windowWidth*0.04}%`,
                                 color: 'dark.main'
                             }
@@ -343,7 +381,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         margin="normal"
                         variant="filled"
                         disableUnderline
-                        style={{borderRadius: 10, paddingBottom: 15, backgroundColor: '#0000001a'}}
+                        style={{borderRadius: 20, paddingBottom: 15, backgroundColor: 'white'}}
                     >
                         <MenuItem value={0}>
                             <Typography variant="body1" style={styles.card.txt}>
@@ -371,6 +409,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                             loading={loadingPost}
                         >
                             <span>Kirim</span>
+                            <SendRounded sx={{width: '0.9rem', marginLeft: '7px', alignSelf: 'center'}}/>
                         </LoadingButton>
                         {formTouched && (
                         <Button variant="outlined" disableRipple={true} onClick={handleReset} sx={styles.btnStyles.cancel}>
@@ -419,7 +458,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                                                                 {comment.comment}
                                                             </Typography>
                                                             <Typography sx={styles.card.txt.time} component="p">
-                                                                <AccessTimeOutlinedIcon sx={{width: '0.9rem', marginRight: '2%', alignSelf: 'center'}}/>
+                                                                <AccessTimeOutlined sx={{width: '0.9rem', marginRight: '2%', alignSelf: 'center'}}/>
                                                                 {comment.timestamp}
                                                             </Typography>
                                                         </CardContent>
@@ -438,29 +477,9 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         )}
                     </Grid>
                 </div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <div data-aos='fade-up' data-aos-duration='1500' data-aos-delay='200' style={{position: 'relative', marginBottom: windowWidth > 500 ? '4rem' : '1rem', marginRight: '-10%'}}>
-                    <div style={{position: 'absolute', right: 0, width: `${65-windowWidth*0.025}%`}}>
-                        <img src={ornament3} style={styles.ornament}/>
-                    </div>
-                </div>
-                <div data-aos='fade-up' data-aos-duration='1500' style={{position: 'relative', marginBottom: windowWidth > 500 ? '2rem' : '1rem'}}>
-                    <div style={{position: 'absolute', width: `${60-windowWidth*0.025}%`}}>
-                        <img src={ornament2} style={styles.ornament}/>
-                    </div>
-                </div>
-                
-                <div style={{position: 'relative'}}>
-                    <div style={{ position: 'absolute', left: -250, right: -250, display: "flex", justifyContent: "center", alignItems: "center", height: "15vh" }}>
-                        <img src={bgOrnament} style={{ width: '100%', height: '100%' }}/>
-                    </div> 
-                </div>
             </Box>
+            <div style={styles.ornament3} data-aos='fade-up' data-aos-duration="1500" />
+            <div style={styles.ornament2} data-aos='fade-right' data-aos-duration="1500" />
         </section>
     );
 });

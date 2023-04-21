@@ -72,9 +72,10 @@ const OpeningModal = () => {
         imageButton: {
             display: 'inline-block',
             position: 'fixed',
+            transformOrigin: "center",
             top: '50%',
             left: '50%',
-            transform: `translate(-50%, ${-15+windowWidth*0.001}%)`,
+            // transform: `translate(-50%, ${-15+windowWidth*0.001}%)`,
             zIndex: 3,
             width: windowWidth>windowHeight ? 
             `${(65-windowHeight*0.05)}vh` : 
@@ -118,7 +119,6 @@ const OpeningModal = () => {
     }, [])
 
     if (isOpen) {
-        console.log('isOpen')
         document.body.style.overflow = 'hidden';
     }
 
@@ -137,7 +137,15 @@ const OpeningModal = () => {
                 <h1 style={styles.txt2}>Hendra & Elma<br/>15 Mei 2023</h1>
                 <img src={ornament} style={styles.ornament}></img>
                 <br/>
-                <img src={imageButton} onClick={closeModal} style={styles.imageButton}></img>
+                <motion.img 
+                    src={imageButton}
+                    alt='Button' 
+                    onClick={closeModal} 
+                    style={styles.imageButton}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    initial={{ scale: 1, x: '-50%', y: '-5%' }}
+                />
                 <img src={ornament2} style={styles.ornament2}/>
             </Box>
         </Modal>

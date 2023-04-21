@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useHistory } from "react-router-dom";
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 import OpeningModal from "./OpeningModal"
@@ -42,7 +43,25 @@ const theme = createTheme({
     },
 });
 
-const ElmaHendra = () => {    
+const ElmaHendra = () => {  
+    
+    const history = useHistory();
+
+    useEffect(() => {
+        // scroll to the top of the page when the component mounts
+        window.scrollTo(0, 0);
+
+        // listen for history changes and scroll to the top of the page
+        const unlisten = history.listen(() => {
+            window.scrollTo(0, 0);
+        });
+
+        // cleanup function to remove the listener when the component unmounts
+        return () => {
+            unlisten();
+        };
+    }, [history]);
+
     const section1Ref = React.useRef(null);
     const section2Ref = React.useRef(null);
     const section3Ref = React.useRef(null);
@@ -55,14 +74,14 @@ const ElmaHendra = () => {
         <ThemeProvider theme={theme}>
             <ElmaHendraStyle>
                 <Helmet>
-                    <title>Irfan & Yayuk Wedding</title>
-                    <meta name="description" content="Minggu, 7 Mei 2023" />
-                    <meta property="og:title" content="Irfan & Yayuk Wedding" />
-                    <meta property="og:description" content="Minggu, 7 Mei 2023" />
+                    <title>Hendra & Elma Wedding</title>
+                    <meta name="description" content="Senin, 15 Mei 2023" />
+                    <meta property="og:title" content="Hendra & Elma Wedding" />
+                    <meta property="og:description" content="Senin, 15 Mei 2023" />
                     <meta property="og:image" content={ogImageUrl} />
                     <meta property="og:url" content="https://menghitunghari.vercel.app/" />
                     <meta property="og:type" content="website" />
-                    <link rel="canonical" href="https://menghitunghari.vercel.app/irfan_yayuk" />
+                    <link rel="canonical" href="https://menghitunghari.vercel.app/hendra_elma" />
                 </Helmet>
                 <OpeningModal />
                 <Home ref={section1Ref}/>
