@@ -40,18 +40,6 @@ const Acara = forwardRef((props, sectionRef) => {
             color: 'primary.main',
             margin: '0% 15%' 
         },
-        // ornament1: {
-        //     justifySelf: 'end',
-        //     alignSelf: 'start',
-        //     marginLeft: '-22%',
-        //     marginTop: '-20vh',
-        //     left: 0,
-        //     width: `${57+windowWidth*0.03}%`,
-        //     height: `${27+windowWidth*0.01}vh`,
-        //     backgroundImage: `url(${ornament1})`,
-        //     backgroundRepeat: 'no-repeat',
-        //     backgroundSize: 'contain',
-        // },
         btnStyles: {
             borderRadius: 30,
             position: 'relative',
