@@ -6,6 +6,7 @@ import backgroundImage from '../assets/image/bgAcara.png'
 const Acara = forwardRef((props, sectionRef) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     
+    const linkLokasi = 'https://goo.gl/maps/inffUEmwiEWBDq8YA'
 
     useEffect(() => {
         const handleResize = () => {
@@ -20,7 +21,7 @@ const Acara = forwardRef((props, sectionRef) => {
     const theme = useTheme();
 
     const handleButtonClick = () => {
-        window.open('https://maps.app.goo.gl/9eDXpA7zyLP59MPL9?g_st=iw');
+        window.open(linkLokasi);
     }
 
     const styles ={
