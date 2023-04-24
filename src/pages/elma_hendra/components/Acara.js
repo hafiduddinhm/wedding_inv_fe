@@ -2,6 +2,7 @@ import React, { forwardRef, useState, useEffect } from 'react';
 import { Grid, Box, Button, useTheme } from '@mui/material'
 import PlaceIcon from '@mui/icons-material/PlaceOutlined';
 import backgroundImage from '../assets/image/bgAcara.png'
+// import { Map, Marker, GoogleApiWrapper } from 'google-maps-react'
 
 const Acara = forwardRef((props, sectionRef) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
