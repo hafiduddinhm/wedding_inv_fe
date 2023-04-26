@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import IrfanYayuk from './irfan_yayuk/components/IrfanYayuk';
 import ElmaHendra from './elma_hendra/components/ElmaHendra';
@@ -60,6 +62,7 @@ const App = () => {
         <Route path="/hendra_elma" component={ElmaHendra} />
       </Switch>
     </BrowserRouter>
+    <Analytics />
     </>
   );
 };
