@@ -22,7 +22,7 @@ const AmplopDigital = () => {
     }, []);
 
     const handleWhatsappClick = () => {
-        window.open('http://wa.me/6281225031635');
+        window.open('http://wa.link/nd0byg');
     };
 
     const handleInstagramClick = () => {
