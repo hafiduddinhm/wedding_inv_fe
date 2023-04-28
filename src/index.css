@@ -8,6 +8,10 @@ body {
   font-family: "moontime";
   src: url('/src/pages/elma_hendra/assets/font/moontime.ttf');
 }
+@font-face {
+  font-family: "malibu";
+  src: url('/src/pages/ozie_lusi/assets/font/Malibu.otf');
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

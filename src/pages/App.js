@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import IrfanYayuk from './irfan_yayuk/components/IrfanYayuk';
 import ElmaHendra from './elma_hendra/components/ElmaHendra';
+import OzieLusi from './ozie_lusi/components/OzieLusi'
 // import IrfanYayukImage from './irfan_yayuk/assets/image/11.png';
 // import Icon from '../assets/image/icon.png'
 
@@ -60,6 +61,7 @@ const App = () => {
       <Switch>
         <Route path="/irfan_yayuk" component={IrfanYayuk} />
         <Route path="/hendra_elma" component={ElmaHendra} />
+        <Route path="/ozie_lusi" component={OzieLusi} />
       </Switch>
     </BrowserRouter>
     <Analytics />
