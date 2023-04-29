@@ -204,12 +204,12 @@ const OpeningModal = () => {
                     <h1 style={{...styles.txt1, marginTop: `${1-windowWidth*0.001}vh`, marginBottom: '3vh' }}><i>Together with our families<br/>we invite you to</i></h1>
                     <h1 style={{...styles.txt1, fontSize: windowWidth>windowHeight ? `${(3+windowHeight*0.003)}vh` : `${(30+windowWidth*0.3)}%`,}}>The Wedding of</h1>
                     <h1 style={styles.txt2} className="font-estetik">Ozie & </h1>
-                    <h1 style={styles.txt2} className="font-estetik">  Lusi</h1>
+                    <h1 style={styles.txt2} className="font-estetik">  Lusy</h1>
                     {guest != null && 
                         <h1 style={{...styles.txt1, marginTop: '3vh'}}>Kepada Bapak/Ibu/Saudara/i</h1>
                     }
                     {guest === null && 
-                        <><br/><br/></>
+                        <><br/></>
                     }
                     <h1 style={{...styles.txt1, fontWeight: 'bold'}}>{guest}</h1>
                     <img src={ornament5} style={styles.ornament5}/>

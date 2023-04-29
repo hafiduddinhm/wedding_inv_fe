@@ -149,7 +149,7 @@ const Acara = forwardRef((props, sectionRef) => {
                 </Grid>
                 <Box data-aos='fade-up' data-aos-duration='1500' style={styles.box2}>
                     <img src={line2} style={{width: `${90-windowWidth*0.03}%`}} />
-                    <p style={{...styles.txt}}>JUMAT, 12 Mei 2023<br/>Ds Dopyak Kecamatan Bangilan Tuban</p>
+                    <p style={{...styles.txt}}>JUMAT, 12 Mei 2023<br/>Jl. Rondo Kuning RT 003 RW 007<br/>Desa Bangilan Kecamatan Bangilan Tuban</p>
                     <img src={line3} style={{width: `${90-windowWidth*0.03}%`}} />
                 </Box>
                 <Button data-aos='fade-up' data-aos-duration="1500" variant="contained" onClick={handleButtonClick} style={styles.btnStyles}>

@@ -114,7 +114,7 @@ const Closing = () => {
                     Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.<br/>
                     Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.<br/>
                     Wassalamu'alaikum Wr. Wb.<br/>
-                    <br/>-OZIE & LUSI-
+                    <br/>-OZIE & LUSY-
                 </p>
                 <br/>
                 <br/>
