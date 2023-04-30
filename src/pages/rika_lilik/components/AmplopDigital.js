@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Box, Button, useTheme, Alert, AlertTitle, Snackbar, Slide } from '@mui/material'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import backgroundImage from '../assets/image/bgAmplop.png'
+import backgroundImage from '../assets/image/bg2.png'
 import ornament from '../assets/image/ornamen2.png'
-import ornament3 from '../assets/image/galeri3.png'
-import ornament4 from '../assets/image/galeri4.png'
 
 const AmplopDigital = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -13,13 +11,13 @@ const AmplopDigital = () => {
     const [title, setTitle] = useState('')
     const [message, setMessage] = useState('')
 
-    const bank1 = 'BCA'
-    const rekening1 = '8240824851'
-    const atasNama1 = 'Muchammad Fachur Rozi'
+    const bank1 = 'Mandiri'
+    const rekening1 = '1780002644488'
+    const atasNama1 = 'Hendra Dwi Irawan'
 
-    const bank2 = 'DANA'
-    const rekening2 = '081238290507'
-    const atasNama2 = 'Muchammad Fachur Rozi'
+    const bank2 = 'Mandiri'
+    const rekening2 = '1780002200240'
+    const atasNama2 = 'Yuyun Laylia El Mahera'
 
     const handleSnackbarClose = (event, reason) => {
         if (reason === 'clickaway') {
@@ -42,6 +40,8 @@ const AmplopDigital = () => {
 
     const handleButtonClick = (rekening) => {
         if (!navigator.clipboard) {
+            // Clipboard API not available
+            // alert("something went wrong1");
             setSeverity('error')
             setTitle('Yahh..') 
             setMessage('terjadi kesalahan saat menyalin')
@@ -49,6 +49,7 @@ const AmplopDigital = () => {
             return;
         }
         navigator.clipboard.writeText(rekening).then(() => {
+            // alert("successfully copied");
             setSeverity('success')
             setTitle('Berhasil') 
             setMessage('nomor rekening berhasil disalin!')
@@ -58,6 +59,7 @@ const AmplopDigital = () => {
             setTitle('Yahh..') 
             setMessage('nomor rekening gagal disalin')
             setOpen(true);
+            // alert("something went wrong");
         });
     }
 
@@ -67,7 +69,7 @@ const AmplopDigital = () => {
             flexDirection: 'column', 
             alignItems: 'center', 
             color: 'dark.main',
-            padding: windowWidth > 600 ? '35% 17% 10% 17%' : '45% 17% 10% 17%',
+            padding: windowWidth > 600 ? '15% 17% 10% 17%' : '45% 17% 10% 17%',
             backgroundColor: theme.palette.light.main,
             backgroundImage: `url(${backgroundImage})`,
             backgroundRepeat: 'no-repeat',
@@ -85,32 +87,6 @@ const AmplopDigital = () => {
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'contain',
         },
-        ornament3: {
-            left: 0,
-            display: 'flex',
-            zIndex: 0,
-            position: 'absolute',
-            marginTop: '-20vh',
-            width: `${55+windowWidth*0.01}%`,
-            height: `${42+windowWidth*0.01}vh`,
-            backgroundImage: `url(${ornament3})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
-            backgroundPosition: 'left',
-        },
-        ornament4: {
-            right: 0,
-            display: 'flex',
-            zIndex: 0,
-            position: 'absolute',
-            marginTop: '-20vh',
-            width: `${55+windowWidth*0.01}%`,
-            height: `${42+windowWidth*0.01}vh`,
-            backgroundImage: `url(${ornament4})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
-            backgroundPosition: 'right',
-        },
         btnStyles: {
             borderRadius: 30,
             padding: '8px 15px',
@@ -118,11 +94,11 @@ const AmplopDigital = () => {
             justifySelf: 'center',
             marginTop: '5%',
             width: '100%',
-            backgroundColor: theme.palette.primary.main
+            backgroundColor: '#F29999'
         },
         txt:{
             header: {
-                fontSize: `${300+windowWidth*0.06}%`,
+                fontSize: `${250+windowWidth*0.06}%`,
                 marginBottom: '2vh',
                 textAlign: 'center',
             },
@@ -136,13 +112,11 @@ const AmplopDigital = () => {
                 textAlign: 'center',
                 fontSize: `${110+windowWidth*0.04}%`,
                 color: theme.palette.dark.main,
-                fontWeight: 300,
             },
             textAlign: 'center',
             fontSize: `${70+windowWidth*0.04}%`,
             color: theme.palette.dark.main,
             marginBottom: '2vh',
-            fontWeight: 300,
         },
         img: {
             width: '100%',
@@ -152,8 +126,6 @@ const AmplopDigital = () => {
 
     return (
         <>
-        <div style={styles.ornament3} />
-        <div style={styles.ornament4} />
         <Box sx={styles.box}>
             <h1 className="font-estetik" style={styles.txt.header}>Amplop Digital</h1>
             <p style={styles.txt}>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.<br/>Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashlesh melalui:</p>

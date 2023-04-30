@@ -14,28 +14,29 @@ import Gallery from "./galery";
 import AmplopDigital from "./AmplopDigital";
 import coupleImage from '../assets/image/brides.png';
 
-const OzieLusiStyle = styled.div`
+
+const RikaLilikStyle = styled.div`
    
-    font-family: 'Josefin Sans', sans-serif !important;
+    font-family: 'Glacial Indifference', sans-serif !important;
 
     .font-estetik {
-        font-family: 'malibu', cursive !important;
+        font-family: 'moontime', cursive !important;
     }
 `;
 
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#C26942',
+            main: '#043D6A',
         },
         secondary: {
-            main: '#e0e2e4',
+            main: '#1A87A1',
         },
         dark: {
             main: '#6D423F',
         },
         light: {
-            main: '#FFFBF5',
+            main: '#FAFFFF',
         },
         gray: {
             main: '#F59C9C'
@@ -43,7 +44,7 @@ const theme = createTheme({
     },
 });
 
-const OzieLusi = () => {  
+const RikaLilik = () => {  
     
     const history = useHistory();
 
@@ -66,36 +67,37 @@ const OzieLusi = () => {
     const section2Ref = React.useRef(null);
     const section3Ref = React.useRef(null);
     const section4Ref = React.useRef(null);
+    const section5Ref = React.useRef(null);
 
     const ogImageUrl = `${window.location.origin}${coupleImage}`;
 
     return (
         <ThemeProvider theme={theme}>
-            <OzieLusiStyle>
+            <RikaLilikStyle>
                 <Helmet>
-                    <title>Ozie & Lusi Wedding</title>
-                    <meta name="description" content="Jumat, 12 Mei 2023" />
-                    <meta property="og:title" content="Ozie & Lusi Wedding" />
-                    <meta property="og:description" content="Jumat, 12 Mei 2023" />
+                    <title>Hendra & Elma Wedding</title>
+                    <meta name="description" content="Senin, 15 Mei 2023" />
+                    <meta property="og:title" content="Hendra & Elma Wedding" />
+                    <meta property="og:description" content="Senin, 15 Mei 2023" />
                     <meta property="og:image" content={ogImageUrl} />
                     <meta property="og:url" content="https://menghitunghari.vercel.app/" />
                     <meta property="og:type" content="website" />
-                    <link rel="canonical" href="https://menghitunghari.vercel.app/ozie_lusi" />
+                    <link rel="canonical" href="https://menghitunghari.vercel.app/hendra_elma" />
                 </Helmet>
                 <OpeningModal />
                 <Home ref={section1Ref}/>
                 <Pengantin ref={section2Ref}/>
                 <Acara ref={section3Ref}/>
-                <Gallery />
+                <Gallery ref={section4Ref} />
                 <AmplopDigital/>
-                <Ucapan ref={section4Ref}/>
+                <Ucapan ref={section5Ref}/>
                 <Closing/>
                 <BottomNavbar
-                    sectionRefs={[section1Ref, section2Ref, section3Ref, section4Ref]}
+                    sectionRefs={[section1Ref, section2Ref, section3Ref, section4Ref, section5Ref]}
                 />
-            </OzieLusiStyle>
+            </RikaLilikStyle>
         </ThemeProvider>
     );
 };
 
-export default OzieLusi;
+export default RikaLilik;

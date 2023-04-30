@@ -2,11 +2,10 @@ import React, { forwardRef, useState, useEffect } from 'react';
 import { Grid, Box, Button, useTheme, TextField, Select, MenuItem, CircularProgress } from '@mui/material'
 import { LoadingButton } from '@mui/lab';
 import { AccessTimeOutlined, SendRounded } from '@mui/icons-material';
-import backgroundImage from '../assets/image/bgUcapan.png'
-import ornament1 from '../assets/image/acara2.png'
-import ornament2 from '../assets/image/acara1.png'
-import ornament3 from '../assets/image/ucapan1.png'
-import ornament4 from '../assets/image/ucapan2.png'
+import ornament1 from '../assets/image/ucapan_flower.png'
+import ornament2 from '../assets/image/galeri2.png'
+import ornament3 from '../assets/image/ucapan_ornament.png'
+import resin1 from '../assets/image/resin4.png'
 import { motion } from "framer-motion"
 import axios from "axios"
 
@@ -40,7 +39,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
     const [title, setTitle] = useState('')
     const [message, setMessage] = useState('')
 
-    const beUrl = "https://wedding-inv-be.vercel.app/ozie_lusi"
+    const beUrl = "https://wedding-inv-be.vercel.app/hendra_elma"
     const MAX_LENGTH = 20
 
     const handleSnackbarClose = (event, reason) => {
@@ -142,80 +141,72 @@ const Ucapan = forwardRef((props, sectionRef) => {
         setFormTouched(false);
     };
 
-    function toTitleCase(str) {
-        return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-    }
-
     const styles ={
-        section: {
-            
-        },
         box: {
             display: 'grid', 
             flexDirection: 'column', 
             alignItems: 'center', 
             color: 'dark.main',
-            padding: windowWidth > 500 ? '20vh 12% 0vh 12%' : '20vh 12% 0vh 12%',
+            padding: windowWidth > 500 ? '0% 12%' : '0% 12%',
             backgroundColor: theme.palette.light.main,
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100% 100%',
-            backgroundPosition: 'center center',
+            // backgroundImage: `url(${backgroundImage})`,
             overflow: 'hidden' 
         },
         ornament1: {
+            // right: `${-8+windowWidth*0.025}%`,
+            left:  `${60-windowWidth*0.03}%`,
+            display: 'flex',
+            zIndex: 0,
+            position: 'relative',
+            marginBottom: '-4vh',
+            // marginBottom: `${-10-windowWidth*0.025}vh`,
+            width: `${60+windowWidth*0.008}%`,
+            height: `${15+windowWidth*0.006}vh`,
+            backgroundImage: `url(${ornament1})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'right',
+        },
+        ornament2: {
             left: 0,
             display: 'flex',
             zIndex: 0,
             position: 'absolute',
             marginTop: '7vh',
-            width: `${55+windowWidth*0.01}%`,
-            height: `${45+windowWidth*0.01}vh`,
-            backgroundImage: `url(${ornament1})`,
+            width: `${60+windowWidth*0.025}%`,
+            height: `${40+windowWidth*0.01}vh`,
+            backgroundImage: `url(${ornament2})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'contain',
             backgroundPosition: 'left',
             overflow: 'hidden',
         },
-        ornament2: {
+        ornament3: {
             right: 0,
             display: 'flex',
             zIndex: 0,
             position: 'absolute',
-            marginTop: '0vh',
-            width: `${60+windowWidth*0.01}%`,
+            marginTop: '-12vh',
+            width: `${70+windowWidth*0.025}%`,
             height: `${50+windowWidth*0.01}vh`,
-            backgroundImage: `url(${ornament2})`,
+            backgroundImage: `url(${ornament3})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'contain',
             backgroundPosition: 'right',
         },
-        ornament3: {
+        resin1: {
             left: 0,
             display: 'flex',
             zIndex: 0,
             position: 'absolute',
-            marginTop: '-20vh',
-            width: `${45+windowWidth*0.01}%`,
-            height: `${35+windowWidth*0.01}vh`,
-            backgroundImage: `url(${ornament3})`,
+            marginTop: '30vh',
+            width: `${80+windowWidth*0.025}%`,
+            height: `${60+windowWidth*0.01}vh`,
+            backgroundImage: `url(${resin1})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'contain',
             backgroundPosition: 'left',
-        },
-        ornament4: {
-            right: 0,
-            display: 'flex',
-            zIndex: 0,
-            position: 'absolute',
-            marginTop: '-20vh',
-            width: `${55+windowWidth*0.01}%`,
-            height: `${42+windowWidth*0.01}vh`,
-            backgroundImage: `url(${ornament4})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
-            backgroundPosition: 'right',
-        },
+          },
         card: {
             maxHeight: '60vh', 
             overflowY: 'scroll', 
@@ -228,10 +219,10 @@ const Ucapan = forwardRef((props, sectionRef) => {
             txt:{
                 header: {
                     fontSize: `${80+windowWidth*0.04}%`,
-                    fontWeight: '500',
+                    fontWeight: 'bold',
                     color: theme.palette.dark.main,
                     marginBottom: '5px',
-                    fontFamily: 'Josefin Sans',
+                    fontFamily: 'Glacial Indifference'
                 },
                 time: {
                     fontSize: `${60+windowWidth*0.04}%`,
@@ -239,14 +230,12 @@ const Ucapan = forwardRef((props, sectionRef) => {
                     display: 'flex',
                     alignItems: 'center',
                     marginTop: '1.2rem',
-                    fontFamily: 'Josefin Sans',
-                    fontWeight: 300,
+                    fontFamily: 'Glacial Indifference'
                 },
                 fontSize: `${70+windowWidth*0.04}%`,
                 color: theme.palette.dark.main,
                 alignItems: 'center',
-                fontFamily: 'Josefin Sans',
-                fontWeight: 300,
+                fontFamily: 'Glacial Indifference'
             },
         },
         btnStyles: {
@@ -287,7 +276,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
         },
         txt:{
             header: {
-                fontSize: `${300+windowWidth*0.06}%`,
+                fontSize: `${250+windowWidth*0.06}%`,
                 marginBottom: '2vh',
                 textAlign: 'center',
                 zIndex: 1,
@@ -301,7 +290,6 @@ const Ucapan = forwardRef((props, sectionRef) => {
             fontSize: `${70+windowWidth*0.04}%`,
             color: theme.palette.dark.main,
             marginBottom: '2vh',
-            fontWeight: 300,
             zIndex: 1,
         },
         img: {
@@ -326,10 +314,10 @@ const Ucapan = forwardRef((props, sectionRef) => {
     
 
     return (
-        <section ref={sectionRef} style={styles.section}>
-            <div data-aos='fade-right' data-aos-duration='1500' style={styles.ornament3} />
-            <div data-aos='fade-down' data-aos-duration='1500'style={styles.ornament4} />
+        <section ref={sectionRef} >
+            <div style={styles.resin1} />
             <Box sx={styles.box}>
+                <div style={styles.ornament1} data-aos='fade-left' data-aos-duration="1500"/>
                 <h1 className="font-estetik" style={styles.txt.header}>Ucapkan Sesuatu</h1>
                 <p style={styles.txt}>Berikan Ucapan & Doa Restu</p>
                 <form onSubmit={handleSubmit} style={{zIndex: 0, margin: '3vh 0% 7vh 0%'}}>
@@ -350,8 +338,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         }}
                         InputLabelProps={{
                             sx: {
-                                fontFamily: 'Josefin Sans',
-                                fontWeight: 300,
+                                fontFamily: 'Glacial Indifference',
                                 fontSize: `${70+windowWidth*0.04}%`,
                                 color: 'dark.main'
                             }
@@ -374,8 +361,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         }}
                         InputLabelProps={{
                             sx: {
-                                fontFamily: 'Josefin Sans',
-                                fontWeight: 300,
+                                fontFamily: 'Glacial Indifference',
                                 fontSize: `${70+windowWidth*0.04}%`,
                                 color: 'dark.main'
                             }
@@ -464,7 +450,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                                                     <Card style={{borderRadius: '10px'}}>
                                                         <CardContent sx={{paddingBottom: '1.5vh !important'}}>
                                                             <Typography sx={styles.card.txt.header} variant="h5" component="h2">
-                                                                {toTitleCase(comment.name)} - {comment.status === "true" ? 'Hadir ᅟᅟᅟᅟ' : 'Tidak Hadir'}
+                                                                {comment.name} - {comment.status === "true" ? 'Hadir ᅟᅟᅟᅟ' : 'Tidak Hadir'}
                                                             </Typography>
                                                             <Typography sx={styles.card.txt} component="p">
                                                                 {comment.comment}
@@ -490,8 +476,8 @@ const Ucapan = forwardRef((props, sectionRef) => {
                     </Grid>
                 </div>
             </Box>
-            <div style={styles.ornament2} data-aos='fade-up' data-aos-duration="1500" />
-            <div style={styles.ornament1} data-aos='fade-right' data-aos-duration="1500" />
+            <div style={styles.ornament3} data-aos='fade-up' data-aos-duration="1500" />
+            <div style={styles.ornament2} data-aos='fade-right' data-aos-duration="1500" />
         </section>
     );
 });

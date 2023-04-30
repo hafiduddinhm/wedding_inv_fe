@@ -3,20 +3,17 @@ import backgroundImage from '../assets/image/bgGaleri.jpg';
 import ornament1 from '../assets/image/galeri1.png'
 import ornament2 from '../assets/image/galeri2.png'
 import bgOrnament from '../assets/image/bgOrnament.png'
-import resin1 from '../assets/image/resin1.png'
-import resin2 from '../assets/image/resin2.png'
-import resin3 from '../assets/image/resin3.png'
-import { Box, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 
 const Gallery = () => {
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+    // const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
-            setWindowHeight(window.innerHeight);
+            // setWindowHeight(window.innerHeight);
         };
         window.addEventListener('resize', handleResize);
         return () => {
@@ -97,8 +94,6 @@ const Gallery = () => {
       <br/>
       <br/>
       <br/>
-
-        
     </section>
     );
 }

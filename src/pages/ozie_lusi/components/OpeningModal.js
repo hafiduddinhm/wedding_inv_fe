@@ -6,8 +6,6 @@ import { motion, transform } from 'framer-motion'
 import { MailOutlined } from '@mui/icons-material';
 
 import PlayAudio from './PlayAudio'
-import ornament from '../assets/image/ornamen.png'
-import imageButton from '../assets/image/openingButton.png'
 import backgroundImage from '../assets/image/bgModal.png'
 import ornament1 from '../assets/image/opening1.png'
 import ornament2 from '../assets/image/opening2.png'
@@ -191,8 +189,6 @@ const OpeningModal = () => {
         overflow: 'hidden',
     }
 
-    
-
     return (
         <Modal isOpen={isOpen} onRequestClose={closeModal} closeTimeoutMS={500} style={modalStyles}>
             <Box style={boxStyles}>
@@ -235,7 +231,6 @@ const OpeningModal = () => {
                     <br/>
                     <br/>
                 </div>
-                
                 <img src={ornament2} style={styles.ornament2}/>
             </Box>
         </Modal>

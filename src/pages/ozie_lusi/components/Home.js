@@ -1,11 +1,9 @@
 import React, {useRef, forwardRef, useState, useEffect} from 'react';
 import { Box, useTheme } from '@mui/material';
 import backgroundImage from '../assets/image/bgHome.png'
-import ornament from '../assets/image/ornamen.png'
 import ornament1 from '../assets/image/home1.png'
 import ornament2 from '../assets/image/home2.png'
 import brides from '../assets/image/brides.png'
-import ring from '../assets/image/ring.png'
 import aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -110,7 +108,6 @@ const Home = forwardRef((props, ref) => {
                 <img src={ornament2} style={styles.ornament2}/>
             </Box>
         </section>
-        
     );
 });
 

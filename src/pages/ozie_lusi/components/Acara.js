@@ -1,6 +1,5 @@
 import React, { forwardRef, useState, useEffect } from 'react';
 import { Grid, Box, Button, useTheme, Typography } from '@mui/material'
-import { GoogleMap, LoadScript, MarkerF, InfoWindow } from '@react-google-maps/api';
 import PlaceIcon from '@mui/icons-material/PlaceOutlined';
 import backgroundImage from '../assets/image/bgAcara.png'
 import ornament1 from '../assets/image/acara1.png'
@@ -8,8 +7,6 @@ import ornament2 from '../assets/image/acara2.png'
 import line1 from '../assets/image/line1.png'
 import line2 from '../assets/image/line2.png'
 import line3 from '../assets/image/line3.png'
-
-
 
 const Acara = forwardRef((props, sectionRef) => {
     const linkLokasi = 'https://www.google.com/maps?q=-6.965381,111.7095535'
@@ -162,9 +159,7 @@ const Acara = forwardRef((props, sectionRef) => {
                 <br/>
                 <br/>
             </Box>
-            
         </section>
-
     );
 });
 

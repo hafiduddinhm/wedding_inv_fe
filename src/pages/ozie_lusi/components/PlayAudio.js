@@ -1,5 +1,5 @@
-import audiofile from '../assets/music/sound.mp3'
-const audio = new Audio(audiofile);
+
+const audio = new Audio('https://f005.backblazeb2.com/file/menghitunghari-music/marry_you.mp3');
 
 const PlayAudio = () => {
     
