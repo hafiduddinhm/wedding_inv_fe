@@ -1,12 +1,11 @@
 import React, {useRef, forwardRef, useState, useEffect} from 'react';
 import { Box, useTheme } from '@mui/material';
-import ornament from '../assets/image/ornamen.png'
+import bg from '../assets/image/bgHome.png'
 import ornament1 from '../assets/image/home1.png'
 import ornament2 from '../assets/image/home2.png'
 import ornament3 from '../assets/image/home3.png'
 import ornament4 from '../assets/image/home4.png'
 import brides from '../assets/image/brides.png'
-import ring from '../assets/image/ring.png'
 import aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -32,15 +31,25 @@ const Home = forwardRef((props, ref) => {
     const theme = useTheme();
 
     const boxStyles = {
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingBottom: '25vh',
-        overflow: 'hidden',
+        
     };
 
     const styles = {
+        section: {
+            backgroundColor: theme.palette.light.main, 
+            backgroundImage: `url(${bg})`,
+            backgroundSize: '100% 100%',
+
+            overflow: 'hidden'
+        },
+        box: {
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            paddingBottom: '25vh',
+            overflow: 'hidden',
+        },
         header: {
             color: theme.palette.primary.main, 
             fontSize: `${140+windowWidth*0.07}%`,
@@ -57,7 +66,7 @@ const Home = forwardRef((props, ref) => {
             // width: '75%',
             width: windowWidth>windowHeight ? 
             `${(65-windowHeight*0.01)}vh` : 
-            `${(85-windowWidth*0.01)}%`,
+            `${(75-windowWidth*0.01)}%`,
         },
         ornament2: {
             right: 0,
@@ -66,17 +75,17 @@ const Home = forwardRef((props, ref) => {
             // width: '60%',
             width: windowWidth>windowHeight ? 
             `${(50-windowHeight*0.01)}vh` : 
-            `${(70-windowWidth*0.01)}%`,
+            `${(60-windowWidth*0.01)}%`,
         },
         ornament3: {
             right: 0,
-            bottom: '5vh',
+            bottom: '0vh',
             // transform: 'translate(0, 100%)',
             position: 'absolute',
             // width: '75%',
             width: windowWidth>windowHeight ? 
             `${(65-windowHeight*0.01)}vh` : 
-            `${(85-windowWidth*0.01)}%`,
+            `${(60-windowWidth*0.01)}%`,
         },
         ornament4: {
             left: 0,
@@ -85,36 +94,20 @@ const Home = forwardRef((props, ref) => {
             // width: '92%',
             width: windowWidth>windowHeight ? 
             `${(95-windowHeight*0.05)}vh` : 
-            `${(110-windowWidth*0.05)}%`,
-        },
-        ring:{
-            width: `${30-windowWidth*0.01}%`,
-            marginTop: `${20-windowWidth*0.001}vh`,
-            zIndex: 3,
+            `${(80-windowWidth*0.05)}%`,
         },
         brides: {
             position: 'relative',
-            bottom: 0,
+            bottom: `${-17+windowWidth*0.01}vh`,
             width: `${110-windowWidth*0.05}%`,
         },
-        txt1: {
-            color: theme.palette.gray.main,
-            marginTop: `2vh`, 
-            marginBottom: 10, 
-            fontFamily: 'moontime', 
-            zIndex: 3,
-            fontSize: windowWidth>windowHeight ? 
-            `${(-5+windowHeight*0.025)}vh` : 
-            `${(100+windowWidth*0.5)}%`,
-        },
-        txt2: {
+        txt: {
             color: theme.palette.primary.main, 
-            fontFamily: 'Glacial Indifference',
             textAlign: 'center', 
             zIndex: 3,
             fontSize: windowWidth>windowHeight ? 
-            `${(1+windowHeight*0.005)}vh` : 
-            `${(40+windowWidth*0.25)}%`,
+            `${(0+windowHeight*0.005)}vh` : 
+            `${(20+windowWidth*0.25)}%`,
         }
 
     };
@@ -130,46 +123,18 @@ const Home = forwardRef((props, ref) => {
 
     
     return (
-        <section ref={sectionRef} style={{backgroundColor: theme.palette.light.main, overflow: 'hidden'}}>
-            <Box style={boxStyles}>
-                <img src={ornament2} style={styles.ornament2}/>
+        <section ref={sectionRef} style={styles.section}>
+            <Box style={styles.box}>
                 <img src={ornament1} style={styles.ornament1}/>
-                {/* <div style={{ position: 'absolute', top: '10vh', left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "20vh" }}>
-                    <img src={bgOrnament2} style={{ width: '100%', height: '100%' }}></img>
-                </div> */}
-                {/* <div style={{ position: 'relative', top: 0, left: 0, width: '100%', zIndex: 0 }}>
-                    <div style={ornament3Styles}>
-                        <img src={flowerOrnament3} style={{width: '100%',height: '100%'}}></img>
-                    </div>
-                </div>
-                <p className= 'font-estetik' style={{ color: theme.palette.gray.main, marginTop: '16.5vh', marginBottom: 10, zIndex: 0, fontSize: '5vh'}}>The Wedding of</p>
-                <div style={{ position: 'relative', top: 0, left: 0, width: '100%', zIndex: 0 }}>
-                    <div style={ornament2Styles}>
-                        <img src={flowerOrnament2} style={{width: '100%',height: '100%'}}></img>
-                    </div>
-                </div>
-                <br/> */}
-                <img src={ring} style={styles.ring}/>
-                {/* <h1 style={Object.assign({}, styles.header, { marginTop: '10vh' }) } >Irfan Arif Widya Kusuma</h1>
-                <h1 style={ styles.header } >&</h1>
-                <h1 style={ styles.header } >Yayuk Susanti</h1>
-                <br/>
-                <h1 style={{ color: theme.palette.primary.main, fontSize: `${110+windowWidth*0.07}%`, marginTop: '2vh' }} >— 07 May 2023 —</h1> */}
-                <h1 style={styles.txt1} className="font-estetik">The Wedding of</h1>
-                <h1 style={styles.txt2}>Hendra & Elma<br/>15 Mei 2023</h1>
-                <img src={ornament} style={styles.ornament}></img>
-                <br/>
+                <img src={ornament2} style={styles.ornament2}/>
+                <Box sx={{marginTop: '20vh'}}>
+                    <p style={{...styles.txt}}>The Wedding of</p>
+                    <h1 style={{...styles.txt, fontSize: `${180+windowWidth*0.1}%`}} className="font-serif">Rika & Lilik</h1>
+                    <h1 style={{...styles.txt, fontSize: `${130+windowWidth*0.1}%`}} className="font-serif">13 Mei 2023</h1>
+                </Box>
                 <img src={brides} style={styles.brides}/>
-                <img src={ornament4} style={styles.ornament4}/>
                 <img src={ornament3} style={styles.ornament3}/>
-                {/* <div style={{ position: 'absolute', bottom: -57, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "20vh" }}>
-                    <img src={bgOrnament} style={{ width: '100%', height: '100%' }}></img>
-                </div>
-                <div style={{ position: 'relative', left: 0, width: '100%', zIndex: 0 }}>
-                    <div style={ornament1Styles}>
-                        <img src={flowerOrnament1} style={{width: '100%',height: '100%'}}></img>
-                    </div>
-                </div> */}
+                <img src={ornament4} style={styles.ornament4}/>
             </Box>
         </section>
         

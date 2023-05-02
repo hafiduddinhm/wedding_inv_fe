@@ -11,14 +11,18 @@ import BottomNavbar from "./BottomNavbar"
 import Ucapan from "./Ucapan"
 import Closing from "./Closing"
 import Gallery from "./galery";
-import AmplopDigital from "./AmplopDigital";
+// import AmplopDigital from "./AmplopDigital";
 import coupleImage from '../assets/image/brides.png';
 
 
 const RikaLilikStyle = styled.div`
    
-    font-family: 'Glacial Indifference', sans-serif !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300 !important;
 
+    .font-serif {
+        font-family: 'Playfair Display', serif !important;
+    }
     .font-estetik {
         font-family: 'moontime', cursive !important;
     }
@@ -33,7 +37,7 @@ const theme = createTheme({
             main: '#1A87A1',
         },
         dark: {
-            main: '#6D423F',
+            main: '#043D6A',
         },
         light: {
             main: '#FAFFFF',
@@ -75,21 +79,21 @@ const RikaLilik = () => {
         <ThemeProvider theme={theme}>
             <RikaLilikStyle>
                 <Helmet>
-                    <title>Hendra & Elma Wedding</title>
-                    <meta name="description" content="Senin, 15 Mei 2023" />
-                    <meta property="og:title" content="Hendra & Elma Wedding" />
-                    <meta property="og:description" content="Senin, 15 Mei 2023" />
+                    <title>Rika & Lilik Wedding</title>
+                    <meta name="description" content="Sabtu, 13 Mei 2023" />
+                    <meta property="og:title" content="Rika & Lilik Wedding" />
+                    <meta property="og:description" content="Sabtu, 13 Mei 2023" />
                     <meta property="og:image" content={ogImageUrl} />
                     <meta property="og:url" content="https://menghitunghari.vercel.app/" />
                     <meta property="og:type" content="website" />
-                    <link rel="canonical" href="https://menghitunghari.vercel.app/hendra_elma" />
+                    <link rel="canonical" href="https://menghitunghari.vercel.app/rika_lilik" />
                 </Helmet>
                 <OpeningModal />
                 <Home ref={section1Ref}/>
                 <Pengantin ref={section2Ref}/>
                 <Acara ref={section3Ref}/>
                 <Gallery ref={section4Ref} />
-                <AmplopDigital/>
+                {/* <AmplopDigital/> */}
                 <Ucapan ref={section5Ref}/>
                 <Closing/>
                 <BottomNavbar

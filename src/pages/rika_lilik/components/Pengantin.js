@@ -1,18 +1,21 @@
 import React, { forwardRef, useState, useEffect } from 'react';
 import { Box, useTheme } from '@mui/material'
-import backgroundImage from '../assets/image/bgOrnamentPengantin.png'
+import backgroundImage from '../assets/image/bgPengantin.png'
 import ornamentTransition from '../assets/image/acara1.png'
-import groom from '../assets/image/groom.png'
-import bride from '../assets/image/bride.png'
+import brides from '../assets/image/brides2.png'
+import ornament1 from '../assets/image/pengantin1.png'
+import ornament2 from '../assets/image/pengantin2.png'
 import aos from 'aos'
 import 'aos/dist/aos.css'
 
 const Pengantin = forwardRef((props, sectionRef) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
+            setWindowHeight(window.innerHeight);
         };
         window.addEventListener('resize', handleResize);
         return () => {
@@ -27,6 +30,15 @@ const Pengantin = forwardRef((props, sectionRef) => {
     const theme = useTheme();
 
     const styles ={
+        section: {
+            backgroundColor: theme.palette.light.main, 
+            backgroundImage: `url(${backgroundImage})`,
+            marginTop: '-5vh', 
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '100% 100%', 
+            backgroundPosition: 'right top',  
+            overflow: 'hidden' 
+        },
         box: {
             position: 'relative',
             display: 'flex', 
@@ -35,16 +47,25 @@ const Pengantin = forwardRef((props, sectionRef) => {
             color: 'primary.main',
             margin: '70vh 10% 10vh 10%' 
         },
-        ornament: {
-            width: `${75-windowWidth*0.04}%`,
-            position: 'relative',
-            left: `${windowWidth}px`,
-            transform: 'translateX(-100%)',
-            top: '-15vh'
+        ornament1: {
+            right: 0,
+            marginTop: '20vh',
+            position: 'absolute',
+            width: windowWidth>windowHeight ? 
+            `${(35-windowHeight*0.01)}vh` : 
+            `${(30-windowWidth*0.01)}%`,
+        },
+        ornament2: {
+            left: 0,
+            marginTop: `${-30-windowWidth*0.02}vh`,
+            position: 'absolute',
+            width: windowWidth>windowHeight ? 
+            `${(40-windowHeight*0.01)}vh` : 
+            `${(35-windowWidth*0.01)}%`,
         },
         txt:{
             header: {
-                fontSize: `${190+windowWidth*0.06}%`,
+                fontSize: `${230+windowWidth*0.15}%`,
                 marginTop: '2vh',
                 textAlign: 'center',
             },
@@ -52,32 +73,30 @@ const Pengantin = forwardRef((props, sectionRef) => {
             fontSize: `${70+windowWidth*0.04}%`,
         },
         img: {
-            width: '65%',
+            width: `${75-windowWidth*0.035}%`,
         }
     }
 
     return (
-        <section ref={sectionRef} style={{ backgroundColor: theme.palette.light.main, backgroundImage: `url(${backgroundImage})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right top',  overflow: 'hidden' }}>
-            {/* <Box sx={{position: 'relative', top: 0}}>
-                <div style={{ position: 'absolute', left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", zIndex: 0 }}>
-                    <img src={backgroundImage} style={{ width: '100%', height: '100%' }}></img>
-                </div>
-            </Box> */}
+        <section ref={sectionRef} style={styles.section}>
+            <img data-aos='zoom-in' data-aos-duration="1500" src={ornament1} style={styles.ornament1}/>
             <Box sx={styles.box}>
-                <p style={{ color: theme.palette.dark.main, textAlign: 'center', marginTop: '-60vh', fontSize: `${70+windowWidth*0.04}%`,}}>Assalamu'alaikum Wr. Wb.<br/>Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami:</p>
+                <p style={{ color: theme.palette.dark.main, textAlign: 'center', marginTop: '-60vh', fontSize: `${70+windowWidth*0.04}%`,}}>Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i sekalian untuk menghadiri acara pernikahan kami</p>
+                <img data-aos='fade-down' data-aos-duration="1500" src={brides} style={styles.img}/>
                 <Box data-aos='fade-right' data-aos-duration="1500" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <img src={groom} style={styles.img}/>
-                    <h1 className='font-estetik' style={styles.txt.header}>Hendra Dwi Irawan</h1>
-                    <p style={styles.txt}>Putra kedua dari Bpk Ramaji & Ibu Pukpingah</p>
+                    <h1 className='font-estetik' style={styles.txt.header}>Rika Tania Ningsih</h1>
+                    <p style={styles.txt}>Putri dari Bapak Rusdi & Ibu Ririn</p>
                 </Box>
-                <br/>
+                <h1 data-aos='flip-left' data-aos-duration="1500" className='font-estetik' style={styles.txt.header}>&</h1>
                 <Box data-aos='fade-left' data-aos-duration="1500" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <img src={bride} style={styles.img} />
-                    <h1 className='font-estetik' style={styles.txt.header}>Yuyun Laylia El Mahera</h1>
-                    <p style={styles.txt}>Putri pertama dari Bpk Pungkasan & Ibu Isni Kurnianingsih</p>
+                    <h1 className='font-estetik' style={styles.txt.header}>Lilik Waloyo</h1>
+                    <p style={styles.txt}>Putra dari Bapak Lasidin & Ibu Sudarsih</p>
                 </Box>
             </Box>
-            <img src={ornamentTransition} style={styles.ornament} />
+            <img data-aos='zoom-in' data-aos-duration="1500" src={ornament2} style={styles.ornament2}/>
+            <br/>
+            <br/>
+            <br/>
         </section>
 
     );

@@ -147,9 +147,6 @@ const Ucapan = forwardRef((props, sectionRef) => {
     }
 
     const styles ={
-        section: {
-            
-        },
         box: {
             display: 'grid', 
             flexDirection: 'column', 

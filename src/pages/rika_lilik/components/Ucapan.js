@@ -2,10 +2,11 @@ import React, { forwardRef, useState, useEffect } from 'react';
 import { Grid, Box, Button, useTheme, TextField, Select, MenuItem, CircularProgress } from '@mui/material'
 import { LoadingButton } from '@mui/lab';
 import { AccessTimeOutlined, SendRounded } from '@mui/icons-material';
-import ornament1 from '../assets/image/ucapan_flower.png'
-import ornament2 from '../assets/image/galeri2.png'
-import ornament3 from '../assets/image/ucapan_ornament.png'
-import resin1 from '../assets/image/resin4.png'
+import bg1 from '../assets/image/bgucapan1.png'
+import bg2 from '../assets/image/bgucapan2.png'
+import flower from '../assets/image/ucapan.png'
+import ornament1 from '../assets/image/ucapan1.png'
+import ornament2 from '../assets/image/ucapan2.png'
 import { motion } from "framer-motion"
 import axios from "axios"
 
@@ -39,7 +40,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
     const [title, setTitle] = useState('')
     const [message, setMessage] = useState('')
 
-    const beUrl = "https://wedding-inv-be.vercel.app/hendra_elma"
+    const beUrl = "https://wedding-inv-be.vercel.app/rika_lilik"
     const MAX_LENGTH = 20
 
     const handleSnackbarClose = (event, reason) => {
@@ -142,6 +143,9 @@ const Ucapan = forwardRef((props, sectionRef) => {
     };
 
     const styles ={
+        section: {
+            marginTop: '10vh',
+        },
         box: {
             display: 'grid', 
             flexDirection: 'column', 
@@ -152,61 +156,69 @@ const Ucapan = forwardRef((props, sectionRef) => {
             // backgroundImage: `url(${backgroundImage})`,
             overflow: 'hidden' 
         },
-        ornament1: {
-            // right: `${-8+windowWidth*0.025}%`,
-            left:  `${60-windowWidth*0.03}%`,
-            display: 'flex',
+        bg1: {
+            left: 0,
             zIndex: 0,
-            position: 'relative',
-            marginBottom: '-4vh',
-            // marginBottom: `${-10-windowWidth*0.025}vh`,
-            width: `${60+windowWidth*0.008}%`,
-            height: `${15+windowWidth*0.006}vh`,
-            backgroundImage: `url(${ornament1})`,
+            position: 'absolute',
+            marginTop: '-25vh',
+            width: `${45+windowWidth*0.02}%`,
+            height: `${40+windowWidth*0.02}vh`,
+            backgroundImage: `url(${bg1})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'left',
+        },
+        bg2: {
+            right: 0,
+            zIndex: 0,
+            position: 'absolute',
+            marginTop: '15vh',
+            width: `${70+windowWidth*0.012}%`,
+            height: `${75+windowWidth*0.012}vh`,
+            backgroundImage: `url(${bg2})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'contain',
             backgroundPosition: 'right',
         },
-        ornament2: {
+        flower: {
+            right: 0,
+            zIndex: 2,
+            position: 'absolute',
+            marginTop: '-55vh',
+            width: `${30+windowWidth*0.005}%`,
+            height: `${35+windowWidth*0.005}vh`,
+            backgroundImage: `url(${flower})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'right',
+        },
+        ornament1: {
             left: 0,
             display: 'flex',
             zIndex: 0,
             position: 'absolute',
-            marginTop: '7vh',
-            width: `${60+windowWidth*0.025}%`,
-            height: `${40+windowWidth*0.01}vh`,
-            backgroundImage: `url(${ornament2})`,
+            marginTop: '-3vh',
+            width: `${80+windowWidth*0.025}%`,
+            height: `${50+windowWidth*0.01}vh`,
+            backgroundImage: `url(${ornament1})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'contain',
             backgroundPosition: 'left',
             overflow: 'hidden',
         },
-        ornament3: {
+        ornament2: {
             right: 0,
             display: 'flex',
             zIndex: 0,
             position: 'absolute',
-            marginTop: '-12vh',
-            width: `${70+windowWidth*0.025}%`,
-            height: `${50+windowWidth*0.01}vh`,
-            backgroundImage: `url(${ornament3})`,
+            marginTop: '0vh',
+            width: `${35+windowWidth*0.025}%`,
+            height: `${35+windowWidth*0.01}vh`,
+            backgroundImage: `url(${ornament2})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'contain',
             backgroundPosition: 'right',
         },
-        resin1: {
-            left: 0,
-            display: 'flex',
-            zIndex: 0,
-            position: 'absolute',
-            marginTop: '30vh',
-            width: `${80+windowWidth*0.025}%`,
-            height: `${60+windowWidth*0.01}vh`,
-            backgroundImage: `url(${resin1})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'contain',
-            backgroundPosition: 'left',
-          },
         card: {
             maxHeight: '60vh', 
             overflowY: 'scroll', 
@@ -222,7 +234,8 @@ const Ucapan = forwardRef((props, sectionRef) => {
                     fontWeight: 'bold',
                     color: theme.palette.dark.main,
                     marginBottom: '5px',
-                    fontFamily: 'Glacial Indifference'
+                    fontFamily: 'Roboto',
+                    fontWeight: 700,
                 },
                 time: {
                     fontSize: `${60+windowWidth*0.04}%`,
@@ -230,12 +243,14 @@ const Ucapan = forwardRef((props, sectionRef) => {
                     display: 'flex',
                     alignItems: 'center',
                     marginTop: '1.2rem',
-                    fontFamily: 'Glacial Indifference'
+                    fontFamily: 'Roboto',
+                    fontWeight: 300,
                 },
                 fontSize: `${70+windowWidth*0.04}%`,
                 color: theme.palette.dark.main,
                 alignItems: 'center',
-                fontFamily: 'Glacial Indifference'
+                fontFamily: 'Roboto',
+                fontWeight: 300,
             },
         },
         btnStyles: {
@@ -252,7 +267,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                     color: 'white',
                 },
                 '&:hover': {
-                    backgroundColor: '#875B57',
+                    backgroundColor: theme.palette.secondary.main,
                     boxShadow: 'none',
                 }
             },
@@ -276,6 +291,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
         },
         txt:{
             header: {
+                color: theme.palette.secondary.main,
                 fontSize: `${250+windowWidth*0.06}%`,
                 marginBottom: '2vh',
                 textAlign: 'center',
@@ -288,7 +304,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
             },
             textAlign: 'center',
             fontSize: `${70+windowWidth*0.04}%`,
-            color: theme.palette.dark.main,
+            color: theme.palette.primary.main,
             marginBottom: '2vh',
             zIndex: 1,
         },
@@ -314,12 +330,13 @@ const Ucapan = forwardRef((props, sectionRef) => {
     
 
     return (
-        <section ref={sectionRef} >
-            <div style={styles.resin1} />
+        <section style={styles.section} ref={sectionRef} >
+            <div style={styles.bg2} />
+            <div style={styles.bg1} />
             <Box sx={styles.box}>
-                <div style={styles.ornament1} data-aos='fade-left' data-aos-duration="1500"/>
                 <h1 className="font-estetik" style={styles.txt.header}>Ucapkan Sesuatu</h1>
                 <p style={styles.txt}>Berikan Ucapan & Doa Restu</p>
+                <div style={styles.flower} data-aos='zoom-in' data-aos-duration='1500' />
                 <form onSubmit={handleSubmit} style={{zIndex: 0, margin: '3vh 0% 7vh 0%'}}>
                     <TextField
                         label="Nama"
@@ -334,11 +351,17 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         InputProps={{
                             maxLength: MAX_LENGTH,
                             disableUnderline: true,
-                            style: { borderRadius: 20, fontSize: `${70+windowWidth*0.04}%`, backgroundColor: 'white'},
+                            style: { 
+                                borderRadius: 20, 
+                                fontSize: `${70+windowWidth*0.04}%`, 
+                                backgroundColor: '#E1F9FF',
+                                boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1)'
+                            },
                         }}
                         InputLabelProps={{
                             sx: {
-                                fontFamily: 'Glacial Indifference',
+                                fontFamily: 'Roboto',
+                                fontWeight: 300,
                                 fontSize: `${70+windowWidth*0.04}%`,
                                 color: 'dark.main'
                             }
@@ -357,11 +380,17 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         variant="filled"
                         InputProps={{
                             disableUnderline: true,
-                            style: { borderRadius: 20, fontSize: `${70+windowWidth*0.04}%`, backgroundColor: 'white'},
+                            style: { 
+                                borderRadius: 20, 
+                                fontSize: `${70+windowWidth*0.04}%`, 
+                                backgroundColor: '#E1F9FF',
+                                boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1)'
+                            },
                         }}
                         InputLabelProps={{
                             sx: {
-                                fontFamily: 'Glacial Indifference',
+                                fontFamily: 'Roboto',
+                                fontWeight: 300,
                                 fontSize: `${70+windowWidth*0.04}%`,
                                 color: 'dark.main'
                             }
@@ -379,7 +408,12 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         margin="normal"
                         variant="filled"
                         disableUnderline
-                        style={{borderRadius: 20, paddingBottom: 15, backgroundColor: 'white'}}
+                        style={{
+                            borderRadius: 20, 
+                            paddingBottom: 15, 
+                            backgroundColor: '#E1F9FF',
+                            boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1)'
+                        }}
                     >
                         <MenuItem value={0}>
                             <Typography variant="body1" style={styles.card.txt}>
@@ -420,8 +454,9 @@ const Ucapan = forwardRef((props, sectionRef) => {
                             onClose={handleSnackbarClose}
                             TransitionComponent={Slide}
                             anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                            style={{zIndex: 10}}
                         >
-                            <Alert severity={severity} variant="filled" onClose={handleSnackbarClose}>
+                            <Alert severity={severity} variant="filled" onClose={handleSnackbarClose} style={{zIndex: 10}}>
                                 <AlertTitle>{title}</AlertTitle>
                                 {message}
                             </Alert>
@@ -447,7 +482,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                                                 style={{height: '100%'}}
                                             >
                                                 <motion.div className="card" variants={cardVariants} style={{backgroundColor: 'transparent', borderColor: 'transparent'}}>
-                                                    <Card style={{borderRadius: '10px'}}>
+                                                    <Card style={{borderRadius: '10px', backgroundColor: '#E1F9FF', boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1)'}}>
                                                         <CardContent sx={{paddingBottom: '1.5vh !important'}}>
                                                             <Typography sx={styles.card.txt.header} variant="h5" component="h2">
                                                                 {comment.name} - {comment.status === "true" ? 'Hadir ᅟᅟᅟᅟ' : 'Tidak Hadir'}
@@ -476,8 +511,8 @@ const Ucapan = forwardRef((props, sectionRef) => {
                     </Grid>
                 </div>
             </Box>
-            <div style={styles.ornament3} data-aos='fade-up' data-aos-duration="1500" />
-            <div style={styles.ornament2} data-aos='fade-right' data-aos-duration="1500" />
+            <div style={styles.ornament2} data-aos='fade-up' data-aos-duration="1500" />
+            <div style={styles.ornament1} data-aos='fade-right' data-aos-duration="1500" />
         </section>
     );
 });

@@ -93,11 +93,6 @@ const Pengantin = forwardRef((props, sectionRef) => {
 
     return (
         <section ref={sectionRef} style={styles.section}>
-            {/* <Box sx={{position: 'relative', top: 0}}>
-                <div style={{ position: 'absolute', left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", zIndex: 0 }}>
-                    <img src={backgroundImage} style={{ width: '100%', height: '100%' }}></img>
-                </div>
-            </Box> */}
             <img src={ornament1} style={styles.ornament1}/>
             <img src={ornament2} style={styles.ornament2}/>
             <Box sx={styles.box}>
@@ -113,7 +108,6 @@ const Pengantin = forwardRef((props, sectionRef) => {
                 </Box>
             </Box>
         </section>
-
     );
 });
 

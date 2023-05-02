@@ -134,27 +134,7 @@ const Home = forwardRef((props, ref) => {
             <Box style={boxStyles}>
                 <img src={ornament2} style={styles.ornament2}/>
                 <img src={ornament1} style={styles.ornament1}/>
-                {/* <div style={{ position: 'absolute', top: '10vh', left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "20vh" }}>
-                    <img src={bgOrnament2} style={{ width: '100%', height: '100%' }}></img>
-                </div> */}
-                {/* <div style={{ position: 'relative', top: 0, left: 0, width: '100%', zIndex: 0 }}>
-                    <div style={ornament3Styles}>
-                        <img src={flowerOrnament3} style={{width: '100%',height: '100%'}}></img>
-                    </div>
-                </div>
-                <p className= 'font-estetik' style={{ color: theme.palette.gray.main, marginTop: '16.5vh', marginBottom: 10, zIndex: 0, fontSize: '5vh'}}>The Wedding of</p>
-                <div style={{ position: 'relative', top: 0, left: 0, width: '100%', zIndex: 0 }}>
-                    <div style={ornament2Styles}>
-                        <img src={flowerOrnament2} style={{width: '100%',height: '100%'}}></img>
-                    </div>
-                </div>
-                <br/> */}
                 <img src={ring} style={styles.ring}/>
-                {/* <h1 style={Object.assign({}, styles.header, { marginTop: '10vh' }) } >Irfan Arif Widya Kusuma</h1>
-                <h1 style={ styles.header } >&</h1>
-                <h1 style={ styles.header } >Yayuk Susanti</h1>
-                <br/>
-                <h1 style={{ color: theme.palette.primary.main, fontSize: `${110+windowWidth*0.07}%`, marginTop: '2vh' }} >— 07 May 2023 —</h1> */}
                 <h1 style={styles.txt1} className="font-estetik">The Wedding of</h1>
                 <h1 style={styles.txt2}>Hendra & Elma<br/>15 Mei 2023</h1>
                 <img src={ornament} style={styles.ornament}></img>
@@ -162,14 +142,6 @@ const Home = forwardRef((props, ref) => {
                 <img src={brides} style={styles.brides}/>
                 <img src={ornament4} style={styles.ornament4}/>
                 <img src={ornament3} style={styles.ornament3}/>
-                {/* <div style={{ position: 'absolute', bottom: -57, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", height: "20vh" }}>
-                    <img src={bgOrnament} style={{ width: '100%', height: '100%' }}></img>
-                </div>
-                <div style={{ position: 'relative', left: 0, width: '100%', zIndex: 0 }}>
-                    <div style={ornament1Styles}>
-                        <img src={flowerOrnament1} style={{width: '100%',height: '100%'}}></img>
-                    </div>
-                </div> */}
             </Box>
         </section>
         
