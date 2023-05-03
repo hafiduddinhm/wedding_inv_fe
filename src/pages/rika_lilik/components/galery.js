@@ -1,4 +1,4 @@
-import React, { forwardRef, useState, useEffect } from "react";
+import React, { forwardRef, useState, useEffect } from "react"; 
 import bg1 from '../assets/image/bggaleri1.png'
 import bg2 from '../assets/image/bggaleri2.png'
 import ornament1 from '../assets/image/galeri1.png'
@@ -14,9 +14,15 @@ import 'slick-carousel/slick/slick-theme.css'
 
 const ImageCarouselWrapper = styled(Box)`
   padding: 5px;
+  .slick-track {
+    display: flex;
+  }
+  .slick-slide {
+    align-self: center;
+  }
   .slick-slide img {
-    max-width: 100%;
-    justify-self: 'center' 
+    max-width: 70%;
+    justify-self: 'center'
     display: inline-block;
     margin: 0 auto;
     
@@ -128,7 +134,7 @@ const Gallery = forwardRef((props, sectionRef) => {
         position: 'relative',
         overflow: 'hidden',
         width: '100%',
-        height: '9rem',
+        height: '7rem',
         padding: '5%'
       },
       txt: {
@@ -268,7 +274,7 @@ const Gallery = forwardRef((props, sectionRef) => {
             <Slider {...settings1} ref={setMainSlider} >
                 {imageToShow.map((imageUrl, index) => (
                     <div key={index} >
-                        <img src={imageUrl} style={{height: `${windowWidth>windowHeight ? '60vh' : '20rem'}`}} alt={`Image ${index}`} onClick={() => setSelectedImage(imageUrl)}/>
+                        <img src={imageUrl} style={{maxHeight: `${windowWidth>windowHeight ? '60vh' : '20rem'}`}} alt={`Image ${index}`} onClick={() => setSelectedImage(imageUrl)}/>
                     </div>
                 ))}
             </Slider>
