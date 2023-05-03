@@ -11,7 +11,7 @@ import BottomNavbar from "./BottomNavbar"
 import Ucapan from "./Ucapan"
 import Closing from "./Closing"
 import Gallery from "./galery";
-// import AmplopDigital from "./AmplopDigital";
+import AmplopDigital from "./AmplopDigital";
 import coupleImage from '../assets/image/brides.png';
 
 
@@ -93,7 +93,7 @@ const RikaLilik = () => {
                 <Pengantin ref={section2Ref}/>
                 <Acara ref={section3Ref}/>
                 <Gallery ref={section4Ref} />
-                {/* <AmplopDigital/> */}
+                <AmplopDigital/>
                 <Ucapan ref={section5Ref}/>
                 <Closing/>
                 <BottomNavbar

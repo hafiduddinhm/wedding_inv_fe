@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Box, Button, useTheme, Alert, AlertTitle, Snackbar, Slide } from '@mui/material'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import backgroundImage from '../assets/image/bg2.png'
-import ornament from '../assets/image/ornamen2.png'
+// import backgroundImage from '../assets/image/bg2.png'
+import ornament from '../assets/image/ornamen.png'
+import bg1 from '../assets/image/bgamplop1.png'
+import bg2 from '../assets/image/bgamplop2.png'
+import ornament1 from '../assets/image/amplop1.png'
+import ornament2 from '../assets/image/amplop2.png'
 
 const AmplopDigital = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -12,8 +16,8 @@ const AmplopDigital = () => {
     const [message, setMessage] = useState('')
 
     const bank1 = 'Mandiri'
-    const rekening1 = '1780002644488'
-    const atasNama1 = 'Hendra Dwi Irawan'
+    const rekening1 = '1350015886680'
+    const atasNama1 = 'Lilik Waloyo'
 
     const bank2 = 'Mandiri'
     const rekening2 = '1780002200240'
@@ -69,23 +73,69 @@ const AmplopDigital = () => {
             flexDirection: 'column', 
             alignItems: 'center', 
             color: 'dark.main',
-            padding: windowWidth > 600 ? '15% 17% 10% 17%' : '45% 17% 10% 17%',
-            backgroundColor: theme.palette.light.main,
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'left center',
-            backgroundSize: 'contain',
+            padding: windowWidth > 600 ? '5% 17% 10% 17%' : '5% 17% 10% 17%',
+            // backgroundColor: theme.palette.light.main,
+            // backgroundImage: `url(${backgroundImage})`,
+            // backgroundRepeat: 'no-repeat',
+            // backgroundPosition: 'left center',
+            // backgroundSize: 'contain',
             overflow: 'hidden' 
         },
-        ornament1: {
-            justifySelf: 'start',
-            alignSelf: 'start',
-            marginLeft: '-22%',
+        bg1: {
             left: 0,
-            width: `${57+windowWidth*0.03}%`,
-            height: `${27+windowWidth*0.01}vh`,
+            zIndex: 0,
+            position: 'absolute',
+            marginTop: '-20vh',
+            width: `${65+windowWidth*0.02}%`,
+            height: `${60+windowWidth*0.02}vh`,
+            backgroundImage: `url(${bg1})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'contain',
+            backgroundPosition: 'left',
+        },
+        bg2: {
+            right: 0,
+            zIndex: 0,
+            position: 'absolute',
+            marginTop: '30vh',
+            width: `${70+windowWidth*0.012}%`,
+            height: `${75+windowWidth*0.012}vh`,
+            backgroundImage: `url(${bg2})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'right',
+        },
+        ornament1: {
+            left: 0,
+            display: 'flex',
+            zIndex: 0,
+            position: 'absolute',
+            marginTop: '70vh',
+            width: `${45+windowWidth*0.025}%`,
+            height: `${25+windowWidth*0.01}vh`,
+            backgroundImage: `url(${ornament1})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'left',
+          },
+        ornament2: {
+            right: 0,
+            display: 'flex',
+            zIndex: 0,
+            position: 'absolute',
+            marginTop: '75vh',
+            width: `${40+windowWidth*0.025}%`,
+            height: `${25+windowWidth*0.01}vh`,
+            backgroundImage: `url(${ornament2})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'right',
+        },
+        card: {
+            backgroundColor: '#E1F9FF', 
+            borderRadius: '7%', 
+            padding: '5% 10% 10% 10%', 
+            boxShadow: '0 3px 3px 0 rgba(0, 0, 0, 0.1)'
         },
         btnStyles: {
             borderRadius: 30,
@@ -94,23 +144,25 @@ const AmplopDigital = () => {
             justifySelf: 'center',
             marginTop: '5%',
             width: '100%',
-            backgroundColor: '#F29999'
+            backgroundColor: theme.palette.light.main,
+            color: theme.palette.secondary.main,
         },
         txt:{
             header: {
                 fontSize: `${250+windowWidth*0.06}%`,
                 marginBottom: '2vh',
                 textAlign: 'center',
+                color: theme.palette.secondary.main
             },
             h5: {
                 textAlign: 'center',
-                fontSize: `${90+windowWidth*0.04}%`,
+                fontSize: `${90+windowWidth*0.07}%`,
                 fontWeight: 'bold',
                 color: theme.palette.dark.main
             },
             larger: {
                 textAlign: 'center',
-                fontSize: `${110+windowWidth*0.04}%`,
+                fontSize: `${80+windowWidth*0.07}%`,
                 color: theme.palette.dark.main,
             },
             textAlign: 'center',
@@ -127,11 +179,22 @@ const AmplopDigital = () => {
     return (
         <>
         <Box sx={styles.box}>
+            <div style={styles.bg2} />
+            <div style={styles.bg1} />
             <h1 className="font-estetik" style={styles.txt.header}>Amplop Digital</h1>
             <p style={styles.txt}>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.<br/>Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashlesh melalui:</p>
             <br/>
+            <Box data-aos='fade-up' data-aos-duration="1500" style={styles.card}>
+                <img src={ornament} style={styles.img}/>
+                <h5 style={styles.txt.h5}>{bank1}</h5>
+                <p style={styles.txt.larger}>{rekening1}<br/>a.n. {atasNama1}</p>
+                <Button variant="contained" onClick={() => handleButtonClick(rekening1)} style={styles.btnStyles}>
+                    <ContentCopyIcon style={{ marginRight: '7px', fontSize: '1rem' }} />
+                    Salin Rekening
+                </Button>
+            </Box>
             <Grid container spacing={4}>
-                <Grid data-aos='fade-right' data-aos-duration="1500" item xs={12} sm={6} style={{justifyContent: 'center'}}>
+                {/* <Grid data-aos='fade-right' data-aos-duration="1500" item xs={12} sm={6} style={{justifyContent: 'center'}}>
                     <Box style={{backgroundColor: '#f7fafc', borderRadius: '7%', padding: '5% 10% 10% 10%'}}>
                         <img src={ornament} style={styles.img}/>
                         <h5 style={styles.txt.h5}>{bank1}</h5>
@@ -152,7 +215,7 @@ const AmplopDigital = () => {
                             Salin Rekening
                         </Button>
                     </Box>
-                </Grid>
+                </Grid> */}
                 <Snackbar
                     open={open}
                     autoHideDuration={3000}
@@ -166,7 +229,13 @@ const AmplopDigital = () => {
                     </Alert>
                 </Snackbar>
             </Grid>
+            <div style={styles.ornament2} data-aos='fade-up' data-aos-duration="1500" />
+            <div style={styles.ornament1} data-aos='fade-up' data-aos-duration="1500" />
+            <br/>            
             <br/>
+            <br/>            
+            <br/>
+            <br/>            
             <br/>
             <br/>            
             <br/>

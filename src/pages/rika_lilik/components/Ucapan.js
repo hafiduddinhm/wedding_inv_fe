@@ -227,7 +227,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
             border: '0.5rem solid rgba(0, 0, 0, 0.01)',
             borderWidth: '0.5rem',
             // padding: '0.5rem',
-            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+            backgroundColor: 'rgba(0, 0, 0, 0.05)',
             txt:{
                 header: {
                     fontSize: `${80+windowWidth*0.04}%`,
