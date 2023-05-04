@@ -147,7 +147,7 @@ const Acara = forwardRef((props, sectionRef) => {
                     <Grid item data-aos='fade-left' data-aos-duration="1500" xs={5} sm={5} style={{justifyContent: 'center', padding: 0}}>
                         <Box style={{ padding: windowWidth > 600 ? '1% 5% 5% 5%' : '1% 5% 5% 5%'}}>
                             <p className='font-serif' style={{...styles.txt.header, letterSpacing: '2px'}}>Resepsi</p>
-                            <p className='font-serif' style={{...styles.txt}}>13.00 s/d 19.00</p>
+                            <p className='font-serif' style={{...styles.txt}}>10.00 s/d selesai</p>
                         </Box>
                     </Grid>
                 </Grid>
