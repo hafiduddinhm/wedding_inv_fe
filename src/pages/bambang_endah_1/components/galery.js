@@ -151,7 +151,6 @@ const Gallery = forwardRef((props, sectionRef) => {
                 src={item}
                 alt={index+1}
                 onClick={() => setSelectedImage(item)}
-                loading="lazy"
                 style={styles.img}
               />
             </ImageListItem>
