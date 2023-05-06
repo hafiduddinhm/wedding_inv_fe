@@ -41,14 +41,14 @@ const GalleryWrapper = styled(Box)`
 `;
 
 const imageToShow = [
-    "/media/bambang_hendra/1.JPG",
-    "/media/bambang_hendra/2.JPG",
-    "/media/bambang_hendra/3.JPG",
-    "/media/bambang_hendra/4.JPG",
-    "/media/bambang_hendra/5.JPG",
-    "/media/bambang_hendra/6.JPG",
-    "/media/bambang_hendra/7.JPG",
-    "/media/bambang_hendra/8.JPG",
+    "/media/bambang_endah/1.jpg",
+    "/media/bambang_endah/2.jpg",
+    "/media/bambang_endah/3.jpg",
+    "/media/bambang_endah/4.jpg",
+    "/media/bambang_endah/5.jpg",
+    "/media/bambang_endah/6.jpg",
+    "/media/bambang_endah/7.jpg",
+    "/media/bambang_endah/8.jpg",
 ];
 
 const Gallery = forwardRef((props, sectionRef) => {
