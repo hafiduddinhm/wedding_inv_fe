@@ -211,7 +211,9 @@ const AmplopDigital = () => {
                 <h2 className="font-serif" style={styles.txt.header}>Wedding Gift</h2>
                 <hr style={styles.hr} />
                 <br/>
-                <p style={styles.txt}>Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.<br/>Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado secara cashlesh melalui:</p>
+                <p style={styles.txt}>
+                    Doa Restu Anda merupakan karunia yang sangat berarti bagi kami.<br/>
+                    Dan jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi kado melalui:</p>
                 <br/>
                 <div style={styles.flower} data-aos='zoom-in' data-aos-duration='1500' />
                 <Button variant="contained" onClick={handleKadoClick} style={styles.btnStyles}>

@@ -38,7 +38,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
     const [title, setTitle] = useState('')
     const [message, setMessage] = useState('')
 
-    const beUrl = "https://wedding-inv-be.vercel.app/bambang_endah"
+    const beUrl = "https://wedding-inv-be.vercel.app/bambang_endah1"
     const MAX_LENGTH = 20
 
     const handleSnackbarClose = (event, reason) => {

@@ -47,8 +47,6 @@ const imageToShow = [
     "/media/bambang_endah/4.jpg",
     "/media/bambang_endah/5.jpg",
     "/media/bambang_endah/6.jpg",
-    "/media/bambang_endah/7.jpg",
-    "/media/bambang_endah/8.jpg",
 ];
 
 const Gallery = forwardRef((props, sectionRef) => {
