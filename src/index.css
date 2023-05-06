@@ -6,11 +6,11 @@ body {
 
 @font-face {
   font-family: "moontime";
-  src: url('/src/pages/elma_hendra/assets/font/moontime.ttf');
+  src: url('/src/font/moontime.ttf');
 }
 @font-face {
   font-family: "malibu";
-  src: url('/src/pages/ozie_lusi/assets/font/Malibu.otf');
+  src: url('/src/font/Malibu.otf');
 }
 
 code {

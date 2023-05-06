@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
-import { useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -8,6 +6,7 @@ import IrfanYayuk from './irfan_yayuk/components/IrfanYayuk';
 import ElmaHendra from './elma_hendra/components/ElmaHendra';
 import OzieLusi from './ozie_lusi/components/OzieLusi'
 import RikaLilik from './rika_lilik/components/RikaLilik'
+import BambangEndah1 from './bambang_endah_1/components/BambangEndah'
 
 if (window.location.pathname === '/') {
   window.location.replace('https://linktr.ee/menghitunghari');
@@ -22,6 +21,7 @@ const App = () => {
         <Route path="/hendra_elma" component={ElmaHendra} />
         <Route path="/ozie_lusi" component={OzieLusi} />
         <Route path="/rika_lilik" component={RikaLilik} />
+        <Route path="/bambang_endah/1" component={BambangEndah1} />
       </Switch>
     </BrowserRouter>
     <Analytics />
