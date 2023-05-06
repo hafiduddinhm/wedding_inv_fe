@@ -94,7 +94,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
                     }}>
                         <div data-aos='fade-down' data-aos-duration="1500">
                             <p style={{...styles.txt, fontSize: `${100+windowWidth*0.04}%`, fontWeight: 'bold'}}>Bambang Setiyoko</p>
-                            <p style={styles.txt}>Putra pertama<br/> Bapak Marjuki & Ibu Rumi</p>
+                            <p style={styles.txt}>Putra pertama<br/> Bapak Marjuki (Alm) & Ibu Rumi</p>
                         </div>
                     </div>
                     
