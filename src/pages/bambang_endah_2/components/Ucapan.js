@@ -38,7 +38,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
     const [title, setTitle] = useState('')
     const [message, setMessage] = useState('')
 
-    const beUrl = "https://wedding-inv-be.vercel.app/bambang_endah1"
+    const beUrl = "https://wedding-inv-be.vercel.app/bambang_endah2"
     const MAX_LENGTH = 20
 
     const handleSnackbarClose = (event, reason) => {
@@ -147,11 +147,9 @@ const Ucapan = forwardRef((props, sectionRef) => {
             display: 'flex',
             flexDirection: 'column', 
             alignItems: 'center', 
-            color: 'dark.main',
             padding: windowWidth > 500 ? '0% 12%' : '0% 12%',
-            backgroundColor: theme.palette.primary.main,
-            color: theme.palette.light.main,
-            // backgroundImage: `url(${backgroundImage})`,
+            backgroundColor: theme.palette.light.main,
+            color: theme.palette.primary.main,
             overflow: 'hidden' 
         },
         card: {
@@ -159,7 +157,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
             overflowY: 'scroll', 
             overflowX: 'hidden',
             borderRadius: '15px',
-            border: '0.5rem solid rgba(255, 255, 255, 0.01)',
+            border: '0.5rem solid rgba(0, 0, 0 , 0.1)',
             borderWidth: '0.5rem',
             // padding: '0.5rem',
             backgroundColor: 'rgba(255, 255, 255, 0.2)',
@@ -195,7 +193,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                 justifySelf: 'center',
                 marginTop: '15px',
                 width: '100%',
-                backgroundColor: '#043D6A',
+                backgroundColor: theme.palette.primary.main,
                 color: 'white',
                 '& .MuiCircularProgress-root': {
                     color: 'primary.main',
@@ -204,24 +202,24 @@ const Ucapan = forwardRef((props, sectionRef) => {
                     backgroundColor: theme.palette.secondary.main,
                     boxShadow: 'none',
                 },
-                '&:disabled': {
-                    backgroundColor: '#687884',
-                    color: '#8B9FAD'
-                },
+                // '&:disabled': {
+                //     backgroundColor: '#687884',
+                //     color: '#8B9FAD'
+                // },
             },
             cancel:{
                 borderRadius: 30,
-                borderColor: '#043D6A',
+                borderColor: theme.palette.primary.main,
                 padding: '8px 15px',
                 fontSize: '0.75rem',
                 borderWidth: '2px',
                 justifySelf: 'center',
                 marginTop: '15px',
                 width: '100%',
-                color: 'white',
+                color: theme.palette.secondary.main,
                 '&:hover': {
                     backgroundColor: 'light.main',
-                    color: 'white',
+                    color: theme.palette.secondary.main,
                 },
                 '&:active': {
                     borderColor: '#043D6A',
@@ -233,7 +231,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
             clear: 'both',
             display: 'block',
             width: '65%',               
-            backgroundColor: '#FFFFFF',
+            backgroundColor: theme.palette.primary.main,
             height: '2px',
             opacity: 0.8,
             margin: '2%',
@@ -276,7 +274,7 @@ const Ucapan = forwardRef((props, sectionRef) => {
                 <h1 className="font-serif" style={styles.txt.header}>Ucapkan Sesuatu</h1>
                 <hr style={styles.hr} />
                 <br/>
-                <p style={styles.txt}>Berikan Ucapan & Doa Restu</p>
+                <p style={{...styles.txt, color: theme.palette.dark.main}}>Berikan Ucapan & Doa Restu</p>
                 <form onSubmit={handleSubmit} style={{zIndex: 0, margin: '3vh 0% 7vh 0%'}}>
                     <TextField
                         label="Nama"
@@ -287,10 +285,10 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         helperText={ formTouched ? `${nama.length}/${MAX_LENGTH}` : ""}
                         margin="normal"
                         required
-                        variant="filled"
+                        variant="outlined"
                         sx={{
                             '& .MuiFormHelperText-root': {
-                                color: theme.palette.light.main,
+                                color: theme.palette.primary.main,
                             },
                         }}
                         InputProps={{
@@ -299,16 +297,12 @@ const Ucapan = forwardRef((props, sectionRef) => {
                             style: { 
                                 borderRadius: 20, 
                                 fontSize: `${70+windowWidth*0.04}%`, 
-                                backgroundColor: theme.palette.light.main,
-                                boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1)'
+                                backgroundColor: '#E1F9FF',
+                                boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1)',
                             },
                         }}
                         FormHelperTextProps={{
-                            classes:{
-                                root:{
-                                    color: theme.palette.light.main
-                                }
-                            }
+                            color: theme.palette.dark.main
                         }}
                         InputLabelProps={{
                             sx: {
@@ -329,15 +323,17 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         multiline
                         rows={4}
                         margin="none"
-                        variant="filled"
+                        variant="outlined"
                         InputProps={{
                             maxLength: MAX_LENGTH,
                             disableUnderline: true,
                             style: { 
                                 borderRadius: 20, 
                                 fontSize: `${70+windowWidth*0.04}%`, 
-                                backgroundColor: theme.palette.light.main,
-                                boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1)'
+                                backgroundColor: '#E1F9FF',
+                                boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1)',
+                                outlineWidth: '5px',
+                                borderColor: theme.palette.primary.main,
                             },
                         }}
                         InputLabelProps={{
@@ -359,13 +355,15 @@ const Ucapan = forwardRef((props, sectionRef) => {
                         onChange={handleChange}
                         fullWidth
                         margin="normal"
-                        variant="filled"
+                        variant="outlined"
                         disableUnderline
                         style={{
                             borderRadius: 20, 
-                            paddingBottom: 15, 
-                            backgroundColor: theme.palette.light.main,
-                            boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1)'
+                            // paddingBottom: 15, 
+                            backgroundColor: '#E1F9FF',
+                            boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1)',
+                            borderWidth: '10px',
+                            borderColor: theme.palette.primary.main,
                         }}
                     >
                         <MenuItem value={0}>
