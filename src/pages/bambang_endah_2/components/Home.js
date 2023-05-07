@@ -80,7 +80,7 @@ const Home = forwardRef((props, ref) => {
         <section ref={sectionRef} style={styles.section}>
             <Box sx={styles.box}>
                 <h1 style={{...styles.txt, fontSize: `${150+windowWidth*0.1}%`, fontWeight: 'bold',}} className="font-serif">Bambang & Endah</h1>
-                <h1 style={{...styles.txt, fontSize: `${50+windowWidth*0.1}%`, fontWeight: 500, }}>Save the Date || Minggu, 14 Mei 2023</h1>
+                <h1 style={{...styles.txt, fontSize: `${50+windowWidth*0.1}%`, fontWeight: 500, }}>Save the Date || Kamis, 18 Mei 2023</h1>
             </Box>
         </section>
         
