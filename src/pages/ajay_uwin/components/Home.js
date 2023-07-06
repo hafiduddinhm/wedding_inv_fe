@@ -79,7 +79,7 @@ const Home = forwardRef((props, ref) => {
     btnStyles: {
       border: `1.5px solid ${theme.palette.light.main}`,
       borderRadius: 30,
-      zIndex: "4",
+      zIndex: "1",
       position: "relative",
       padding: "8px 15px",
       margin: "10px 0",
