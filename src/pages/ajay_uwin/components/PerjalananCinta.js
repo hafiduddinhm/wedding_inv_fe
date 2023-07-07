@@ -70,9 +70,9 @@ const PerjalananCerita = () => {
         textAlign: "center",
         fontWeight: "600 !important",
       },
-      textAlign: "justify",
-      lineHeight: "18px",
-      fontSize: `${70 + windowWidth * 0.04}%`,
+      textAlign: "left",
+      lineHeight: "2vh",
+      fontSize: `${60 + windowWidth * 0.04}%`,
       color: theme.palette.primary.main,
       marginBottom: "-0.1rem",
       fontWeight: 300,
@@ -82,6 +82,11 @@ const PerjalananCerita = () => {
       padding: "10px 0",
     },
   };
+  const story = [
+    "Di tahun 2022, singkat cerita kami berkenalan tanpa sengaja melalui teman kami berdua. Waktu berjalan begitu singkat, hingga dari situlah perkenalan kami dimulai. waktu demi waktu kami lewati seperti teman biasa, hingga pada suatu saat dia memutuskan untuk datang ke rumahku, dan meminta izin kepada orang tua ku untuk berkenalan lebih jauh lagi. Alhamdulillah waktu itu kali pertama dia datang, yang bertepatan juga dengan bulan suci Ramadhan tahun lalu.",
+    "17 Juli 2022, tanpa menunggu waktu lama, dia akhirnya memutuskan untuk melamarku tepat tiga bulan sejak kita berkenalan, kami pun tidak menyangka bahwa perkenalan kami yang singkat, akan sampai ke titik ini dengan penuh makna.",
+    "11 & 16 Juli 2023, Insya Allah dengan Doa Restu kedua orang tua, keluarga, dan sahabat, kami akan melangsungkan pernikahan kami.",
+  ];
 
   return (
     <section style={styles.section}>
@@ -157,16 +162,7 @@ const PerjalananCerita = () => {
                       Perkenalan
                     </h1>
                     <img src={storyImg} style={styles.img} alt="" />
-                    <p style={styles.txt}>
-                      Di tahun 2022, singkat cerita kami berkenalan Tanpa
-                      sengaja, lewat teman kami berdua, waktu berjalan begitu
-                      singkat, hingga Dari situlah perkenalan kami dimulai,
-                      waktu demi waktu kami lewati seperti teman biasa, hingga
-                      suatu saat dia memutuskan untuk datang ke rumahku, dan
-                      meminta izin kepada ortu ku untuk berkenalan lebih jauh,
-                      dan Alhamdulillah waktu itu kali pertama dia datang, yang
-                      bertepatan juga pada Bulan suci ramadhan tahun lalu
-                    </p>
+                    <p style={styles.txt}>{story[0]}</p>
                   </Box>
                 </Grid>
               </Grid>
@@ -196,12 +192,7 @@ const PerjalananCerita = () => {
                     >
                       Tunangan
                     </h1>
-                    <p style={styles.txt}>
-                      17 Juli 2022, Tanpa menunggu waktu lama, akhirnya dia
-                      memutuskan untuk melamarku tepat 3 bulan sejak kita
-                      berkenalan, kami pun tidak menyangka bahwa perkenalan kami
-                      yang singkat, akan sampai ketitik ini dengan penuh makna.
-                    </p>
+                    <p style={styles.txt}>{story[1]}</p>
                   </Box>
                 </Grid>
                 <Grid item xs={2} md={2} style={{ paddingLeft: "0px" }}>
@@ -279,11 +270,7 @@ const PerjalananCerita = () => {
                     >
                       Pernikahan
                     </h1>
-                    <p style={styles.txt}>
-                      11 & 16 Juli 2023, Insyaallah dengan Doa Restu kedua orang
-                      tua, keluarga, dan sahabat, kami akan melangsungkan
-                      pernikahan kami
-                    </p>
+                    <p style={styles.txt}>{story[2]}</p>
                   </Box>
                 </Grid>
               </Grid>
@@ -340,16 +327,7 @@ const PerjalananCerita = () => {
                       Perkenalan
                     </h1>
                     <img src={storyImg} style={styles.img} alt="" />
-                    <p style={styles.txt}>
-                      Di tahun 2022, singkat cerita kami berkenalan Tanpa
-                      sengaja, lewat teman kami berdua, waktu berjalan begitu
-                      singkat, hingga Dari situlah perkenalan kami dimulai,
-                      waktu demi waktu kami lewati seperti teman biasa, hingga
-                      suatu saat dia memutuskan untuk datang ke rumahku, dan
-                      meminta izin kepada ortu ku untuk berkenalan lebih jauh,
-                      dan Alhamdulillah waktu itu kali pertama dia datang, yang
-                      bertepatan juga pada Bulan suci ramadhan tahun lalu
-                    </p>
+                    <p style={styles.txt}>{story[0]}</p>
                   </Box>
                 </Grid>
               </Grid>
@@ -402,12 +380,7 @@ const PerjalananCerita = () => {
                     >
                       Tunangan
                     </h1>
-                    <p style={styles.txt}>
-                      17 Juli 2022, Tanpa menunggu waktu lama, akhirnya dia
-                      memutuskan untuk melamarku tepat 3 bulan sejak kita
-                      berkenalan, kami pun tidak menyangka bahwa perkenalan kami
-                      yang singkat, akan sampai ketitik ini dengan penuh makna.
-                    </p>
+                    <p style={styles.txt}>{story[1]}</p>
                   </Box>
                 </Grid>
               </Grid>
@@ -460,11 +433,7 @@ const PerjalananCerita = () => {
                     >
                       Pernikahan
                     </h1>
-                    <p style={styles.txt}>
-                      11 & 16 Juli 2023, Insyaallah dengan Doa Restu kedua orang
-                      tua, keluarga, dan sahabat, kami akan melangsungkan
-                      pernikahan kami
-                    </p>
+                    <p style={styles.txt}>{story[2]}</p>
                   </Box>
                 </Grid>
               </Grid>
