@@ -110,7 +110,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
             Fajar Garsela
           </h1>
           <p style={styles.txt}>
-            Putra dari Bapak Agus Solihin
+            Putra Pertama dari Bapak Agus Solihin
             <br />
             dan Ibu Heni Suhartini
           </p>
@@ -135,7 +135,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
             Windi Windiyarti
           </h1>
           <p style={styles.txt}>
-            Putri dari Bapak Asep Tarya
+            Putri Pertama dari Bapak Asep Tarya
             <br />
             dan Ibu Anah Setiawati
           </p>
