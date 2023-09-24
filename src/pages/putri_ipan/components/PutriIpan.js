@@ -1,5 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import {createTheme, ThemeProvider} from '@mui/material/styles';
+import React, {useState, useEffect} from 'react';
+import {
+  createTheme,
+  ThemeProvider,
+  responsiveFontSizes,
+} from '@mui/material/styles';
 import {useHistory} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 import styled from 'styled-components';
@@ -12,49 +16,53 @@ import Ucapan from './Ucapan';
 import Closing from './Closing';
 import Gallery from './galery';
 import AmplopDigital from './AmplopDigital';
-import coupleImage from '../assets/image/brides.png';
+import PerjalananCerita from './PerjalananCinta';
+import coupleImage from '../assets/image/home.png';
+import {Alert, AlertTitle, Snackbar, Slide} from '@mui/material';
 
-const RikaLilikStyle = styled.div`
-  font-family: 'Roboto', sans-serif !important;
-  font-weight: 300 !important;
+const PutriIpanStyle = styled.div`
+  font-family: 'EB Garamond', serif !important;
 
-  .font-serif {
-    font-family: 'Playfair Display', serif !important;
-  }
   .font-estetik {
-    font-family: 'moontime', cursive !important;
+    font-family: 'lovely-thing', cursive !important;
   }
 `;
 
-const theme = createTheme({
+let theme = createTheme({
+  typography: {
+    fontFamily: ['EB Garamond', 'lovely-thing'].join(','),
+  },
   palette: {
     primary: {
-      main: '#043D6A',
+      main: '#72523B',
     },
     secondary: {
-      main: '#1A87A1',
+      main: '#AE8F7A',
     },
     dark: {
-      main: '#043D6A',
+      main: '#6D423F',
     },
     light: {
-      main: '#FAFFFF',
+      main: '#FFFCF6',
     },
     gray: {
       main: '#F59C9C',
     },
   },
 });
+theme = responsiveFontSizes(theme, {factor: 1});
 
-const RikaLilik = () => {
+const PutriIpan = () => {
   const history = useHistory();
+  const [isAudioLoading, setIsAudioLoading] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [snackbar, setSnackbar] = useState({});
+
   const audio = new Audio(
-    'https://f005.backblazeb2.com/file/menghitunghari-music/beautiful_in_white.mp3',
+    'https://f005.backblazeb2.com/b2api/v1/b2_download_file_by_id?fileId=4_za2e91be36419d72d827d081b_f1060c263b1e57af5_d20230922_m132917_c005_v0501007_t0020_u01695389357494',
   );
   audio.volume = 0.5;
   audio.loop = true;
-
-  const [isAudioLoading, setIsAudioLoading] = useState(false);
 
   useEffect(() => {
     // scroll to the top of the page when the component mounts
@@ -72,7 +80,16 @@ const RikaLilik = () => {
   }, [history]);
 
   useEffect(() => {
-    audio.load();
+    try {
+      audio.load();
+    } catch (error) {
+      setSnackbar({
+        severity: 'error',
+        title: 'Yahh.. gagal memuat lagu',
+        message: error.message,
+      });
+      setOpen(true);
+    }
 
     const handleLoadStart = () => {
       setIsAudioLoading(true);
@@ -86,6 +103,12 @@ const RikaLilik = () => {
     };
     const handleLoadError = (error) => {
       console.log('load audio error: ' + error.message);
+      setSnackbar({
+        severity: 'error',
+        title: 'Yahh.. gagal memuat lagu',
+        message: error.message,
+      });
+      setOpen(true);
       setIsAudioLoading(false);
       audio.removeEventListener('loadstart', handleLoadStart);
       audio.removeEventListener('loadeddata', handleLoadSuccess);
@@ -104,6 +127,17 @@ const RikaLilik = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handlePlayMusic = () => {
+    audio.play();
+  };
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
+
   const section1Ref = React.useRef(null);
   const section2Ref = React.useRef(null);
   const section3Ref = React.useRef(null);
@@ -112,21 +146,19 @@ const RikaLilik = () => {
 
   const ogImageUrl = `${window.location.origin}${coupleImage}`;
 
-  const handlePlayMusic = () => {
-    console.log(audio);
-    audio.play();
-  };
-
   return (
     <ThemeProvider theme={theme}>
-      <RikaLilikStyle>
+      <PutriIpanStyle>
         <Helmet>
-          <title>Rika & Lilik Wedding</title>
-          <meta name="description" content="Sabtu, 13 Mei 2023" />
-          <meta property="og:title" content="Rika & Lilik Wedding" />
+          <title>Putri & Ipan Wedding</title>
+          <meta
+            name="description"
+            content="Minggu, 29 Oktober 2023"
+          />
+          <meta property="og:title" content="Putri & Ipan Wedding" />
           <meta
             property="og:description"
-            content="Sabtu, 13 Mei 2023"
+            content="Minggu, 29 Oktober 2023"
           />
           <meta property="og:image" content={ogImageUrl} />
           <meta
@@ -136,7 +168,7 @@ const RikaLilik = () => {
           <meta property="og:type" content="website" />
           <link
             rel="canonical"
-            href="https://menghitunghari.vercel.app/rika_lilik"
+            href="https://menghitunghari.vercel.app/putri_ipan"
           />
         </Helmet>
         <OpeningModal onClosed={handlePlayMusic} />
@@ -144,6 +176,7 @@ const RikaLilik = () => {
         <Pengantin ref={section2Ref} />
         <Acara ref={section3Ref} />
         <Gallery ref={section4Ref} />
+        <PerjalananCerita />
         <AmplopDigital />
         <Ucapan ref={section5Ref} />
         <Closing />
@@ -158,9 +191,23 @@ const RikaLilik = () => {
           isAudioLoading={isAudioLoading}
           audio={audio}
         />
-      </RikaLilikStyle>
+        <Snackbar
+          open={open}
+          autoHideDuration={3000}
+          onClose={handleSnackbarClose}
+          TransitionComponent={Slide}
+          anchorOrigin={{vertical: 'top', horizontal: 'center'}}>
+          <Alert
+            severity={snackbar.severity}
+            variant="filled"
+            onClose={handleSnackbarClose}>
+            <AlertTitle>{snackbar.title}</AlertTitle>
+            {snackbar.message}
+          </Alert>
+        </Snackbar>
+      </PutriIpanStyle>
     </ThemeProvider>
   );
 };
 
-export default RikaLilik;
+export default PutriIpan;

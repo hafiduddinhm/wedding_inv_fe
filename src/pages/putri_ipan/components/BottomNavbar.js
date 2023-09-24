@@ -5,17 +5,21 @@ import {
   CircularProgress,
   Typography,
   useTheme,
+  Box,
+  Fab,
+  useMediaQuery,
 } from '@mui/material';
-import {Box, Fab, useMediaQuery} from '@mui/material';
 
 // icons
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import CollectionsRoundedIcon from '@mui/icons-material/CollectionsRounded';
-import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
-import EventNoteRoundedIcon from '@mui/icons-material/EventNoteRounded';
-import SmsRoundedIcon from '@mui/icons-material/SmsRounded';
-import PauseCircleFilledRoundedIcon from '@mui/icons-material/PauseCircleFilledRounded';
-import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
+import {
+  HomeRounded,
+  CollectionsRounded,
+  FavoriteRounded,
+  EventNoteRounded,
+  SmsRounded,
+  PauseCircleFilledRounded,
+  PlayCircleRounded,
+} from '@mui/icons-material';
 
 const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
   const [value, setValue] = useState('home');
@@ -61,7 +65,7 @@ const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
     });
   };
 
-  const handlePlay = (event) => {
+  const handlePlay = () => {
     if (play) audio.pause();
     else audio.play();
   };
@@ -83,13 +87,13 @@ const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
         sx={btnStyles}
         onClick={handlePlay}>
         {play && !isAudioLoading && (
-          <PauseCircleFilledRoundedIcon
-            style={{color: theme.palette.dark.main}}
+          <PauseCircleFilledRounded
+            style={{color: theme.palette.primary.main}}
           />
         )}
         {!play && !isAudioLoading && (
-          <PlayCircleRoundedIcon
-            style={{color: theme.palette.dark.main}}
+          <PlayCircleRounded
+            style={{color: theme.palette.primary.main}}
           />
         )}
         {isAudioLoading && (
@@ -113,7 +117,7 @@ const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
             }
             value="home"
             icon={
-              <HomeRoundedIcon
+              <HomeRounded
                 sx={{
                   fontSize: isSmallScreen ? '16px' : '20px',
                   color: theme.palette.primary.main,
@@ -131,7 +135,7 @@ const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
             }
             value="home"
             icon={
-              <FavoriteRoundedIcon
+              <FavoriteRounded
                 sx={{
                   fontSize: isSmallScreen ? '16px' : '20px',
                   color: theme.palette.primary.main,
@@ -149,7 +153,7 @@ const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
             }
             value="home"
             icon={
-              <EventNoteRoundedIcon
+              <EventNoteRounded
                 sx={{
                   fontSize: isSmallScreen ? '16px' : '20px',
                   color: theme.palette.primary.main,
@@ -167,7 +171,7 @@ const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
             }
             value="home"
             icon={
-              <CollectionsRoundedIcon
+              <CollectionsRounded
                 sx={{
                   fontSize: isSmallScreen ? '16px' : '20px',
                   color: theme.palette.primary.main,
@@ -185,7 +189,7 @@ const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
             }
             value="home"
             icon={
-              <SmsRoundedIcon
+              <SmsRounded
                 sx={{
                   fontSize: isSmallScreen ? '16px' : '20px',
                   color: theme.palette.primary.main,

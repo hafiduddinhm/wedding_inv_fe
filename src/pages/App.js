@@ -9,6 +9,7 @@ import RikaLilik from "./rika_lilik/components/RikaLilik";
 import BambangEndah1 from "./bambang_endah_1/components/BambangEndah";
 import BambangEndah2 from "./bambang_endah_2/components/BambangEndah";
 import AjayUwin from "./ajay_uwin/components/AjayUwin";
+import PutriIpan from "./putri_ipan/components/PutriIpan";
 
 if (window.location.pathname === "/") {
   window.location.replace("https://linktr.ee/menghitunghari");
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/bambang_endah/1" component={BambangEndah1} />
           <Route path="/bambang_endah/2" component={BambangEndah2} />
           <Route path="/ajay_uwin" component={AjayUwin} />
+          <Route path="/putri_ipan" component={PutriIpan} />
         </Switch>
       </BrowserRouter>
       <Analytics />

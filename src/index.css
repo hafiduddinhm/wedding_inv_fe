@@ -6,14 +6,18 @@ body {
 
 @font-face {
   font-family: "moontime";
-  src: url('/src/font/moontime.ttf');
+  src: url("/src/font/moontime.ttf");
 }
 @font-face {
   font-family: "malibu";
-  src: url('/src/font/Malibu.otf');
+  src: url("/src/font/Malibu.otf");
+}
+@font-face {
+  font-family: "lovely-thing";
+  src: url("/src/font/Lovely\ Thing.otf");
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
