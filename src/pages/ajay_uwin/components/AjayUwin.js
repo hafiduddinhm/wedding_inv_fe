@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 import styled from 'styled-components';
 import OpeningModal from './OpeningModal';
-import Home from './Home';
+import Home from './Home'; 
 import Pengantin from './Pengantin';
 import Acara from './Acara';
 import BottomNavbar from './BottomNavbar';
