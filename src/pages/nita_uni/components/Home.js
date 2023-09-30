@@ -1,15 +1,15 @@
 import React, {useRef, forwardRef, useState, useEffect} from 'react';
 import {Box, useTheme, Button, Typography} from '@mui/material';
 import backgroundImage from '../assets/image/bgHome.png';
-import brides from '../assets/image/home.png';
+import brides from '../assets/image/illustration.png';
 import aos from 'aos';
 import 'aos/dist/aos.css';
 import {motion, AnimatePresence} from 'framer-motion';
 
 const Home = forwardRef((props, ref) => {
-  const receptionDate = '2023-10-29T09:00:00';
+  const receptionDate = '2023-11-05T11:00:00';
   const linkCalendar =
-    'https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Putri+%26+Ipan&location=https%3A%2F%2Fgoo.gl%2Fmaps%2FHdrSfmGTmVsF2efQ7&dates=20231029T100000+0700/20231029T150000+0700&details=https%3A%2F%2Fmenghitunghari.vercel.app%2Fputri%5Fipan';
+    'https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Ade+Nita+%26+Uni&location=https%3A%2F%2Fmaps.app.goo.gl%2FZ1AMZyT86ZJLoPhLA&dates=20231105T110000+0700/20231105T150000+0700&details=https%3A%2F%2Fmenghitunghari.vercel.app%2Fnita%5Funi';
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -179,7 +179,7 @@ const Home = forwardRef((props, ref) => {
             variant="h2"
             style={styles.txt_estetik}
             className="font-estetik">
-            Putri & Ipan
+            Ade Nita & Uni
           </Typography>
           <br />
           <Typography variant="p">
@@ -281,7 +281,7 @@ const Home = forwardRef((props, ref) => {
             </Box>
           </Box>
           <h1 style={{...styles.txt2, fontWeight: 'bold'}}>
-            Minggu, 29 Oktober 2023
+            Minggu, 5 November 2023
           </h1>
           <Button
             variant="contained"

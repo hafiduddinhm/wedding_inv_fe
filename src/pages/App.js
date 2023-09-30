@@ -1,18 +1,20 @@
-import React from "react";
-import { Analytics } from "@vercel/analytics/react";
+import React from 'react';
+import {Analytics} from '@vercel/analytics/react';
 
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import IrfanYayuk from "./irfan_yayuk/components/IrfanYayuk";
-import ElmaHendra from "./elma_hendra/components/ElmaHendra";
-import OzieLusi from "./ozie_lusi/components/OzieLusi";
-import RikaLilik from "./rika_lilik/components/RikaLilik";
-import BambangEndah1 from "./bambang_endah_1/components/BambangEndah";
-import BambangEndah2 from "./bambang_endah_2/components/BambangEndah";
-import AjayUwin from "./ajay_uwin/components/AjayUwin";
-import PutriIpan from "./putri_ipan/components/PutriIpan";
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import IrfanYayuk from './irfan_yayuk/components/IrfanYayuk';
+import ElmaHendra from './elma_hendra/components/ElmaHendra';
+import OzieLusi from './ozie_lusi/components/OzieLusi';
+import RikaLilik from './rika_lilik/components/RikaLilik';
+import BambangEndah1 from './bambang_endah_1/components/BambangEndah';
+import BambangEndah2 from './bambang_endah_2/components/BambangEndah';
+import AjayUwin from './ajay_uwin/components/AjayUwin';
+import PutriIpan from './putri_ipan/components/PutriIpan';
+import NitaUni from './nita_uni/components/NitaUni';
+// import Template1 from './template1/components/Template1';
 
-if (window.location.pathname === "/") {
-  window.location.replace("https://linktr.ee/menghitunghari");
+if (window.location.pathname === '/') {
+  window.location.replace('https://linktr.ee/menghitunghari');
 }
 
 const App = () => {
@@ -28,6 +30,8 @@ const App = () => {
           <Route path="/bambang_endah/2" component={BambangEndah2} />
           <Route path="/ajay_uwin" component={AjayUwin} />
           <Route path="/putri_ipan" component={PutriIpan} />
+          <Route path="/nita_uni" component={NitaUni} />
+          {/* <Route path="/template1" component={Template1} /> */}
         </Switch>
       </BrowserRouter>
       <Analytics />
