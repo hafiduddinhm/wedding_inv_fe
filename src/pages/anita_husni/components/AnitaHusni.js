@@ -20,7 +20,7 @@ import PerjalananCerita from './PerjalananCinta';
 import coupleImage from '../assets/image/home.png';
 import {Alert, AlertTitle, Snackbar, Slide} from '@mui/material';
 
-const NitaUniStyle = styled.div`
+const AnitaHusniStyle = styled.div`
   font-family: 'EB Garamond', serif !important;
 
   .font-estetik {
@@ -52,7 +52,7 @@ let theme = createTheme({
 });
 theme = responsiveFontSizes(theme, {factor: 1});
 
-const NitaUni = () => {
+const AnitaHusni = () => {
   const history = useHistory();
   const [isAudioLoading, setIsAudioLoading] = useState(false);
   const [open, setOpen] = useState(false);
@@ -148,17 +148,14 @@ const NitaUni = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <NitaUniStyle>
+      <AnitaHusniStyle>
         <Helmet>
-          <title>Ade Nita & Uni Wedding</title>
+          <title>Anita & Husni Wedding</title>
           <meta
             name="description"
             content="Minggu, 5 November 2023"
           />
-          <meta
-            property="og:title"
-            content="Ade Nita & Uni Wedding"
-          />
+          <meta property="og:title" content="Anita & Husni Wedding" />
           <meta
             property="og:description"
             content="Minggu, 5 November 2023"
@@ -208,9 +205,9 @@ const NitaUni = () => {
             {snackbar.message}
           </Alert>
         </Snackbar>
-      </NitaUniStyle>
+      </AnitaHusniStyle>
     </ThemeProvider>
   );
 };
 
-export default NitaUni;
+export default AnitaHusni;

@@ -10,7 +10,7 @@ import BambangEndah1 from './bambang_endah_1/components/BambangEndah';
 import BambangEndah2 from './bambang_endah_2/components/BambangEndah';
 import AjayUwin from './ajay_uwin/components/AjayUwin';
 import PutriIpan from './putri_ipan/components/PutriIpan';
-import NitaUni from './nita_uni/components/NitaUni';
+import AnitaHusni from './anita_husni/components/AnitaHusni';
 // import Template1 from './template1/components/Template1';
 
 if (window.location.pathname === '/') {
@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/bambang_endah/2" component={BambangEndah2} />
           <Route path="/ajay_uwin" component={AjayUwin} />
           <Route path="/putri_ipan" component={PutriIpan} />
-          <Route path="/nita_uni" component={NitaUni} />
+          <Route path="/anita_husni" component={AnitaHusni} />
           {/* <Route path="/template1" component={Template1} /> */}
         </Switch>
       </BrowserRouter>

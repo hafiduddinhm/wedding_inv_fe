@@ -108,8 +108,8 @@ const OpeningModal = ({onClosed = () => {}}) => {
           variant="h1"
           style={styles.txt_estetik}
           className="font-estetik">
-          Ade Nita & <br />
-          Uni
+          Anita & <br />
+          Husni
         </Typography>
         <Typography variant="h6">5 November 2023</Typography>
         <Stack>

@@ -95,7 +95,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
           </Typography>
           <Typography variant="h6">(Uni)</Typography>
           <Typography variant="p" style={styles.txt}>
-            Putra dari Bpk Apud Mahpudin & Ibu Ikah Atikah
+            Putra ke-10 dari Bpk Apud Mahpudin & Ibu Ikah Atikah
           </Typography>
           <IconButton
             size="small"
@@ -130,7 +130,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
           </Typography>
           <Typography variant="h6">(Ade Nita)</Typography>
           <Typography variant="p" style={styles.txt}>
-            Putri dari Bpk Aat Syafa'at & Ibu Tati Rahmawati
+            Putri ke-2 dari Bpk Aat Syafa'at & Ibu Tati Rahmawati
           </Typography>
           <IconButton
             size="small"

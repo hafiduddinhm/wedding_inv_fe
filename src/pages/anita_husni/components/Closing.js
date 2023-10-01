@@ -133,7 +133,7 @@ const Closing = () => {
           </span>
           <br />
           <br />
-          <span style={{fontWeight: 'bold'}}>-Ade Nita & Uni-</span>
+          <span style={{fontWeight: 'bold'}}>-Anita & Husni-</span>
         </Typography>
         <Typography
           variant="p"

@@ -30,8 +30,8 @@ const AmplopDigital = () => {
   const rekening1 = '087836544816';
   const atasNama1 = 'Anita Nurrispa';
 
-  // const rekening2 = '2832473422';
-  // const atasNama2 = 'PUTRI DESTIANA FRASISKA';
+  const rekening2 = '081398055757';
+  const atasNama2 = 'Muhammad Husni Thamrin';
 
   const handleSnackbarClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -189,7 +189,7 @@ const AmplopDigital = () => {
               data-aos-duration="1500"
               item
               xs={12}
-              sm={12}
+              sm={6}
               style={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -216,7 +216,7 @@ const AmplopDigital = () => {
                 </Button>
               </Box>
             </Grid>
-            {/* <Grid
+            <Grid
               data-aos="fade-left"
               data-aos-duration="1500"
               item
@@ -243,7 +243,7 @@ const AmplopDigital = () => {
                   Salin Rekening
                 </Button>
               </Box>
-            </Grid> */}
+            </Grid>
             <Snackbar
               open={open}
               autoHideDuration={3000}
