@@ -11,7 +11,7 @@ import BambangEndah2 from './bambang_endah_2/components/BambangEndah';
 import AjayUwin from './ajay_uwin/components/AjayUwin';
 import PutriIpan from './putri_ipan/components/PutriIpan';
 import AnitaHusni from './anita_husni/components/AnitaHusni';
-// import Template1 from './template1/components/Template1';
+import Ivy5 from './ivy5/components/ivy5';
 
 if (window.location.pathname === '/') {
   window.location.replace('https://linktr.ee/menghitunghari');
@@ -31,7 +31,7 @@ const App = () => {
           <Route path="/ajay_uwin" component={AjayUwin} />
           <Route path="/putri_ipan" component={PutriIpan} />
           <Route path="/anita_husni" component={AnitaHusni} />
-          {/* <Route path="/template1" component={Template1} /> */}
+          <Route path="/ivy5" component={Ivy5} />
         </Switch>
       </BrowserRouter>
       <Analytics />
