@@ -1,6 +1,6 @@
 import React from "react";
 import { Analytics } from "@vercel/analytics/react";
-// naisjdnfaoisnueofiuanwie
+// let me try
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import IrfanYayuk from "./irfan_yayuk/components/IrfanYayuk";
 import ElmaHendra from "./elma_hendra/components/ElmaHendra";
