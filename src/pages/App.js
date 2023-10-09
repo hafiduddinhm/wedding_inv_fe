@@ -11,6 +11,7 @@ import BambangEndah2 from './bambang_endah_2/components/BambangEndah';
 import AjayUwin from './ajay_uwin/components/AjayUwin';
 import PutriIpan from './putri_ipan/components/PutriIpan';
 import AnitaHusni from './anita_husni/components/AnitaHusni';
+import OciOmi from './oci_omi/components/OciOmi';
 import Ivy5 from './ivy5/components/ivy5';
 
 if (window.location.pathname === '/') {
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/ajay_uwin" component={AjayUwin} />
           <Route path="/putri_ipan" component={PutriIpan} />
           <Route path="/anita_husni" component={AnitaHusni} />
+          <Route path="/oci_omi" component={OciOmi} />
           <Route path="/ivy5" component={Ivy5} />
         </Switch>
       </BrowserRouter>
