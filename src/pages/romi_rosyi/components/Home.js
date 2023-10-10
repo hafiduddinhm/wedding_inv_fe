@@ -21,8 +21,8 @@ const Image = styled.img`
 
 const Home = forwardRef((props, ref) => {
   const receptionDate = '2023-10-21T10:00:00';
-  const mempelai1 = 'Oci';
-  const mempelai2 = 'Omi';
+  const mempelai1 = 'Romi';
+  const mempelai2 = 'Rosyi';
   const hariTanggal = 'Sabtu, 21 Oktober 2023';
   const linkCalendar =
     'https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Oci+%26+Omi&location=https%3A%2F%2Fmaps.app.goo.gl%2F5a27GrQJCxSkEqW89&dates=20231021T100000+0700/20231021T160000+0700&details=https%3A%2F%2Fmenghitunghari.vercel.app%2Fomi_oci';

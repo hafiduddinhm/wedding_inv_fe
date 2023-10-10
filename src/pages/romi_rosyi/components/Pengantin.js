@@ -21,6 +21,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
     {
       icon: <Instagram fontSize="small" />,
       link: 'https://instagram.com/RomiMuhammadpadli',
+      nama: '@romimuhammadpadli',
     },
   ];
 
@@ -33,6 +34,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
     {
       icon: <Instagram fontSize="small" />,
       link: 'https://instagram.com/ciaocii_',
+      nama: '@ciaocii_',
     },
   ];
 
@@ -125,14 +127,23 @@ const Pengantin = forwardRef((props, sectionRef) => {
             <br />
             Ibu {ibuPria}
           </Typography>
-          <Box display="flex" flexDirection="row" alignItems="center">
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center">
             {medsosPria.map((medsos) => (
-              <IconButton
-                size="small"
-                onClick={() => window.open(medsos.link)}
-                sx={{margin: '5px 0'}}>
-                {medsos.icon}
-              </IconButton>
+              <Box
+                display="flex"
+                flexDirection="row"
+                alignItems="center">
+                <IconButton
+                  size="small"
+                  onClick={() => window.open(medsos.link)}
+                  sx={{margin: '5px 0'}}>
+                  {medsos.icon}
+                </IconButton>
+                {medsos.nama}
+              </Box>
             ))}
           </Box>
         </Box>
@@ -165,14 +176,23 @@ const Pengantin = forwardRef((props, sectionRef) => {
             Putri {putriKe} dari Bpk {ayahWanita} &
             <br /> Ibu {ibuWanita}
           </Typography>
-          <Box display="flex" flexDirection="row" alignItems="center">
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center">
             {medsosWanita.map((medsos) => (
-              <IconButton
-                size="small"
-                onClick={() => window.open(medsos.link)}
-                sx={{margin: '5px 0'}}>
-                {medsos.icon}
-              </IconButton>
+              <Box
+                display="flex"
+                flexDirection="row"
+                alignItems="center">
+                <IconButton
+                  size="small"
+                  onClick={() => window.open(medsos.link)}
+                  sx={{margin: '5px 0'}}>
+                  {medsos.icon}
+                </IconButton>
+                {medsos.nama}
+              </Box>
             ))}
           </Box>
         </Box>

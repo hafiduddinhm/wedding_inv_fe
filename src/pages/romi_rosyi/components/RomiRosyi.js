@@ -20,7 +20,7 @@ import AmplopDigital from './AmplopDigital';
 import coupleImage from '../assets/image/home.jpg';
 import {Alert, AlertTitle, Snackbar, Slide} from '@mui/material';
 
-const OciOmiStyle = styled.div`
+const RomiRosyiStyle = styled.div`
   font-family: 'EB Garamond', serif !important;
 
   .font-estetik {
@@ -52,7 +52,7 @@ let theme = createTheme({
 });
 theme = responsiveFontSizes(theme, {factor: 1});
 
-const OciOmi = () => {
+const RomiRosyi = () => {
   const history = useHistory();
   const [isAudioLoading, setIsAudioLoading] = useState(false);
   const [open, setOpen] = useState(false);
@@ -148,11 +148,11 @@ const OciOmi = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <OciOmiStyle>
+      <RomiRosyiStyle>
         <Helmet>
-          <title>Oci & Omi Wedding</title>
+          <title>Romi & Rosyi Wedding</title>
           <meta name="description" content="Sabtu, 21 Oktober 2023" />
-          <meta property="og:title" content="Oci & Omi Wedding" />
+          <meta property="og:title" content="Romi & Rosyi Wedding" />
           <meta
             property="og:description"
             content="Sabtu, 21 Oktober 2023"
@@ -165,7 +165,7 @@ const OciOmi = () => {
           <meta property="og:type" content="website" />
           <link
             rel="canonical"
-            href="https://menghitunghari.vercel.app/oci_omi"
+            href="https://menghitunghari.vercel.app/romi_rosyi"
           />
         </Helmet>
         <OpeningModal onClosed={handlePlayMusic} />
@@ -202,9 +202,9 @@ const OciOmi = () => {
             {snackbar.message}
           </Alert>
         </Snackbar>
-      </OciOmiStyle>
+      </RomiRosyiStyle>
     </ThemeProvider>
   );
 };
 
-export default OciOmi;
+export default RomiRosyi;

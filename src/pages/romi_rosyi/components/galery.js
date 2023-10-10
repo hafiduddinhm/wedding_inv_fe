@@ -63,14 +63,14 @@ const imageToShow = [
   '/media/oci_omi/1.jpg',
   '/media/oci_omi/2.jpg',
   '/media/oci_omi/3.jpg',
-  '/media/oci_omi/4.jpg',
+  '/media/oci_omi/4.jpeg',
   '/media/oci_omi/5.jpg',
 ];
 const placeholder = [
   '/media/oci_omi/p1.jpg',
   '/media/oci_omi/p2.jpg',
   '/media/oci_omi/p3.jpg',
-  '/media/oci_omi/p4.jpg',
+  '/media/oci_omi/p4.jpeg',
   '/media/oci_omi/p5.jpg',
 ];
 

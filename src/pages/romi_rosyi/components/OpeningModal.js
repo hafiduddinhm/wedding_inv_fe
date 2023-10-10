@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import {MailOutlined} from '@mui/icons-material';
 
-import bg from '../assets/image/bgModal.png';
+import bg from '../assets/image/home.jpg';
 import ornament from '../assets/image/modal.png';
 
 const Transition = forwardRef(function Transition(props, ref) {
@@ -59,7 +59,6 @@ const OpeningModal = ({onClosed = () => {}}) => {
 
   const styles = {
     txt_estetik: {
-      color: theme.palette.primary.main,
       fontFamily: 'lovely-thing',
       lineHeight: '70px',
     },
@@ -77,41 +76,28 @@ const OpeningModal = ({onClosed = () => {}}) => {
       PaperProps={{
         style: {
           background: `url(${bg}) no-repeat center center`,
-          backgroundSize: 'cover',
+          backgroundSize: 'auto 100%',
+          backgroundColor: theme.palette.dark.main,
         },
       }}>
       <DialogContent
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
-          alignItems: 'center',
+          justifyContent: 'end',
+          alignItems: 'left',
           margin: '10vh 10%',
           padding: 0,
-          textAlign: 'center',
-          color: theme.palette.primary.main,
+          textAlign: 'left',
+          color: theme.palette.light.main,
         }}>
-        <img
-          src={ornament}
-          alt="ornament"
-          style={{position: 'fixed', left: 0, top: 0, width: '50%'}}
-        />
-        <Typography variant="body1" sx={{...styles.txt_p}}>
-          <i>
-            Joining hands with our families,
-            <br />
-            we warmly invite you to
-          </i>
-        </Typography>
-        <Typography variant="h5">The Wedding of</Typography>
+        <Typography variant="h6">The Wedding of</Typography>
         <Typography
-          variant="h1"
+          variant="h2"
           style={styles.txt_estetik}
           className="font-estetik">
-          Oci & <br />
-          Omi
+          Romi & Rosyi
         </Typography>
-        <Typography variant="h6">21 Oktober 2023</Typography>
         <Stack>
           {guest != null && (
             <Typography variant="subtitle1">
@@ -127,6 +113,7 @@ const OpeningModal = ({onClosed = () => {}}) => {
             <strong>{guest}</strong>
           </Typography>
         </Stack>
+        <br />
         <Button
           variant="contained"
           onClick={handleClose}
