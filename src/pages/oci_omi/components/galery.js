@@ -66,13 +66,13 @@ const imageToShow = [
   '/media/oci_omi/4.jpg',
   '/media/oci_omi/5.jpg',
 ];
-// const placeholder = [
-//   '/media/oci_omi/p1.jpg',
-//   '/media/oci_omi/p2.jpg',
-//   '/media/oci_omi/p3.jpg',
-//   '/media/oci_omi/p4.jpg',
-//   '/media/oci_omi/p5.jpg',
-// ];
+const placeholder = [
+  '/media/oci_omi/p1.jpg',
+  '/media/oci_omi/p2.jpg',
+  '/media/oci_omi/p3.jpg',
+  '/media/oci_omi/p4.jpg',
+  '/media/oci_omi/p5.jpg',
+];
 
 const Gallery = forwardRef((props, sectionRef) => {
   // let mainSlider = useRef()
@@ -242,7 +242,14 @@ const Gallery = forwardRef((props, sectionRef) => {
           <Slider {...settings1} ref={setMainSlider}>
             {imageToShow.map((imageUrl, index) => (
               <div key={index}>
-                <img
+                <LazyLoadImage
+                  src={imageUrl}
+                  placeholderSrc={placeholder[index]}
+                  width="100%"
+                  height="100%"
+                  alt={`Image ${index}`}
+                />
+                {/* <img
                   src={imageUrl}
                   style={{
                     maxHeight: `${
@@ -251,7 +258,7 @@ const Gallery = forwardRef((props, sectionRef) => {
                   }}
                   alt={`Image ${index}`}
                   onClick={() => setSelectedImage(imageUrl)}
-                />
+                /> */}
               </div>
             ))}
           </Slider>
@@ -264,7 +271,7 @@ const Gallery = forwardRef((props, sectionRef) => {
                 <div style={styles.mask}>
                   <LazyLoadImage
                     src={imageUrl}
-                    // placeholderSrc={placeholder[index]}
+                    placeholderSrc={placeholder[index]}
                     width="100%"
                     height="100%"
                     alt={`Image ${index}`}
