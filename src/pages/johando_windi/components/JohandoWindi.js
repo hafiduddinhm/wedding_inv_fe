@@ -42,6 +42,7 @@ let theme = createTheme({
     },
     light: {
       main: '#D7F0F6',
+      second: '#4BB2D2',
     },
   },
 });
@@ -136,7 +137,7 @@ const JohandoWindi = () => {
   const section2Ref = React.useRef(null);
   const section3Ref = React.useRef(null);
   const section4Ref = React.useRef(null);
-  const section5Ref = React.useRef(null);
+  // const section5Ref = React.useRef(null);
 
   const ogImageUrl = `${window.location.origin}${coupleImage}`;
 
@@ -166,8 +167,8 @@ const JohandoWindi = () => {
         <Home ref={section1Ref} />
         <Pengantin ref={section2Ref} />
         <Acara ref={section3Ref} />
-        <AmplopDigital ref={section4Ref}/>
-        <Ucapan ref={section5Ref} />
+        {/* <AmplopDigital ref={section4Ref}/> */}
+        <Ucapan ref={section4Ref} />
         <Closing />
         <BottomNavbar
           sectionRefs={[
@@ -175,7 +176,7 @@ const JohandoWindi = () => {
             section2Ref,
             section3Ref,
             section4Ref,
-            section5Ref,
+            // section5Ref,
           ]}
           isAudioLoading={isAudioLoading}
           audio={audio}

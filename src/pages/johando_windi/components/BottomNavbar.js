@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   BottomNavigation,
   BottomNavigationAction,
@@ -17,6 +17,11 @@ import SmsRoundedIcon from '@mui/icons-material/SmsRounded';
 import PauseCircleFilledRoundedIcon from '@mui/icons-material/PauseCircleFilledRounded';
 import PlayCircleRoundedIcon from '@mui/icons-material/PlayCircleRounded';
 
+import HomeIcon from '../assets/image/icon-home.png';
+import PengantinIcon from '../assets/image/icon-pengantin.png';
+import AcaraIcon from '../assets/image/icon-acara.png';
+import UcapanIcon from '../assets/image/icon-ucapan.png';
+
 const BottomNavbar = ({
   sectionRefs, 
   audio,
@@ -24,6 +29,31 @@ const BottomNavbar = ({
 }) => {
   const [value, setValue] = useState('home');
   const [play, setPlay] = useState(true);
+  
+  const MENU = [
+    'home', 
+    'pengantin', 
+    'acara', 
+    // 'galeri', 
+    'ucapan'
+  ]
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2; // Adjust for visibility threshold
+      const numOfSection = sectionRefs.length
+      for (let i = 0; i < (numOfSection-1); i++) {
+        if (scrollPosition > sectionRefs[i].current.offsetTop && scrollPosition <= sectionRefs[i + 1].current.offsetTop)
+          setValue(MENU[i]);
+        else if (scrollPosition > sectionRefs[numOfSection-1].current.offsetTop)
+          setValue(MENU[numOfSection-1]);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const theme = useTheme();
   const navbarStyles = {
@@ -35,6 +65,7 @@ const BottomNavbar = ({
     paddingTop: 0.5,
     display: 'flex',
     zIndex: 2,
+
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: theme.palette.light.main,
@@ -55,6 +86,7 @@ const BottomNavbar = ({
   };
 
   const handleChange = (event, newValue) => {
+    console.log(event, newValue)
     setValue(newValue);
   };
 
@@ -77,8 +109,6 @@ const BottomNavbar = ({
   audio.addEventListener('pause', () => {
     setPlay(false);
   });
-
-  const isSmallScreen = useMediaQuery('(max-width:500px)');
 
   return (
     <>
@@ -104,100 +134,98 @@ const BottomNavbar = ({
         <BottomNavigation
           sx={{
             width: '100%',
-            flex: 1,
+            display: 'flex',
+            flexDirection: 'row',
             alignItems: 'center',
             backgroundColor: 'transparent',
-            height: '45px',
+            height: '50px',
           }}
           value={value}
           onChange={handleChange}>
           <BottomNavigationAction
             label={
-              <Typography style={{fontSize: '10px'}}>Home</Typography>
+              <Typography style={{
+                fontSize: '13px', 
+                fontFamily: "Josefin Sans", 
+                color: theme.palette.light.second
+              }}>
+                Home
+              </Typography>
             }
             value="home"
             icon={
-              <HomeRoundedIcon
-                sx={{
-                  fontSize: isSmallScreen ? '16px' : '20px',
-                  color: theme.palette.primary.main,
-                }}
-              />
+              <img src={HomeIcon} style={{width: '40px'}} alt='Home'/>
             }
-            sx={{padding: '0px', minWidth: '40px', height: '40px'}}
+            // sx={{padding: '0px', minWidth: '40px', height: '40px'}}
             onClick={() => scrollToSection(0)}
           />
           <BottomNavigationAction
             label={
-              <Typography style={{fontSize: '10px'}}>
+              <Typography style={{
+                fontSize: '13px', 
+                fontFamily: "Josefin Sans", 
+                color: theme.palette.light.second
+              }}>
                 Pengantin
               </Typography>
             }
-            value="home"
+            value="pengantin"
             icon={
-              <FavoriteRoundedIcon
-                sx={{
-                  fontSize: isSmallScreen ? '16px' : '20px',
-                  color: theme.palette.primary.main,
-                }}
-              />
+              <img src={PengantinIcon} style={{width: '40px'}} alt='Pengantin'/>
             }
-            sx={{padding: '0px', minWidth: '40px', height: '40px'}}
+            // sx={{padding: '0px', minWidth: '40px', height: '40px'}}
             onClick={() => scrollToSection(1)}
           />
           <BottomNavigationAction
             label={
-              <Typography style={{fontSize: '10px'}}>
+              <Typography style={{
+                fontSize: '13px', 
+                fontFamily: "Josefin Sans", 
+                color: theme.palette.light.second
+              }}>
                 Acara
               </Typography>
             }
-            value="home"
+            value="acara"
             icon={
-              <EventNoteRoundedIcon
-                sx={{
-                  fontSize: isSmallScreen ? '16px' : '20px',
-                  color: theme.palette.primary.main,
-                }}
-              />
+              <img src={AcaraIcon} style={{width: '40px'}} alt='Acara'/>
             }
-            sx={{padding: '0px', minWidth: '40px', height: '40px'}}
+            // sx={{padding: '0px', minWidth: '40px', height: '40px'}}
             onClick={() => scrollToSection(2)}
           />
-          <BottomNavigationAction
+          {/* <BottomNavigationAction
             label={
               <Typography style={{fontSize: '10px'}}>
                 Galeri
               </Typography>
             }
-            value="home"
+            value="galeri"
             icon={
               <CollectionsRoundedIcon
-                sx={{
-                  fontSize: isSmallScreen ? '16px' : '20px',
-                  color: theme.palette.primary.main,
-                }}
+                // sx={{
+                //   fontSize: isSmallScreen ? '16px' : '20px',
+                //   color: theme.palette.primary.main,
+                // }}
               />
             }
-            sx={{padding: '0px', minWidth: '40px', height: '40px'}}
+            // sx={{padding: '0px', minWidth: '40px', height: '40px'}}
             onClick={() => scrollToSection(3)}
-          />
+          /> */}
           <BottomNavigationAction
             label={
-              <Typography style={{fontSize: '10px'}}>
+              <Typography style={{
+                fontSize: '13px', 
+                fontFamily: "Josefin Sans", 
+                color: theme.palette.light.second
+              }}>
                 Ucapan
               </Typography>
             }
-            value="home"
+            value="ucapan"
             icon={
-              <SmsRoundedIcon
-                sx={{
-                  fontSize: isSmallScreen ? '16px' : '20px',
-                  color: theme.palette.primary.main,
-                }}
-              />
+              <img src={UcapanIcon} style={{width: '40px'}} alt='Ucapan'/>
             }
-            sx={{padding: '0px', minWidth: '40px', height: '40px'}}
-            onClick={() => scrollToSection(4)}
+            onClick={() => scrollToSection(3)}
           />
         </BottomNavigation>
       </Box>

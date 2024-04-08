@@ -11,13 +11,12 @@ import backgroundImage from "../assets/image/bgAcara.png";
 import backgroundSection1 from "../assets/image/acara-section1.png";
 import backgroundSection2 from "../assets/image/acara-section2.png";
 import PlaceIcon from "@mui/icons-material/PlaceOutlined";
-import ornament1 from "../assets/image/ornamen.png";
-import line1 from "../assets/image/line1.png";
 import { NavigationOutlined } from "@mui/icons-material";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Acara = forwardRef((props, sectionRef) => {
-  const linkLokasi = "https://goo.gl/maps/SroySHvz8ViRGf6S8";
+  const linkLokasiAkad = "https://maps.app.goo.gl/RWBtkVN5T9HA4K1y8";
+  const linkLokasiResepsi = "https://maps.app.goo.gl/KcpgFDq2kRXbeNmR7";
 
   const location1 = {
     lat: -6.94016059337372,
@@ -94,8 +93,12 @@ const Acara = forwardRef((props, sectionRef) => {
   const isXs = useMediaQuery(theme.breakpoints.up('xs')) && useMediaQuery(theme.breakpoints.down('sm'))
   const isSm = useMediaQuery(theme.breakpoints.up('sm')) && useMediaQuery(theme.breakpoints.down('md'))
 
-  const handleButtonClick = () => {
-    window.open(linkLokasi);
+  const handleButtonClick = (type) => {
+    if (type === 'akad')
+      window.open(linkLokasiAkad);
+    else 
+      window.open(linkLokasiResepsi);
+
   };
 
   const styles = {
@@ -221,7 +224,7 @@ const Acara = forwardRef((props, sectionRef) => {
                   data-aos-duration="1500"
                   variant="contained"
                   sx={{borderRadius: '20px', textTransform: 'none', backgroundColor: 'gray'}}
-                  onClick={handleButtonClick}
+                  onClick={() => handleButtonClick('akad')}
                 >
                   <NavigationOutlined style={{ marginRight: "7px", fontSize: "1rem" }} />
                   Kunjungi Lokasi
@@ -256,7 +259,7 @@ const Acara = forwardRef((props, sectionRef) => {
                   <MarkerF
                     position={location1}
                     // label={`Lokasi Resepsi`}
-                    onClick={handleButtonClick}
+                    onClick={() => handleButtonClick('akad')}
                   />
                   <InfoWindow
                     position={location1}
@@ -264,7 +267,7 @@ const Acara = forwardRef((props, sectionRef) => {
                   >
                     <div style={{ display: "flex" }}>
                       <PlaceIcon style={{ marginRight: "8px" }} />
-                      <Typography onClick={handleButtonClick} variant="body1">
+                      <Typography onClick={() => handleButtonClick('akad')} variant="body1">
                         Lokasi Akad
                       </Typography>
                     </div>
