@@ -12,6 +12,7 @@ import AjayUwin from './ajay_uwin/components/AjayUwin';
 import PutriIpan from './putri_ipan/components/PutriIpan';
 import AnitaHusni from './anita_husni/components/AnitaHusni';
 import RomiRosyi from './romi_rosyi/components/RomiRosyi';
+import JohandoWindi from './johando_windi/components/JohandoWindi';
 import Ivy5 from './ivy5/components/ivy5';
 
 if (window.location.pathname === '/') {
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/putri_ipan" component={PutriIpan} />
           <Route path="/anita_husni" component={AnitaHusni} />
           <Route path="/romi_rosyi" component={RomiRosyi} />
+          <Route path="/johando_windi" component={JohandoWindi} />
           <Route path="/ivy5" component={Ivy5} />
         </Switch>
       </BrowserRouter>
