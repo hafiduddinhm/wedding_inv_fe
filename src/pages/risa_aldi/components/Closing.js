@@ -22,7 +22,7 @@ const Closing = () => {
     }, []);
 
     const handleWhatsappClick = () => {
-        window.open('http://wa.link/nd0byg');
+        window.open('https://api.whatsapp.com/send?phone=6289602959322&text=Haloo%2C%20apakah%20disini%20bisa%20memesan%20undangan%20digital%3F%20saya%20.....%20ingin%20memesan%20undangan%20digital%2C%20bolehkah%20tanya-tanya%3F');
     };
 
     const handleInstagramClick = () => {

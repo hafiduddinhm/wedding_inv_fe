@@ -26,7 +26,7 @@ const Acara = forwardRef((props, sectionRef) => {
   //     lng: 111.594725
   // };
   // const zoom = 17
-  // const API_KEY = 'AIzaSyB1OuhrncfDYlFrz3iors1yZkO5z6VkH54'
+  //const API_KEY = process.env.MAPS_API_KEY;
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);

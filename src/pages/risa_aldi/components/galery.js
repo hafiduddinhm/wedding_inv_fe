@@ -129,7 +129,7 @@ const Gallery = forwardRef((props, sectionRef) => {
       position: 'relative',
       overflow: 'hidden',
       width: '100%',
-      height: '7rem',
+      // height: '7rem',
       padding: '5%',
     },
   };

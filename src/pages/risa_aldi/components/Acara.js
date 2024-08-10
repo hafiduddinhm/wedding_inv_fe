@@ -27,7 +27,8 @@ const Acara = forwardRef((props, sectionRef) => {
     lng:  107.81423449167225,
   }
   const zoom = 17;
-  const API_KEY = 'AIzaSyB1OuhrncfDYlFrz3iors1yZkO5z6VkH54';
+  console.log(process.env.MAPS_API_KEY)
+  const API_KEY = process.env.MAPS_API_KEY;
   // const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${location.lat},${location.lng}&zoom=${location.zoom}`;
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

@@ -170,9 +170,9 @@ const Journeys = () => {
                 style={{
                     position: 'absolute',
                     alignSelf: 'left',
-                    marginTop: '50vh',
+                    marginTop: '55vh',
                     width: `${windowHeight > windowWidth ? '15%' : '10vh'}`,
-                    right: '10%',
+                    right: '3%',
                 }}
             />
             <br/>            
