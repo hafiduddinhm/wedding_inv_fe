@@ -14,6 +14,7 @@ import AnitaHusni from './anita_husni/components/AnitaHusni';
 import RomiRosyi from './romi_rosyi/components/RomiRosyi';
 import JohandoWindi from './johando_windi/components/JohandoWindi';
 import Ivy5 from './ivy5/components/ivy5';
+import RisaAldi from './risa_aldi/components/RisaAldi';
 
 if (window.location.pathname === '/') {
   window.location.replace('https://linktr.ee/menghitunghari');
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/romi_rosyi" component={RomiRosyi} />
           <Route path="/johando_windi" component={JohandoWindi} />
           <Route path="/ivy5" component={Ivy5} />
+          <Route path="/risa_aldi" component={RisaAldi} />
         </Switch>
       </BrowserRouter>
       <Analytics />
