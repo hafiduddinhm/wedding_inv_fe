@@ -11,7 +11,7 @@ const Journeys = () => {
     const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
     const journeys = [
-        {label: 'Maret 2022 - PDKT', detail: 'Kita saling di dekatkan oleh sepupu aku yang dimana sepupuku adalah rekan kerja nya Aldi. Seiring berjalan nya waktu, kami dekat, tapi beberapa lama setelah itu kami sempat menjauh dan lost contact'},
+        {label: 'Maret 2022 - PDKT', detail: 'Kita saling didekatkan oleh sepupu aku yang dimana sepupuku adalah rekan kerjanya Aldi. Seiring berjalan nya waktu, kami dekat, tapi beberapa lama setelah itu kami sempat menjauh dan lost contact'},
         {label: 'Mei 2022 - Pacaran', detail: 'Sampai akhirnya kita bertemu lagi di salah satu tempat billiard dan di tanggal 5 mei 2022 kami menjadi pasangan kekasih'},
         {label: 'Nov 2022 - Lamaran', detail: 'Hingga pada saat itu kami berdua memantapkan diri untuk melanjutkan ke jenjang yang lebih serius yang di mana lamaran kami di langsungkan pada tanggal 13 November 2022'},
         {label: '15 Sep 2024 - Akad', detail: 'Setelah badai yang selalu menghantam kami, berbagai ujian sudah terlewati. Semoga ini akhir menuju awal perjalanan kami berdua. Kami akan menyempurnakan ibadah di tanggal 15 September 2024'},
