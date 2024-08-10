@@ -18,7 +18,7 @@ const Acara = forwardRef((props, sectionRef) => {
         lng: 111.594725
     };
     const zoom = 17
-   const API_KEY = process.env.MAPS_API_KEY;
+   const API_KEY = process.env.REACT_APP_MAPS_API_KEY;
 
     const onLoad = (map) => {
         setMap(map);
