@@ -79,12 +79,12 @@ const Pengantin = forwardRef((props, sectionRef) => {
                 <p style={{ color: theme.palette.dark.main, textAlign: 'center', fontSize: `${70+windowWidth*0.04}%`,}}>Tanpa mengurangi rasa hormat. Kami mengundang Bapak/Ibu/Saudara/i sekalian untuk menghadiri acara pernikahan kami</p>
                 <img data-aos='fade-down' data-aos-duration="1500" src={brides} alt="brides" style={styles.img}/>
                 <Box data-aos='fade-right' data-aos-duration="1500" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <h1 className='font-estetik' style={styles.txt.header}>Risa Apriliani Sabrina (Ica)</h1>
+                    <h1 className='font-estetik' style={styles.txt.header}>Risa Apriliani Sabrina</h1>
                     <p style={styles.txt}>Putri Pertama dari Bapak Nurdin & Ibu Siti Julaeha </p>
                 </Box>
                 <h1 data-aos='flip-left' data-aos-duration="1500" className='font-estetik' style={styles.txt.header}>&</h1>
                 <Box data-aos='fade-left' data-aos-duration="1500" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <h1 className='font-estetik' style={styles.txt.header}>Aldi Ardiansyah (Aang)</h1>
+                    <h1 className='font-estetik' style={styles.txt.header}>Aldi Ardiansyah</h1>
                     <p style={styles.txt}>Putra Pertama dari Bapak Deki (alm) & Ibu Nani Purwanti </p>
                 </Box>
             </Box>
