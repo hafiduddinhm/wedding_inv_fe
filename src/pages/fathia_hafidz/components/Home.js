@@ -1,15 +1,16 @@
 import React, {useRef, forwardRef, useState, useEffect} from 'react';
-import {Box, useTheme, Button, Typography} from '@mui/material';
+import {Box, useTheme, Typography} from '@mui/material';
 import backgroundImage from '../assets/image/bgHome.png';
-import brides from '../assets/image/illustration.png';
+import brides from '../assets/image/home.png';
 import aos from 'aos';
 import 'aos/dist/aos.css';
 import {motion, AnimatePresence} from 'framer-motion';
+import moment from 'moment/moment';
 
 const Home = forwardRef((props, ref) => {
-  const receptionDate = '2023-11-05T11:00:00';
-  const linkCalendar =
-    'https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Anita+%26+Uni&location=https%3A%2F%2Fmaps.app.goo.gl%2FZ1AMZyT86ZJLoPhLA&dates=20231105T110000+0700/20231105T150000+0700&details=https%3A%2F%2Fmenghitunghari.vercel.app%2Fnita%5Funi';
+  const receptionDate = '2024-12-12T14:00:00';
+  // const linkCalendar =
+  //   'https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Fathia+%26+Hafidz&location=https%3A%2F%2Fgoo.gl%2Fmaps%2FHdrSfmGTmVsF2efQ7&dates=20231029T100000+0700/20231029T150000+0700&details=https%3A%2F%2Fmenghitunghari.vercel.app%2Ffathia%5Fhafidz';
   const [countdown, setCountdown] = useState({
     days: 0,
     hours: 0,
@@ -140,9 +141,9 @@ const Home = forwardRef((props, ref) => {
     }
   }, [ref]);
 
-  const handleCalClick = () => {
-    window.open(linkCalendar);
-  };
+  // const handleCalClick = () => {
+  //   window.open(linkCalendar);
+  // };
 
   return (
     <section
@@ -180,7 +181,7 @@ const Home = forwardRef((props, ref) => {
             variant="h2"
             style={styles.txt_estetik}
             className="font-estetik">
-            Anita & Husni
+            Fathia & Hafidz
           </Typography>
           <br />
           <Typography variant="p">
@@ -282,14 +283,8 @@ const Home = forwardRef((props, ref) => {
             </Box>
           </Box>
           <h1 style={{...styles.txt2, fontWeight: 'bold'}}>
-            Minggu, 5 November 2023
+            {moment(receptionDate).format('dddd, D MMMM YYYY')}
           </h1>
-          <Button
-            variant="contained"
-            onClick={handleCalClick}
-            style={styles.btn}>
-            Save the Date
-          </Button>
         </Box>
       </Box>
     </section>

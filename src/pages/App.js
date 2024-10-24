@@ -1,6 +1,9 @@
 import React from 'react';
 import {Analytics} from '@vercel/analytics/react';
 
+import moment from 'moment';
+import 'moment/locale/id';
+
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import IrfanYayuk from './irfan_yayuk/components/IrfanYayuk';
 import ElmaHendra from './elma_hendra/components/ElmaHendra';
@@ -15,10 +18,13 @@ import RomiRosyi from './romi_rosyi/components/RomiRosyi';
 import JohandoWindi from './johando_windi/components/JohandoWindi';
 import Ivy5 from './ivy5/components/ivy5';
 import RisaAldi from './risa_aldi/components/RisaAldi';
+import FathiaHafidz from './fathia_hafidz/components/FathiaHafidz';
 
 if (window.location.pathname === '/') {
   window.location.replace('https://linktr.ee/menghitunghari');
 }
+
+moment.locale('id'); // biar semua moment pake bahasa indonesia
 
 const App = () => {
   return (
@@ -38,6 +44,7 @@ const App = () => {
           <Route path="/johando_windi" component={JohandoWindi} />
           <Route path="/ivy5" component={Ivy5} />
           <Route path="/risa_aldi" component={RisaAldi} />
+          <Route path="/fathia_hafidz" component={FathiaHafidz} />
         </Switch>
       </BrowserRouter>
       <Analytics />

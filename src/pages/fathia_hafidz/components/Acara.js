@@ -9,13 +9,21 @@ import {
 import backgroundImage from '../assets/image/bgAcara.png';
 import PlaceIcon from '@mui/icons-material/PlaceOutlined';
 import ornament1 from '../assets/image/acara1.png';
+import moment from 'moment';
 
 const Acara = forwardRef((props, sectionRef) => {
-  const linkLokasi = 'https://goo.gl/maps/HdrSfmGTmVsF2efQ7';
+  const akadDate = '2024-12-12T13:00:00';
+  const receptionStartDate = '2024-12-12T14:00:00';
+  const receptionEndDate = null;
+
+  const akadAddress = 'KUA Kecamatan Palang'
+  const reseptionAddress = <>Kediaman Mempelai Wanita<br/>Gang Masjid Sidokabul RT 004 RW 004 Kelurahan Panyuran Kecamatan Palang Kabupaten Tuban</>
+
+  const linkLokasi = 'https://goo.gl/maps/QHdPP94kcyZwUfHc9';
 
   const location = {
-    lat: -6.99565,
-    lng: 107.814449,
+    lat: -6.898683,
+    lng:  112.089970,
   };
   const zoom = 17;
   const API_KEY = process.env.REACT_APP_MAPS_API_KEY;
@@ -127,14 +135,13 @@ const Acara = forwardRef((props, sectionRef) => {
                 Akad Nikah
               </Typography>
               <Typography variant="h6">
-                <b>Minggu, 29 Oktober 2023</b>
+                <b>{moment(akadDate).format('dddd, D MMMM YYYY')}</b>
                 <br />
                 Pukul <br />
-                <b>09.00 s/d 10.00 WIB</b>
+                <b>{moment(akadDate).format('HH.mm')} WIB s/d {moment(receptionStartDate).format('HH.mm')} WIB</b>
                 <br />
                 Alamat: <br />
-                Kp. Lemburgede RT 003 RW 002 Desa Tanjunglaya Kec.
-                Cikancung Kab. Bandung
+                {akadAddress}
               </Typography>
             </Box>
           </Grid>
@@ -147,17 +154,16 @@ const Acara = forwardRef((props, sectionRef) => {
             style={{justifyContent: 'center', padding: 0}}>
             <Box style={styles.glass}>
               <Typography variant="h3" className="font-estetik">
-                Resepsi
+                Tasyakuran
               </Typography>
               <Typography variant="h6">
-                <b>Minggu, 29 Oktober 2023</b>
+              <b>{moment(receptionStartDate).format('dddd, D MMMM YYYY')}</b>
                 <br />
                 Pukul <br />
-                <b>10.00 WIB s/d selesai </b>
+                <b>{moment(receptionStartDate).format('HH.mm')} WIB s/d {receptionEndDate ? moment(receptionEndDate).format('HH.mm') + ' WIB' : 'selesai'} </b>
                 <br />
                 Alamat: <br />
-                Kp. Lemburgede RT 003 RW 002 Desa Tanjunglaya Kec.
-                Cikancung Kab. Bandung
+                {reseptionAddress}
               </Typography>
             </Box>
           </Grid>
