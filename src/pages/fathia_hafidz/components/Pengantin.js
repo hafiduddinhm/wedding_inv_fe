@@ -64,7 +64,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
       />
       <Box sx={styles.box}>
         <Typography
-          variant="h5"
+          variant="p"
           className="font-estetik"
           style={{marginTop: '2vh'}}>
           Assalamualaikum Warahmatullah Wabarakatuh
@@ -86,7 +86,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
             marginTop: '10%',
           }}>
           <Typography
-            variant="h3"
+            variant="h4"
             className="font-estetik"
             style={{marginTop: '2vh'}}>
             Fathia Ilmiati
@@ -109,7 +109,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
           </IconButton> */}
         </Box>
         <Typography
-          variant="h3"
+          variant="h5"
           data-aos="flip-left"
           data-aos-duration="1500"
           className="font-estetik"
@@ -125,9 +125,9 @@ const Pengantin = forwardRef((props, sectionRef) => {
             alignItems: 'center',
           }}>
           <Typography
-            variant="h3"
+            variant="h4"
             className="font-estetik"
-            style={{marginTop: '2vh'}}>
+            style={{marginTop: '2vh', fontSize: '32px'}}>
             Muhammad Hafidz Taufan Akbar
           </Typography>
           <Typography
@@ -136,7 +136,7 @@ const Pengantin = forwardRef((props, sectionRef) => {
             (Hafidz)
           </Typography>
           <Typography variant="p" style={styles.txt}>
-            Putra pertama dari Bpk Muslihaji & Ibu Erna Ningsih
+            Putra Pertama dari Bpk Muslihaji & Ibu Erna Ningsih
           </Typography>
           {/* <IconButton
             size="small"

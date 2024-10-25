@@ -163,7 +163,7 @@ const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
             sx={{padding: '0px', minWidth: '40px', height: '40px'}}
             onClick={() => scrollToSection(2)}
           />
-          <BottomNavigationAction
+          {/* <BottomNavigationAction
             label={
               <Typography style={{fontSize: '10px'}}>
                 Galeri
@@ -180,7 +180,7 @@ const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
             }
             sx={{padding: '0px', minWidth: '40px', height: '40px'}}
             onClick={() => scrollToSection(3)}
-          />
+          /> */}
           <BottomNavigationAction
             label={
               <Typography style={{fontSize: '10px'}}>
@@ -197,7 +197,7 @@ const BottomNavbar = ({sectionRefs, audio, isAudioLoading}) => {
               />
             }
             sx={{padding: '0px', minWidth: '40px', height: '40px'}}
-            onClick={() => scrollToSection(4)}
+            onClick={() => scrollToSection(3)}
           />
         </BottomNavigation>
       </Box>

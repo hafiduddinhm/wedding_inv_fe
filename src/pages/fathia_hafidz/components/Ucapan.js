@@ -285,9 +285,9 @@ const Ucapan = forwardRef((props, sectionRef) => {
       />
       <Box sx={styles.box}>
         <Typography
-          variant="h2"
+          variant="h4"
           className="font-estetik"
-          sx={{textAlign: 'center'}}>
+          sx={{textAlign: 'center', paddingTop: '15px'}}>
           Berikan Ucapan dan Doa Restu
         </Typography>
         <form

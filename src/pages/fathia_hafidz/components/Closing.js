@@ -78,7 +78,7 @@ const Closing = () => {
     <div style={styles.section}>
       <Box sx={styles.box}>
         <Typography
-          variant="h1"
+          variant="h3"
           className="font-estetik"
           sx={{
             textAlign: 'center',

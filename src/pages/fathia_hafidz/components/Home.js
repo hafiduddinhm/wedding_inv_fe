@@ -129,7 +129,7 @@ const Home = forwardRef((props, ref) => {
     txt_estetik: {
       color: theme.palette.primary.main,
       fontFamily: 'lovely-thing',
-      lineHeight: '70px',
+      lineHeight: '50px',
     },
   };
 
@@ -175,14 +175,15 @@ const Home = forwardRef((props, ref) => {
           <img
             src={brides}
             alt="brides"
-            style={{width: '200px', paddingRight: '10px'}}
+            style={{width: '200px', paddingRight: '5px', marginBottom: '15px'}}
           />
           <Typography
-            variant="h2"
+            variant="h4"
             style={styles.txt_estetik}
-            className="font-estetik">
+            className="font-estetik"
+          >
             Fathia & Hafidz
-          </Typography>
+        </Typography>
           <br />
           <Typography variant="p">
             Kami berharap Anda menjadi bagian dari hari istimewa kami

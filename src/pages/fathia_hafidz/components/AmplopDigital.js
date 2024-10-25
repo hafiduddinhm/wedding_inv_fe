@@ -169,7 +169,7 @@ const AmplopDigital = () => {
         }}
       />
       <Box sx={styles.box}>
-        <Typography variant="h2" className="font-estetik">
+        <Typography variant="h4" className="font-estetik">
           Amplop Digital
         </Typography>
         <Typography variant="p">

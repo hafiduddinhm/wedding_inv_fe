@@ -16,6 +16,15 @@ body {
   font-family: "lovely-thing";
   src: url("/src/font/Lovely\ Thing.otf");
 }
+@font-face {
+  font-family: "amoresa-aged";
+  src: url("/src/font/Amoresa\ Aged.otf");
+}
+@font-face {
+  font-family: "amoresa-regular";
+  src: url("/src/font/Amoresa\ Regular.otf");
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

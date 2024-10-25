@@ -88,9 +88,9 @@ const PerjalananCerita = () => {
   };
 
   const stories = [
-    {title: 'Awal Berjumpa', date: '2016', detail: 'Pertemuan kami tepatnya di Masjid Al-Ikhlas, Randugeneng Desa Cepokorejo dalam agenda Organisasi. Fathia dan Hafidz pun saling berkenalan. Momen inilah Hafidz menaruh rasa pada Fathia dan berujung memendam perasaannya.'},
+    {title: 'Awal Berjumpa', date: '2016', detail: 'Pertemuan kami tepatnya di Masjid Al-Ikhlas, Randugeneng Desa Cepokorejo dalam agenda organisasi. Fathia dan Hafidz pun saling berkenalan. Momen inilah Hafidz menaruh rasa pada Fathia dan berujung memendam perasaannya.'},
     {title: 'Lost Contact', date: '2017 - 2019', detail: 'Kami sempat lost contact dalam rentang waktu yang cukup lama karena kesibukan masing-masing.'},
-    {title: 'Komunikasi Terjalin', date: '2019', detail: 'Kami kembali dipertemukan dalam agenda organisasi sekaligus menjadi pengurus Organisasi yang sama. Kami mulai berkomunikasi kembali dengan jarak yang membentang Bogor-Tuban. Sedang Hafidz, masih jua memendam rasanya dan belum berani mengungkapkan meski komunikasi semakin terjalin. '},
+    {title: 'Komunikasi Terjalin', date: '2019', detail: 'Kami kembali dipertemukan dalam agenda organisasi sekaligus menjadi pengurus organisasi yang sama. Kami mulai berkomunikasi kembali dengan jarak yang membentang Bogor-Tuban. Sedang Hafidz, masih jua memendam rasanya dan belum berani mengungkapkan meski komunikasi semakin terjalin. '},
     {title: 'Pertemuan Kembali', date: '2024', detail: 'Hafidz dan Fathia dipertemukan kembali setelah Fathia kembali dari perantauan. Komunikasi terjalin semakin baik antara Hafidz dan Fathia.'},
     {title: 'Mengungkapkan Rasa', date: 'Mei 2024', detail: 'Membulatkan tekad, Hafidz akhirnya mengungkapkan perasaan yang selama ini ia pendam kepada Fathia.'},
     {title: 'Khitbah', date: 'September 2024', detail: 'Hafidz dengan didampingi keluarga, meminang Fathia di hadapan keluarga besar. Alhamdulillah, Fathia menerima niat baik Hafidz dan memutuskan untuk melangsungkan pernikahan.'},
@@ -126,7 +126,7 @@ const PerjalananCerita = () => {
         }}
       />
       <Box sx={styles.box}>
-        <Typography variant="h2" className="font-estetik">
+        <Typography variant="h4" className="font-estetik">
           Our Journey
         </Typography>
         <Timeline 

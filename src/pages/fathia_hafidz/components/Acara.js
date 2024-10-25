@@ -107,7 +107,7 @@ const Acara = forwardRef((props, sectionRef) => {
         }}
       />
       <Box sx={styles.box}>
-        <Typography variant="h2" className="font-estetik">
+        <Typography variant="h4" className="font-estetik">
           Save the Date
         </Typography>
         <p style={styles.txt}>
@@ -131,7 +131,7 @@ const Acara = forwardRef((props, sectionRef) => {
             sm={6}
             style={{justifyContent: 'center', padding: 0}}>
             <Box style={styles.glass}>
-              <Typography variant="h3" className="font-estetik">
+              <Typography variant="h5" className="font-estetik">
                 Akad Nikah
               </Typography>
               <Typography variant="h6">
@@ -153,7 +153,7 @@ const Acara = forwardRef((props, sectionRef) => {
             sm={6}
             style={{justifyContent: 'center', padding: 0}}>
             <Box style={styles.glass}>
-              <Typography variant="h3" className="font-estetik">
+              <Typography variant="h5" className="font-estetik">
                 Tasyakuran
               </Typography>
               <Typography variant="h6">

@@ -59,8 +59,8 @@ const OpeningModal = ({ onClosed = () => {} }) => {
   const styles = {
     txt_estetik: {
       color: theme.palette.primary.main,
-      fontFamily: "lovely-thing",
-      lineHeight: "70px",
+      fontFamily: "amoresa-aged",
+      lineHeight: "60px",
     },
     txt_p: {
       fontFamily: "EB Garamond",
@@ -106,11 +106,13 @@ const OpeningModal = ({ onClosed = () => {} }) => {
         </Typography>
         <Typography variant="h5">The Wedding of</Typography>
         <Typography
-          variant="h1"
+          variant="h3"
           style={styles.txt_estetik}
           className="font-estetik"
         >
-          Fathia & <br />
+          Fathia 
+          <br />
+          <h3>&</h3> 
           Hafidz
         </Typography>
         <Typography variant="h6">12 Desember 2024</Typography>

@@ -25,13 +25,13 @@ const FathiaHafidzStyle = styled.div`
   font-family: 'EB Garamond', serif !important;
 
   .font-estetik {
-    font-family: 'lovely-thing', cursive !important;
+    font-family: 'amoresa-aged', cursive !important;
   }
 `;
 
 let theme = createTheme({
   typography: {
-    fontFamily: ['EB Garamond', 'lovely-thing'].join(','),
+    fontFamily: ['EB Garamond', 'amoresa-aged'].join(','),
   },
   palette: {
     primary: {
@@ -152,12 +152,12 @@ const FathiaHafidz = () => {
     <ThemeProvider theme={theme}>
       <FathiaHafidzStyle>
         <Helmet>
-          <title>Putri & Ipan Wedding</title>
+          <title>Fathia & Hafidz Wedding</title>
           <meta
             name="description"
             content={moment(receptionDate).format('dddd, D MMMM YYYY')}
           />
-          <meta property="og:title" content="Putri & Ipan Wedding" />
+          <meta property="og:title" content="Fathia & Hafidz Wedding" />
           <meta
             property="og:description"
             content={moment(receptionDate).format('dddd, D MMMM YYYY')}
